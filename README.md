@@ -1,13 +1,13 @@
-# BreakOut Website v11 — v9
+# BreakOut Website — v12
 
-Public static website for BreakOut, ready for GitHub Pages.
+Static GitHub Pages build for the BreakOut macOS application.
 
-- `index.html` — main landing page and interactive BreakOut demo
-- `styles-v10.css` — dark/light themes and responsive layouts
-- `script-v10.js` — RU/EN switch, theme switch, carousel, screenshot zoom and demo interactions
-- `config.js` — future public URLs for download, account and payments
-- `assets/` — BreakOut icon and website screenshots
+Current files:
+- `index.html` — main landing page
+- `styles-v12.css` — dark/light themes and responsive layout
+- `script-v12.js` — language/theme switching, carousel and interactive demo
+- `config.js` — future production URLs
+- `assets/` — BreakOut icon, demo frame and real application screenshots
+- `privacy.html`, `terms.html`, `support.html` — supporting pages
 
-The selected language and site theme are saved in the browser.
-
-Do not place payment secrets, private keys or application source code in this public repository.
+Upload the contents of this folder to the repository root.
