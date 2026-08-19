@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v12.css?v=12">
+  <link rel="stylesheet" href="styles-v13.css?v=13">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -29,7 +29,7 @@
         <a href="#breakout-demo" data-i18n="navDemo">Демо</a>
         <a href="#showcase" data-i18n="navShowcase">Интерфейс</a>
         <a href="#pricing" data-i18n="navPricing">Тарифы</a>
-        <a href="#privacy" data-i18n="navPrivacy">Конфиденциальность</a>
+        <a href="account.html" data-i18n="navAccount">Аккаунт</a>
         <a href="support.html" data-i18n="navSupport">Поддержка</a>
       </nav>
       <div class="nav-actions">
@@ -45,7 +45,7 @@
       <a href="#breakout-demo" data-i18n="navDemo">Демо</a>
       <a href="#showcase" data-i18n="navShowcase">Интерфейс</a>
       <a href="#pricing" data-i18n="navPricing">Тарифы</a>
-      <a href="#privacy" data-i18n="navPrivacy">Конфиденциальность</a>
+      <a href="account.html" data-i18n="navAccount">Аккаунт</a>
       <a href="support.html" data-i18n="navSupport">Поддержка</a>
       <a href="#" data-action="signin" data-i18n="signIn">Войти</a>
     </div>
@@ -266,11 +266,31 @@
       </div>
     </section>
 
+
+    <section class="section account-link-section" id="account">
+      <div class="content-shell account-link-card">
+        <div class="account-link-copy">
+          <div class="kicker" data-i18n="accountKicker">Аккаунт и доступ</div>
+          <h2 data-i18n="accountTitle">Один аккаунт — на сайте и в BreakOut.</h2>
+          <p data-i18n="accountIntro">Создайте аккаунт, выберите срок доступа и войдите тем же e-mail в приложении на Mac. Статус доступа и активированные устройства будут собраны в личном кабинете.</p>
+          <div class="account-link-actions">
+            <a class="button primary" href="account.html?mode=register" data-i18n="createAccount">Создать аккаунт</a>
+            <a class="button secondary" href="account.html?mode=signin" data-i18n="signIn">Войти</a>
+          </div>
+        </div>
+        <div class="account-facts">
+          <div><strong data-i18n="accountFact1Title">Срок доступа</strong><small data-i18n="accountFact1Text">В аккаунте видно, до какой даты активен BreakOut.</small></div>
+          <div><strong data-i18n="accountFact2Title">Активированные Mac</strong><small data-i18n="accountFact2Text">Устройства и состояние доступа можно контролировать централизованно.</small></div>
+          <div><strong data-i18n="accountFact3Title">Покупка и продление</strong><small data-i18n="accountFact3Text">Оплата выполняется на сайте, а доступ обновляется в приложении автоматически.</small></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section pricing-section" id="pricing">
       <div class="content-shell">
         <div class="section-heading">
           <div><div class="kicker" data-i18n="pricingKicker">Тарифы</div><h2 data-i18n="pricingTitle">Полный доступ к BreakOut.</h2></div>
-          <p data-i18n="pricingIntro">Тарифы на полный доступ к BreakOut. Продажи будут открыты к коммерческому запуску.</p>
+          <p data-i18n="pricingIntro">Выберите срок доступа. После оплаты он будет привязан к аккаунту BreakOut и станет доступен в приложении на Mac.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
@@ -342,7 +362,7 @@
     </div>
   </div>
 
-  <script src="config.js?v=12"></script>
-  <script src="script-v12.js?v=12"></script>
+  <script src="config.js?v=13"></script>
+  <script src="script-v13.js?v=13"></script>
 </body>
 </html>

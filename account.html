@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('breakout-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+  <meta name="theme-color" content="#070907">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="assets/breakout-icon.png">
+  <link rel="apple-touch-icon" href="assets/breakout-icon.png">
+  <link rel="stylesheet" href="styles-v13.css?v=13">
+  <title>Аккаунт — BreakOut</title>
+</head>
+<body class="account-page" data-page="account">
+  <header class="topbar">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="BreakOut"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span></a>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div>
+        <div class="theme-switch" aria-label="Тема"><button type="button" data-theme-option="light" aria-label="Светлая тема"><span aria-hidden="true">☀</span></button><button type="button" data-theme-option="dark" aria-label="Тёмная тема"><span aria-hidden="true">☾</span></button></div>
+        <a class="signin-btn account-back" href="index.html" data-i18n="backHome">← На главную</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-main">
+    <section class="account-hero">
+      <div class="content-shell account-layout">
+        <div class="account-auth-card">
+          <div class="account-brand-line"><img src="assets/breakout-icon.png" alt=""><div><span data-i18n="accountPageKicker">Аккаунт BreakOut</span><small data-i18n="accountPageSub">Один аккаунт для сайта и приложения на Mac.</small></div></div>
+          <div class="account-tabs" role="tablist">
+            <button type="button" data-account-mode="signin" class="active" data-i18n="signIn">Войти</button>
+            <button type="button" data-account-mode="register" data-i18n="createAccount">Создать аккаунт</button>
+          </div>
+
+          <div class="account-plan-summary" data-account-plan hidden>
+            <span data-i18n="selectedAccess">Выбранный доступ</span>
+            <strong data-account-plan-name></strong>
+            <small data-account-plan-price></small>
+          </div>
+
+          <form class="account-form" data-account-form novalidate>
+            <label><span>E-mail</span><input type="email" name="email" autocomplete="email" placeholder="name@example.com" required></label>
+            <label><span data-i18n="password">Пароль</span><input type="password" name="password" autocomplete="current-password" minlength="8" required></label>
+            <label class="account-confirm" hidden><span data-i18n="repeatPassword">Повторите пароль</span><input type="password" name="confirmPassword" autocomplete="new-password" minlength="8"></label>
+            <div class="account-form-row">
+              <button class="account-reset-link" type="button" data-account-reset data-i18n="forgotPassword">Забыли пароль?</button>
+            </div>
+            <label class="account-consent form-check" hidden>
+              <input class="form-check-input" type="checkbox" name="consent">
+              <span class="form-check-label"><span data-i18n="accountConsent">Я принимаю условия использования и политику конфиденциальности.</span></span>
+            </label>
+            <button class="button primary full account-submit" type="submit" data-account-submit data-i18n="signIn">Войти</button>
+            <div class="account-status" data-account-status aria-live="polite"></div>
+          </form>
+          <p class="account-same-login" data-i18n="sameLogin">Этот же аккаунт используется для входа в BreakOut на Mac.</p>
+        </div>
+
+        <div class="account-side">
+          <div class="kicker" data-i18n="accountSideKicker">Личный кабинет</div>
+          <h1 data-i18n="accountSideTitle">Доступ к BreakOut — без ручной активации.</h1>
+          <p data-i18n="accountSideIntro">После покупки срок доступа привязывается к аккаунту. Приложение проверяет его при входе и сохраняет разрешение для работы без постоянного подключения к интернету.</p>
+          <div class="account-preview">
+            <div><span data-i18n="accountPreviewAccess">Доступ</span><strong data-i18n="accountPreviewInactive">Не активирован</strong></div>
+            <div><span data-i18n="accountPreviewPlan">Тариф</span><strong>—</strong></div>
+            <div><span data-i18n="accountPreviewDevices">Устройства</span><strong>0 Mac</strong></div>
+          </div>
+          <div class="account-side-note"><span></span><p data-i18n="accountSideNote">При коммерческом запуске здесь будут отображаться тариф, дата окончания доступа и активированные Mac.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="content-shell footer-inner"><div class="footer-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><small>© 2026</small></div><div class="footer-links"><a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a><a href="terms.html" data-i18n="termsShort">Условия</a><a href="support.html" data-i18n="navSupport">Поддержка</a></div></div></footer>
+  <script src="config.js?v=13"></script>
+  <script src="script-v13.js?v=13"></script>
+</body>
+</html>
