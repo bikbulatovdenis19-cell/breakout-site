@@ -2,16 +2,19 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('breakout-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
   <meta name="theme-color" content="#070907">
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
-  <link rel="stylesheet" href="styles-v14.css?v=14">
+  <link rel="stylesheet" href="styles-v16.css?v=16.0">
   <title>Аккаунт — BreakOut</title>
 </head>
-<body class="account-page" data-page="account">
+<body class="account-page" data-page="account" data-build="16.0">
   <header class="topbar">
     <div class="nav-shell">
       <a class="brand" href="index.html" aria-label="BreakOut"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span></a>
@@ -28,33 +31,35 @@
       <div class="content-shell account-layout">
         <div class="account-auth-card">
           <div class="account-brand-line"><img src="assets/breakout-icon.png" alt=""><div><span data-i18n="accountPageKicker">Аккаунт BreakOut</span><small data-i18n="accountPageSub">Один аккаунт для сайта и приложения на Mac.</small></div></div>
-          <div class="account-tabs" role="tablist">
+          <div class="account-tabs" role="tablist" data-auth-tabs>
             <button type="button" data-account-mode="signin" class="active" data-i18n="signIn">Войти</button>
             <button type="button" data-account-mode="register" data-i18n="createAccount">Создать аккаунт</button>
           </div>
 
-          <div class="account-plan-summary" data-account-plan hidden>
-            <span data-i18n="selectedAccess">Выбранный доступ</span>
-            <strong data-account-plan-name></strong>
-            <small data-account-plan-price></small>
-          </div>
-
-          <form class="account-form" data-account-form novalidate>
+          <form class="account-form" data-signin-form novalidate>
             <label><span>E-mail</span><input type="email" name="email" autocomplete="email" placeholder="name@example.com" required></label>
             <label><span data-i18n="password">Пароль</span><input type="password" name="password" autocomplete="current-password" minlength="8" required></label>
-            <label class="account-confirm" hidden><span data-i18n="repeatPassword">Повторите пароль</span><input type="password" name="confirmPassword" autocomplete="new-password" minlength="8"></label>
-            <div class="account-form-row">
-              <button class="account-reset-link" type="button" data-account-reset data-i18n="forgotPassword">Забыли пароль?</button>
-            </div>
-            <label class="account-consent form-check" hidden>
-              <input class="form-check-input" type="checkbox" name="consent">
-              <span class="form-check-label"><span data-i18n="accountConsent">Я принимаю условия использования и политику конфиденциальности.</span></span>
-            </label>
-            <button class="button primary full account-submit" type="submit" data-account-submit data-i18n="signIn">Войти</button>
-            <div class="account-status" data-account-status aria-live="polite"></div>
+            <div class="account-form-row"><button class="account-reset-link" type="button" data-account-reset data-i18n="forgotPassword">Забыли пароль?</button></div>
+            <button class="button primary full account-submit" type="submit" data-i18n="signIn">Войти</button>
+            <div class="account-status" data-signin-status aria-live="polite"></div>
           </form>
 
-          <div class="account-dashboard" data-account-dashboard hidden>
+          <form class="account-form is-hidden" data-register-form novalidate>
+            <div class="account-plan-summary is-hidden" data-account-plan>
+              <span data-i18n="selectedAccess">Выбранный доступ</span><strong data-account-plan-name></strong><small data-account-plan-price></small>
+            </div>
+            <label><span>E-mail</span><input type="email" name="email" autocomplete="email" placeholder="name@example.com" required></label>
+            <label><span data-i18n="password">Пароль</span><input type="password" name="password" autocomplete="new-password" minlength="8" required></label>
+            <label><span data-i18n="repeatPassword">Повторите пароль</span><input type="password" name="confirmPassword" autocomplete="new-password" minlength="8" required></label>
+            <label class="account-consent form-check">
+              <input class="form-check-input" type="checkbox" name="consent" required>
+              <span class="form-check-label"><span data-i18n="accountConsent">Я принимаю условия использования и политику конфиденциальности.</span></span>
+            </label>
+            <button class="button primary full account-submit" type="submit" data-i18n="createAccount">Создать аккаунт</button>
+            <div class="account-status" data-register-status aria-live="polite"></div>
+          </form>
+
+          <div class="account-dashboard is-hidden" data-account-dashboard>
             <div class="account-dashboard-head">
               <div><span data-i18n="accountSignedInAs">Вы вошли как</span><strong data-account-email>—</strong></div>
               <span class="account-live-badge" data-account-state>—</span>
@@ -72,7 +77,7 @@
             <div class="account-status" data-account-dashboard-status aria-live="polite"></div>
           </div>
 
-          <div class="account-recovery" data-account-recovery hidden>
+          <div class="account-recovery is-hidden" data-account-recovery>
             <h3 data-i18n="accountNewPasswordTitle">Новый пароль</h3>
             <p data-i18n="accountNewPasswordIntro">Введите новый пароль для аккаунта BreakOut.</p>
             <label><span data-i18n="password">Пароль</span><input type="password" data-recovery-password minlength="8"></label>
@@ -100,8 +105,8 @@
   </main>
 
   <footer class="footer"><div class="content-shell footer-inner"><div class="footer-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><small>© 2026</small></div><div class="footer-links"><a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a><a href="terms.html" data-i18n="termsShort">Условия</a><a href="support.html" data-i18n="navSupport">Поддержка</a></div></div></footer>
-  <script src="config.js?v=14"></script>
-  <script src="supabase-v14.js?v=14"></script>
-  <script src="script-v14.js?v=14"></script>
+  <script src="config-v16.js?v=16.0"></script>
+  <script src="supabase-v16.js?v=16.0"></script>
+  <script src="script-v16.js?v=16.0"></script>
 </body>
 </html>
