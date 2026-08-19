@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v17.css?v=17.0">
+  <link rel="stylesheet" href="styles-v18.css?v=18.0">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -78,11 +78,11 @@
         <div class="hero-demo-label">
           <span class="live-dot"></span>
           <strong data-i18n="demoKicker">Интерактивное демо</strong>
-          <span data-i18n="demoIntro">Нажимайте кнопки, создавайте метки и открывайте повтор.</span>
+          <span data-i18n="demoIntro">Пример кодирования: 18 хоккейных тегов, таймлайн и повтор.</span>
         </div>
 
         <div class="demo-shell-wrap">
-          <div class="demo-app" id="breakout-demo" style="--split-x:72%;--split-y:60%">
+          <div class="demo-app" id="breakout-demo" style="--split-x:72%;--split-y:58%">
             <div class="demo-titlebar">
               <div class="demo-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><em>25 Feb 2018 — Russia vs Germany</em></div>
               <div class="demo-status"><span class="record-dot"></span><span data-i18n="captureActive">Захват активен</span><b id="demo-clock">23:54</b></div>
@@ -100,19 +100,29 @@
               <section class="demo-pane buttons-pane">
                 <div class="pane-bar"><strong data-i18n="buttonsModule">Программируемые кнопки</strong><span class="pane-actions">● ◌ ×</span></div>
                 <div class="coding-buttons">
-                  <button class="coding-btn green" type="button" data-mode="beforeAfter" data-name="GOAL +" data-track="goal" data-color="#53d63a"><span>GOAL +</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn red" type="button" data-mode="beforeAfter" data-name="GOAL -" data-track="goal" data-color="#e63d34"><span>GOAL -</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn lime" type="button" data-mode="pressAndRelease" data-name="OZ" data-track="oz" data-color="#39c83e"><span>OZ</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn orange" type="button" data-mode="pressAndRelease" data-name="DZ" data-track="dz" data-color="#e99442"><span>DZ</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn green" type="button" data-mode="pressAndRelease" data-name="PP" data-track="pp" data-color="#36c842"><span>PP</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn red" type="button" data-mode="pressAndRelease" data-name="PK" data-track="pk" data-color="#e84a3d"><span>PK</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn orange" type="button" data-mode="beforeAfter" data-name="FO +" data-track="fo" data-color="#e99a48"><span>FO +</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn violet" type="button" data-mode="beforeAfter" data-name="Hit" data-track="chance" data-color="#cc68d8"><span data-i18n="chance">Hit</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn blue" type="button" data-mode="pressAndRelease" data-name="Forecheck" data-track="chance" data-color="#67c7dc"><span>Forecheck</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="GOAL +" data-track="goal_for" data-color="#43c83f" data-count="2"><em class="coding-count">2</em><span>GOAL +</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="GOAL -" data-track="goal_against" data-color="#df4d45" data-count="1"><em class="coding-count">1</em><span>GOAL -</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="SOG +" data-track="sog_for" data-color="#43c83f" data-count="19"><em class="coding-count">19</em><span>SOG +</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="SOG -" data-track="sog_against" data-color="#df4d45" data-count="16"><em class="coding-count">16</em><span>SOG -</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="pressAndRelease" data-name="PP" data-track="pp" data-color="#43c83f" data-count="3"><em class="coding-count">3</em><span>PP</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn negative" type="button" data-mode="pressAndRelease" data-name="PK" data-track="pk" data-color="#df4d45" data-count="2"><em class="coding-count">2</em><span>PK</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="FO +" data-track="fo_win" data-color="#43c83f" data-count="14"><em class="coding-count">14</em><span>FO +</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="FO -" data-track="fo_loss" data-color="#df4d45" data-count="11"><em class="coding-count">11</em><span>FO -</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="OZ ENTRY" data-track="oz_entry" data-color="#43c83f" data-count="12"><em class="coding-count">12</em><span>OZ ENTRY</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="DZ EXIT" data-track="dz_exit" data-color="#43c83f" data-count="10"><em class="coding-count">10</em><span>DZ EXIT</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="BREAKOUT" data-track="breakout" data-color="#67736b" data-count="8"><em class="coding-count">8</em><span>BREAKOUT</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="FORECHECK" data-track="forecheck" data-color="#67736b" data-count="9"><em class="coding-count">9</em><span>FORECHECK</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="NZ REGROUP" data-track="nz_regroup" data-color="#67736b" data-count="6"><em class="coding-count">6</em><span>NZ REGROUP</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="TK" data-track="takeaway" data-color="#43c83f" data-count="7"><em class="coding-count">7</em><span>TK</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="GV" data-track="giveaway" data-color="#df4d45" data-count="5"><em class="coding-count">5</em><span>GV</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="beforeAfter" data-name="HIT" data-track="hit" data-color="#67736b" data-count="13"><em class="coding-count">13</em><span>HIT</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="BLK" data-track="block" data-color="#43c83f" data-count="6"><em class="coding-count">6</em><span>BLK</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="PEN" data-track="penalty" data-color="#df4d45" data-count="3"><em class="coding-count">3</em><span>PEN</span><small data-i18n="beforeAfterShort">до / после</small></button>
                 </div>
-                <div class="coding-legend">
-                  <span><i></i><b data-i18n="legendBeforeAfter">До / после — одна отметка</b></span>
-                  <span><i class="legend-hold"></i><b data-i18n="legendStartStop">Старт / стоп — повторное нажатие завершает событие</b></span>
+                <div class="coding-legend coding-legend-pro">
+                  <span><i class="legend-positive"></i><b data-i18n="legendPositive">Наша команда</b></span>
+                  <span><i class="legend-negative"></i><b data-i18n="legendNegative">Против нас</b></span>
+                  <span><i class="legend-tactical"></i><b data-i18n="legendTactical">Тактика / структура</b></span>
                 </div>
               </section>
 
@@ -121,13 +131,24 @@
                 <div class="timeline-demo" id="timeline-demo">
                   <div class="timeline-ruler"><span>23:30</span><span>23:40</span><span>23:50</span><span>24:00</span><span>24:10</span></div>
                   <div class="timeline-tracks" id="timeline-tracks">
-                    <div class="demo-track" data-track="goal"><label>GOAL</label><div class="track-surface"></div></div>
-                    <div class="demo-track" data-track="oz"><label>OZ</label><div class="track-surface"></div></div>
-                    <div class="demo-track" data-track="dz"><label>DZ</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="goal_for"><label>GOAL +</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="goal_against"><label>GOAL -</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="sog_for"><label>SOG +</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="sog_against"><label>SOG -</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="pp"><label>PP</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="pk"><label>PK</label><div class="track-surface"></div></div>
-                    <div class="demo-track" data-track="fo"><label>FO</label><div class="track-surface"></div></div>
-                    <div class="demo-track" data-track="chance"><label data-i18n="trackChance">Hit</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="fo_win"><label>FO +</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="fo_loss"><label>FO -</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="oz_entry"><label>OZ ENTRY</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="dz_exit"><label>DZ EXIT</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="breakout"><label>BREAKOUT</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="forecheck"><label>FORECHECK</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="nz_regroup"><label>NZ REGROUP</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="takeaway"><label>TK</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="giveaway"><label>GV</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="hit"><label>HIT</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="block"><label>BLK</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="penalty"><label>PEN</label><div class="track-surface"></div></div>
                   </div>
                   <div class="demo-playhead" id="demo-playhead"></div>
                 </div>
@@ -365,7 +386,7 @@
     </div>
   </div>
 
-  <script src="config-v17.js?v=17.0"></script>
-  <script src="script-v17.js?v=17.0"></script>
+  <script src="config-v18.js?v=18.0"></script>
+  <script src="script-v18.js?v=18.0"></script>
 </body>
 </html>
