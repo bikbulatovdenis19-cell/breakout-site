@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="styles.css">
   <title>BreakOut — Professional Sports Video Analysis</title>
 </head>
-<body>
+<body data-page="home">
   <header class="nav-wrap">
     <div class="shell nav">
       <a class="brand" href="#top" aria-label="BreakOut home"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span></a>
@@ -52,38 +52,20 @@
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">Professional sports video analysis for macOS</span></div>
           <h1 data-i18n-lines="heroTitle">See the game.<br>Mark the moment.</h1>
-          <p class="hero-lead" data-i18n="heroLead">Capture, code, review and export decisive moments in one focused workspace — built for coaches, analysts and video teams.</p>
+          <p class="hero-lead" data-i18n="heroLead">Capture matches, mark key events, review episodes and prepare video for meetings and further analysis — in one macOS workspace for coaches, analysts and sports teams.</p>
           <div class="hero-actions">
             <button class="btn btn-primary btn-large" data-action="download"><span data-i18n="download">Download for Mac</span><span class="icon-arrow">↓</span></button>
             <a class="btn btn-large" href="#features"><span data-i18n="explore">Explore BreakOut</span><span class="icon-arrow">→</span></a>
           </div>
-          <div class="hero-note" data-i18n="releaseNote">macOS · Direct distribution preview · Public download opens at launch</div>
+          <div class="hero-note" data-i18n="releaseNote">macOS · Professional sports video analysis</div>
         </div>
 
-        <div class="product-stage" aria-label="Stylized BreakOut workspace preview">
+        <div class="product-stage" aria-label="BreakOut live workspace screenshot">
           <div class="product-glow"></div>
-          <div class="app-window">
+          <div class="app-window real-shot">
             <div class="window-bar"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="window-title">BreakOut · Workspace</span></div>
-            <div class="workspace">
-              <div class="sidebar">
-                <div class="side-mark active"></div><div class="side-mark"></div><div class="side-mark"></div><div class="side-mark"></div><div class="side-mark"></div><div class="side-mark"></div>
-              </div>
-              <div class="main-pane">
-                <div class="video-pane">
-                  <div class="rink"></div>
-                  <span class="player-dot p1"></span><span class="player-dot p2"></span><span class="player-dot p3"></span><span class="player-dot p4"></span>
-                  <div class="video-hud"><span class="video-pill live">● LIVE</span><span class="video-pill">01:18:42</span></div>
-                </div>
-                <div class="timeline">
-                  <div class="time-ruler"></div>
-                  <div class="track"><div class="track-name">Goals</div><div class="track-line"><span class="tag t1"></span><span class="tag t3"></span></div></div>
-                  <div class="track"><div class="track-name">Entries</div><div class="track-line"><span class="tag t2"></span><span class="tag t4"></span></div></div>
-                  <div class="track"><div class="track-name">PP</div><div class="track-line"><span class="tag t1" style="left:46%;width:19%"></span></div></div>
-                  <div class="track"><div class="track-name">Chances</div><div class="track-line"><span class="tag t2" style="left:19%;width:12%"></span><span class="tag t4" style="left:70%;width:15%"></span></div></div>
-                  <div class="playhead"></div>
-                </div>
-              </div>
-              <div class="tools"><div class="tool-title">Actions</div><div class="tool-btn active"></div><div class="tool-btn"></div><div class="tool-btn"></div><div class="tool-btn"></div><div class="tool-btn active"></div><div class="tool-btn"></div></div>
+            <div class="hero-shot-wrap">
+              <img class="hero-shot" src="assets/workspace-live.webp" alt="BreakOut live workspace screenshot">
             </div>
             <img class="floating-icon" src="assets/breakout-icon.png" alt="BreakOut icon">
           </div>
@@ -107,12 +89,58 @@
           <p class="section-copy" data-i18n="featuresCopy">BreakOut keeps the match, timeline, code, drawings, statistics and export close together, so analysis stays fast when time matters.</p>
         </div>
         <div class="feature-grid">
-          <article class="card"><div class="card-index">01</div><h3 data-i18n="f1t">Capture</h3><p data-i18n="f1d">Record a match directly into the project and keep the workflow centered on the live source.</p></article>
-          <article class="card"><div class="card-index">02</div><h3 data-i18n="f2t">Timeline & coding</h3><p data-i18n="f2d">Create programmable actions and mark events with shortcuts without leaving the video.</p></article>
-          <article class="card"><div class="card-index">03</div><h3 data-i18n="f3t">Review</h3><p data-i18n="f3d">Open episodes from the timeline, compare moments and return to the exact frame quickly.</p></article>
-          <article class="card"><div class="card-index">04</div><h3 data-i18n="f4t">Drawing</h3><p data-i18n="f4d">Annotate frames, explain space and movement, and make tactical points visible.</p></article>
-          <article class="card"><div class="card-index">05</div><h3 data-i18n="f5t">Statistics</h3><p data-i18n="f5d">Turn coded events into practical team context and export structured data when needed.</p></article>
-          <article class="card"><div class="card-index">06</div><h3 data-i18n="f6t">Export</h3><p data-i18n="f6d">Prepare selected episodes, tracks, periods or assembled material for meetings and sharing.</p></article>
+          <article class="card"><div class="card-index">01</div><h3 data-i18n="f1t">Capture</h3><p data-i18n="f1d">Connect a camera, record the match and keep the video inside the project.</p></article>
+          <article class="card"><div class="card-index">02</div><h3 data-i18n="f2t">Timeline & coding</h3><p data-i18n="f2d">Mark events with programmable buttons and hotkeys during recording or review.</p></article>
+          <article class="card"><div class="card-index">03</div><h3 data-i18n="f3t">Review</h3><p data-i18n="f3d">Open an episode from the timeline and return to the exact moment without losing context.</p></article>
+          <article class="card"><div class="card-index">04</div><h3 data-i18n="f4t">Drawing</h3><p data-i18n="f4d">Add arrows, lines, zones and other annotations to explain game situations clearly.</p></article>
+          <article class="card"><div class="card-index">05</div><h3 data-i18n="f5t">Statistics</h3><p data-i18n="f5d">See a clear summary of marked events and use it during post-game analysis.</p></article>
+          <article class="card"><div class="card-index">06</div><h3 data-i18n="f6t">Export</h3><p data-i18n="f6d">Export individual episodes, tracks, periods and prepared selections.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section preview-section" id="previews">
+      <div class="shell">
+        <div class="section-head preview-head">
+          <div><div class="kicker" data-i18n="previewsKicker">Real workflow</div><h2 data-i18n="previewsTitle">What BreakOut looks like during the job.</h2></div>
+          <p class="section-copy" data-i18n="previewsCopy">These are real screenshots from BreakOut: live match work, workspace setup, programmable buttons and post-game statistics with export.</p>
+        </div>
+        <div class="real-preview-grid">
+          <article class="preview-card preview-card-wide screenshot-card">
+            <div class="preview-header">
+              <span class="preview-chip" data-i18n="ss1t">Live workspace</span>
+              <span class="preview-meta" data-i18n="ss1m">Capture + timeline + replay + buttons</span>
+            </div>
+            <div class="photo-frame photo-wide"><img src="assets/workspace-live.webp" alt="BreakOut live match workspace screenshot"></div>
+            <p data-i18n="ss1d">A working layout during the match: capture, timeline, programmable buttons and replay stay visible in one screen.</p>
+          </article>
+
+          <article class="preview-card screenshot-card">
+            <div class="preview-header">
+              <span class="preview-chip" data-i18n="ss2t">Workspace setup</span>
+              <span class="preview-meta" data-i18n="ss2m">Choose the needed modules</span>
+            </div>
+            <div class="photo-frame"><img src="assets/layout-builder.webp" alt="BreakOut module layout setup screenshot"></div>
+            <p data-i18n="ss2d">At the start of work, the workspace can be assembled from the modules needed for the current task.</p>
+          </article>
+
+          <article class="preview-card screenshot-card">
+            <div class="preview-header">
+              <span class="preview-chip" data-i18n="ss3t">Programmable buttons</span>
+              <span class="preview-meta" data-i18n="ss3m">Create and configure events</span>
+            </div>
+            <div class="photo-frame"><img src="assets/buttons-editor.webp" alt="BreakOut programmable buttons editor screenshot"></div>
+            <p data-i18n="ss3d">New buttons, hotkeys and event parameters can be prepared before the match so marking stays fast and consistent.</p>
+          </article>
+
+          <article class="preview-card preview-card-wide screenshot-card">
+            <div class="preview-header">
+              <span class="preview-chip" data-i18n="ss4t">Statistics and export</span>
+              <span class="preview-meta" data-i18n="ss4m">Post-game review</span>
+            </div>
+            <div class="photo-frame photo-wide"><img src="assets/stats-export.webp" alt="BreakOut statistics and export screenshot"></div>
+            <p data-i18n="ss4d">After the game, marked events can be reviewed in statistics and exported by lines, tracks or selected moments.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -132,44 +160,28 @@
       </div>
     </section>
 
-    <section class="section" id="license">
-      <div class="shell">
-        <div class="license-band">
-          <div>
-            <div class="kicker" data-i18n="licenseKicker">Account & license</div>
-            <h2 data-i18n="licenseTitle">A license that follows the user, not the ZIP file.</h2>
-            <p class="section-copy" style="margin-top:20px" data-i18n="licenseCopy">At commercial launch, access will be tied to a BreakOut account. A license key will be issued as a fallback for activation and support — simply forwarding the app will not transfer the subscription.</p>
-          </div>
-          <div class="license-list">
-            <div class="license-item"><div class="license-check">✓</div><div><strong data-i18n="l1t">Account-based access</strong><span data-i18n="l1d">Sign in on the Mac to verify the current entitlement.</span></div></div>
-            <div class="license-item"><div class="license-check">#</div><div><strong data-i18n="l2t">License key fallback</strong><span data-i18n="l2d">A BO-XXXX-XXXX-XXXX key can also be issued after purchase and shown in the customer account.</span></div></div>
-            <div class="license-item"><div class="license-check">2</div><div><strong data-i18n="l3t">Device control</strong><span data-i18n="l3d">Activated Macs, expiration and subscription status can be managed centrally.</span></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="pricing">
       <div class="shell">
         <div class="section-head">
           <div><div class="kicker" data-i18n="pricingKicker">Pricing</div><h2 data-i18n="pricingTitle">Simple access to the full workspace.</h2></div>
-          <p class="section-copy" data-i18n="pricingCopy">Planned direct-distribution pricing. Payment is intentionally disabled in this preview while checkout and licensing infrastructure are being connected.</p>
+          <p class="section-copy" data-i18n="pricingCopy">Planned pricing for the Mac version of BreakOut. Payment is not open yet.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
             <div class="price-top"><div class="price-plan" data-i18n="p6">6 months</div></div>
             <div class="price">25 000 ₽</div><div class="price-sub">BreakOut Professional</div>
-            <ul class="price-list"><li data-i18n="fullWorkspace">Full BreakOut workspace</li><li data-i18n="accountLicense">Account + license activation</li><li data-i18n="updatesTerm">Updates during the paid term</li></ul>
+            <ul class="price-list"><li data-i18n="fullWorkspace">Full BreakOut workspace</li><li data-i18n="accountLicense">Access for the paid term</li><li data-i18n="updatesTerm">Updates during the paid term</li></ul>
             <button class="btn btn-large" data-action="buy-six" data-i18n="buy6">Choose 6 months</button>
           </article>
           <article class="price-card featured">
             <div class="price-top"><div class="price-plan" data-i18n="p12">1 year</div><span class="badge" data-i18n="popular">Best value</span></div>
             <div class="price">50 000 ₽</div><div class="price-sub">BreakOut Professional</div>
-            <ul class="price-list"><li data-i18n="fullWorkspace">Full BreakOut workspace</li><li data-i18n="accountLicense">Account + license activation</li><li data-i18n="updatesTerm">Updates during the paid term</li></ul>
+            <ul class="price-list"><li data-i18n="fullWorkspace">Full BreakOut workspace</li><li data-i18n="accountLicense">Access for the paid term</li><li data-i18n="updatesTerm">Updates during the paid term</li></ul>
             <button class="btn btn-primary btn-large" data-action="buy-annual" data-i18n="buy12">Choose 1 year</button>
           </article>
         </div>
-        <p class="pricing-note" data-i18n="pricingNote">Sales are not open yet. The buttons are already in place and will be connected to checkout before commercial launch.</p>
+        <p class="pricing-note" data-i18n="pricingNote">Sales are not open yet. Purchase buttons will become active when payment is available.</p>
       </div>
     </section>
 
@@ -177,18 +189,18 @@
       <div class="shell">
         <div class="section-head">
           <div><div class="kicker" data-i18n="privacyKicker">Privacy by design</div><h2 data-i18n="privacyTitle">Your work stays your work.</h2></div>
-          <p class="section-copy" data-i18n="privacyCopy">This preview site contains no advertising, analytics SDKs or marketing trackers. When accounts and payments are connected, only the data required to provide the service will be processed and the policy will be updated before launch.</p>
+          <p class="section-copy" data-i18n="privacyCopy">BreakOut is designed to keep product and customer data handling clear and limited. The current site does not use advertising trackers or store payment-card data.</p>
         </div>
         <div class="privacy-panel">
           <div class="privacy-main">
             <h3>BreakOut Privacy</h3>
-            <p data-i18n="privacySideCopy">Payment details will be handled by the payment provider, while BreakOut will keep only the service information needed for an account, license and device activation.</p>
+            <p data-i18n="privacySideCopy">Payment details will be handled by the payment provider. BreakOut will keep only the information needed to provide access and support.</p>
             <div class="mini-row"><span data-i18n="pr1a">Advertising trackers</span><span data-i18n="pr1b">None</span></div>
             <div class="mini-row"><span data-i18n="pr2a">Payment card storage on BreakOut</span><span data-i18n="pr2b">None</span></div>
-            <div class="mini-row"><span data-i18n="pr3a">Public sale on this preview</span><span data-i18n="pr3b">Disabled</span></div>
+            <div class="mini-row"><span data-i18n="pr3a">Online purchases</span><span data-i18n="pr3b">Not available yet</span></div>
           </div>
           <div class="privacy-side">
-            <div><div class="lock-mark">⌁</div><h4 data-i18n="privacySideTitle">Clear data boundaries</h4><p data-i18n="privacySideCopy">Payment details will be handled by the payment provider, while BreakOut will keep only the service information needed for an account, license and device activation.</p></div>
+            <div><div class="lock-mark">⌁</div><h4 data-i18n="privacySideTitle">Clear data boundaries</h4><p data-i18n="privacySideCopy">Payment details will be handled by the payment provider. BreakOut will keep only the information needed to provide access and support.</p></div>
             <a class="text-link" href="privacy.html"><span data-i18n="privacyLink">Read privacy policy</span><span>→</span></a>
           </div>
         </div>
@@ -208,7 +220,7 @@
 
   <footer class="footer">
     <div class="shell footer-grid">
-      <div class="footer-left"><img src="assets/breakout-icon.png" alt=""><span>© 2026 BreakOut · <span data-i18n="footerPreview">Pre-launch website preview</span></span></div>
+      <div class="footer-left"><img src="assets/breakout-icon.png" alt=""><span>© 2026 BreakOut · <span data-i18n="footerPreview">Official BreakOut website</span></span></div>
       <div class="footer-links"><a href="privacy.html" data-i18n="footerPrivacy">Privacy</a><a href="terms.html" data-i18n="footerTerms">Terms</a><a href="support.html" data-i18n="footerSupport">Support</a></div>
     </div>
   </footer>
@@ -216,8 +228,8 @@
   <div class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="preview-title">
     <div class="modal">
       <div class="modal-icon">B</div>
-      <h3 id="preview-title" data-i18n="modalTitle">BreakOut is in pre-launch mode</h3>
-      <p class="modal-detail" data-i18n="modalBody">This control is ready in the website interface, but the public download, account server and payment checkout are not connected yet. Nothing will be charged.</p>
+      <h3 id="preview-title" data-i18n="modalTitle">This function is coming soon</h3>
+      <p class="modal-detail" data-i18n="modalBody">This function is not available yet. Public download, sign-in and payment will be enabled later. Nothing will be charged.</p>
       <div class="modal-actions"><button class="btn" data-modal-close data-i18n="modalClose">Close</button><a class="btn btn-primary" data-support-email href="#" data-i18n="modalSupport">Contact support</a></div>
     </div>
   </div>

@@ -1,18 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070908">
-  <meta name="robots" content="index,follow"><link rel="icon" href="assets/breakout-icon.png"><link rel="stylesheet" href="styles.css"><title>Support — BreakOut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070908">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/breakout-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Support — BreakOut</title>
 </head>
-<body class="legal-page">
-  <header class="nav-wrap"><div class="shell nav"><a class="brand" href="index.html"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span></a><div class="nav-actions"><a class="btn btn-ghost" href="index.html">← Home</a></div></div></header>
+<body class="legal-page" data-page="support">
+  <header class="nav-wrap">
+    <div class="shell nav">
+      <a class="brand" href="index.html"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span></a>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div>
+        <a class="btn btn-ghost" href="index.html" data-i18n="backHome">← Home</a>
+      </div>
+    </div>
+  </header>
   <main>
-    <section class="legal-hero"><div class="shell"><div class="kicker">BreakOut</div><h1>Support</h1><p>Questions about the macOS app, licensing preview or the upcoming commercial launch.</p><div class="support-cards"><div class="support-card"><h3>Email support</h3><p>For product, licensing or distribution questions.</p><a class="btn btn-primary" data-support-email href="#">Send email</a></div><div class="support-card"><h3>Account & license</h3><p>The customer account portal will open together with the production licensing backend.</p><a class="btn" href="index.html#license">How licensing will work</a></div></div></div></section>
+    <section class="legal-hero">
+      <div class="shell">
+        <div class="kicker">BreakOut</div>
+        <h1 data-i18n="supportTitle">Support</h1>
+        <p data-i18n="supportIntro">Help with BreakOut for macOS, installation, access and product questions.</p>
+        <div class="support-cards">
+          <div class="support-card">
+            <h3 data-i18n="supportEmailTitle">Email support</h3>
+            <p data-i18n="supportEmailCopy">For technical questions, product feedback or access issues.</p>
+            <a class="btn btn-primary" data-support-email href="#" data-i18n="supportEmailButton">Send email</a>
+          </div>
+          <div class="support-card">
+            <h3 data-i18n="supportAccessTitle">Download & access</h3>
+            <p data-i18n="supportAccessCopy">Public download and account access will open when BreakOut is ready for release.</p>
+            <a class="btn" href="index.html#pricing" data-i18n="supportAccessButton">View pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="legal-content">
-      <section><h2>Before sending a technical request</h2><p>Include the BreakOut version, macOS version, the action you were performing and the exact error text. Do not send passwords, payment-card details or private signing keys.</p></section>
-      <section><h2>Commercial support</h2><p>Before public sales begin, this page can be expanded with account recovery, license-device management, download history and a structured support form connected to the backend.</p></section>
+      <section><h2 data-i18n="supportBeforeTitle">When reporting a technical issue</h2><p data-i18n="supportBeforeCopy">Please include your BreakOut version, macOS version, what you were doing and the exact error message. Screenshots are helpful when the problem is visual.</p></section>
+      <section><h2 data-i18n="supportPaymentsTitle">Payments and subscriptions</h2><p data-i18n="supportPaymentsCopy">When sales open, purchase history, subscription status and access information will be available through the BreakOut account area.</p></section>
     </div>
   </main>
-  <footer class="footer"><div class="shell footer-grid"><div class="footer-left"><img src="assets/breakout-icon.png" alt=""><span>© 2026 BreakOut</span></div><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div></div></footer>
-  <script src="config.js"></script><script>document.querySelectorAll('[data-support-email]').forEach(el=>{const e=window.BREAKOUT_CONFIG?.supportEmail;if(e){el.href='mailto:'+e;if(el.tagName==='A'&&el.classList.contains('btn')){}else{el.textContent=e;}}});</script>
-</body></html>
+  <footer class="footer"><div class="shell footer-grid"><div class="footer-left"><img src="assets/breakout-icon.png" alt=""><span>© 2026 BreakOut</span></div><div class="footer-links"><a href="privacy.html" data-i18n="footerPrivacy">Privacy</a><a href="terms.html" data-i18n="footerTerms">Terms</a><a href="support.html" data-i18n="footerSupport">Support</a></div></div></footer>
+  <script src="config.js"></script><script src="script.js"></script>
+</body>
+</html>
