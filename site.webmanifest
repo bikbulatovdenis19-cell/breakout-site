@@ -1,0 +1,8 @@
+{
+  "name": "BreakOut",
+  "short_name": "BreakOut",
+  "icons": [{"src":"assets/breakout-icon.png","sizes":"512x512","type":"image/png"}],
+  "theme_color": "#070908",
+  "background_color": "#070908",
+  "display": "standalone"
+}
