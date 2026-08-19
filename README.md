@@ -1,12 +1,13 @@
-# BreakOut Website v13
+# BreakOut Website v14 — Supabase account integration
 
-Static website prepared for GitHub Pages and the new account-first BreakOut licensing flow.
+This version keeps the v13 visual design and connects `account.html` to the same BreakOut Dev Supabase project used by the macOS app.
 
-## Main files
-- `index.html` — public product page
-- `account.html` — account / sign-in / registration UI prepared for backend integration
-- `styles-v13.css` — current site styles
-- `script-v13.js` — language, theme, demo, carousel and account UI
-- `config.js` — public URLs for download, account and payment flow
+Main files:
+- `config.js` — public website/Supabase configuration.
+- `supabase-v14.js` — Auth/session/Data API client.
+- `account.html` — sign-up, sign-in, password recovery and account dashboard.
+- `supabase/01_breakout_dev_schema.sql` — database/RLS/RPC setup.
+- `SUPABASE_SETUP.md` — exact next steps.
 
-No payment secrets or backend credentials belong in this repository.
+Supabase Project URL and Publishable key are already configured in `config.js`.
+Never publish a Supabase secret/service-role key.

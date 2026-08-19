@@ -8,7 +8,7 @@
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
-  <link rel="stylesheet" href="styles-v13.css?v=13">
+  <link rel="stylesheet" href="styles-v14.css?v=14">
   <title>Аккаунт — BreakOut</title>
 </head>
 <body class="account-page" data-page="account">
@@ -53,6 +53,34 @@
             <button class="button primary full account-submit" type="submit" data-account-submit data-i18n="signIn">Войти</button>
             <div class="account-status" data-account-status aria-live="polite"></div>
           </form>
+
+          <div class="account-dashboard" data-account-dashboard hidden>
+            <div class="account-dashboard-head">
+              <div><span data-i18n="accountSignedInAs">Вы вошли как</span><strong data-account-email>—</strong></div>
+              <span class="account-live-badge" data-account-state>—</span>
+            </div>
+            <div class="account-dashboard-grid">
+              <div><span data-i18n="accountPreviewPlan">Тариф</span><strong data-account-access-plan>—</strong></div>
+              <div><span data-i18n="accountValidUntil">Действует до</span><strong data-account-access-until>—</strong></div>
+              <div><span data-i18n="accountPreviewDevices">Устройства</span><strong data-account-device-count>—</strong></div>
+            </div>
+            <div class="account-device-list" data-account-devices></div>
+            <div class="account-dashboard-actions">
+              <button class="button secondary" type="button" data-account-refresh data-i18n="accountRefresh">Обновить статус</button>
+              <button class="button ghost" type="button" data-account-logout data-i18n="accountLogout">Выйти</button>
+            </div>
+            <div class="account-status" data-account-dashboard-status aria-live="polite"></div>
+          </div>
+
+          <div class="account-recovery" data-account-recovery hidden>
+            <h3 data-i18n="accountNewPasswordTitle">Новый пароль</h3>
+            <p data-i18n="accountNewPasswordIntro">Введите новый пароль для аккаунта BreakOut.</p>
+            <label><span data-i18n="password">Пароль</span><input type="password" data-recovery-password minlength="8"></label>
+            <label><span data-i18n="repeatPassword">Повторите пароль</span><input type="password" data-recovery-confirm minlength="8"></label>
+            <button class="button primary full" type="button" data-recovery-submit data-i18n="accountSavePassword">Сохранить пароль</button>
+            <div class="account-status" data-recovery-status aria-live="polite"></div>
+          </div>
+
           <p class="account-same-login" data-i18n="sameLogin">Этот же аккаунт используется для входа в BreakOut на Mac.</p>
         </div>
 
@@ -61,9 +89,9 @@
           <h1 data-i18n="accountSideTitle">Доступ к BreakOut — без ручной активации.</h1>
           <p data-i18n="accountSideIntro">После покупки срок доступа привязывается к аккаунту. Приложение проверяет его при входе и сохраняет разрешение для работы без постоянного подключения к интернету.</p>
           <div class="account-preview">
-            <div><span data-i18n="accountPreviewAccess">Доступ</span><strong data-i18n="accountPreviewInactive">Не активирован</strong></div>
-            <div><span data-i18n="accountPreviewPlan">Тариф</span><strong>—</strong></div>
-            <div><span data-i18n="accountPreviewDevices">Устройства</span><strong>0 Mac</strong></div>
+            <div><span data-i18n="accountPreviewAccess">Доступ</span><strong data-account-preview-state data-i18n="accountPreviewInactive">Не активирован</strong></div>
+            <div><span data-i18n="accountPreviewPlan">Тариф</span><strong data-account-preview-plan>—</strong></div>
+            <div><span data-i18n="accountPreviewDevices">Устройства</span><strong data-account-preview-devices>0 Mac</strong></div>
           </div>
           <div class="account-side-note"><span></span><p data-i18n="accountSideNote">При коммерческом запуске здесь будут отображаться тариф, дата окончания доступа и активированные Mac.</p></div>
         </div>
@@ -72,7 +100,8 @@
   </main>
 
   <footer class="footer"><div class="content-shell footer-inner"><div class="footer-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><small>© 2026</small></div><div class="footer-links"><a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a><a href="terms.html" data-i18n="termsShort">Условия</a><a href="support.html" data-i18n="navSupport">Поддержка</a></div></div></footer>
-  <script src="config.js?v=13"></script>
-  <script src="script-v13.js?v=13"></script>
+  <script src="config.js?v=14"></script>
+  <script src="supabase-v14.js?v=14"></script>
+  <script src="script-v14.js?v=14"></script>
 </body>
 </html>
