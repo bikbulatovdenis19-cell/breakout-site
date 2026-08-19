@@ -2,6 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('breakout-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
@@ -15,21 +18,23 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v14.css?v=14">
+  <link rel="stylesheet" href="styles-v16.css?v=16.0">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
   <header class="topbar">
     <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="BreakOut">
-        <img src="assets/breakout-icon.png" alt="">
-        <span>BreakOut</span>
-      </a>
+      <div class="brand-cluster">
+        <a class="brand" href="#top" aria-label="BreakOut">
+          <img src="assets/breakout-icon.png" alt="">
+          <span>BreakOut</span>
+        </a>
+        <a class="header-signin" href="account.html?mode=signin" data-i18n="signIn">Войти</a>
+      </div>
       <nav class="desktop-nav" aria-label="Основная навигация">
         <a href="#breakout-demo" data-i18n="navDemo">Демо</a>
         <a href="#showcase" data-i18n="navShowcase">Интерфейс</a>
         <a href="#pricing" data-i18n="navPricing">Тарифы</a>
-        <a href="account.html" data-i18n="navAccount">Аккаунт</a>
         <a href="support.html" data-i18n="navSupport">Поддержка</a>
       </nav>
       <div class="nav-actions">
@@ -37,7 +42,6 @@
           <button type="button" data-lang="en">EN</button>
           <button type="button" data-lang="ru">RU</button>
         </div><div class="theme-switch" aria-label="Тема"><button type="button" data-theme-option="light" aria-label="Светлая тема" title="Светлая тема"><span aria-hidden="true">☀</span></button><button type="button" data-theme-option="dark" aria-label="Тёмная тема" title="Тёмная тема"><span aria-hidden="true">☾</span></button></div>
-        <button class="signin-btn" type="button" data-action="signin" data-i18n="signIn">Войти</button>
         <button class="menu-btn" type="button" aria-label="Меню" aria-expanded="false">☰</button>
       </div>
     </div>
@@ -47,7 +51,6 @@
       <a href="#pricing" data-i18n="navPricing">Тарифы</a>
       <a href="account.html" data-i18n="navAccount">Аккаунт</a>
       <a href="support.html" data-i18n="navSupport">Поддержка</a>
-      <a href="#" data-action="signin" data-i18n="signIn">Войти</a>
     </div>
   </header>
 
@@ -66,7 +69,7 @@
               <button class="button primary" data-action="download"><span data-i18n="download">Скачать для macOS</span><span>↓</span></button>
             </div>
             <div class="platform-pill">
-              <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.8"></rect><path d="M2.5 18.5h19"></path></svg></span>
+              <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.8"></rect><path d="M2.5 18.5h19"></path><path d="M9 18.5h6"></path></svg></span>
               <span><strong data-i18n="forMac">Для Mac</strong><small data-i18n="macRequirement">macOS 12.5 и новее</small></span>
             </div>
           </div>
@@ -104,7 +107,7 @@
                   <button class="coding-btn green" type="button" data-mode="pressAndRelease" data-name="PP" data-track="pp" data-color="#36c842"><span>PP</span><small data-i18n="startStopShort">старт / стоп</small></button>
                   <button class="coding-btn red" type="button" data-mode="pressAndRelease" data-name="PK" data-track="pk" data-color="#e84a3d"><span>PK</span><small data-i18n="startStopShort">старт / стоп</small></button>
                   <button class="coding-btn orange" type="button" data-mode="beforeAfter" data-name="FO +" data-track="fo" data-color="#e99a48"><span>FO +</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn violet" type="button" data-mode="beforeAfter" data-name="Chance +" data-track="chance" data-color="#cc68d8"><span data-i18n="chance">Момент +</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn violet" type="button" data-mode="beforeAfter" data-name="Hit" data-track="chance" data-color="#cc68d8"><span data-i18n="chance">Hit</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn blue" type="button" data-mode="pressAndRelease" data-name="Forecheck" data-track="chance" data-color="#67c7dc"><span>Forecheck</span><small data-i18n="startStopShort">старт / стоп</small></button>
                 </div>
                 <div class="coding-legend">
@@ -124,7 +127,7 @@
                     <div class="demo-track" data-track="pp"><label>PP</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="pk"><label>PK</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="fo"><label>FO</label><div class="track-surface"></div></div>
-                    <div class="demo-track" data-track="chance"><label data-i18n="trackChance">Момент</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="chance"><label data-i18n="trackChance">Hit</label><div class="track-surface"></div></div>
                   </div>
                   <div class="demo-playhead" id="demo-playhead"></div>
                 </div>
@@ -362,7 +365,7 @@
     </div>
   </div>
 
-  <script src="config.js?v=14"></script>
-  <script src="script-v14.js?v=14"></script>
+  <script src="config-v16.js?v=16.0"></script>
+  <script src="script-v16.js?v=16.0"></script>
 </body>
 </html>
