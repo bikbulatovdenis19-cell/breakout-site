@@ -11,16 +11,16 @@
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
-  <link rel="stylesheet" href="styles-v18.css?v=18.0">
+  <link rel="stylesheet" href="styles-v19.css?v=19.0">
   <title>Аккаунт — BreakOut</title>
 </head>
-<body class="account-page" data-page="account" data-build="16.0">
+<body class="account-page" data-page="account" data-build="19.0">
   <header class="topbar">
     <div class="nav-shell">
       <a class="brand" href="index.html" aria-label="BreakOut"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span></a>
       <div class="nav-actions">
-        <div class="lang-switch" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div>
-        <div class="theme-switch" aria-label="Тема"><button type="button" data-theme-option="light" aria-label="Светлая тема"><span aria-hidden="true">☀</span></button><button type="button" data-theme-option="dark" aria-label="Тёмная тема"><span aria-hidden="true">☾</span></button></div>
+        <button class="utility-toggle language-toggle" type="button" data-lang-toggle aria-label="Сменить язык" title="Сменить язык"><span data-lang-current>RU</span></button>
+        <button class="utility-toggle theme-toggle" type="button" data-theme-toggle aria-label="Сменить тему" title="Сменить тему"><span data-theme-icon aria-hidden="true">☾</span></button>
         <a class="signin-btn account-back" href="index.html" data-i18n="backHome">← На главную</a>
       </div>
     </div>
@@ -91,22 +91,22 @@
 
         <div class="account-side">
           <div class="kicker" data-i18n="accountSideKicker">Личный кабинет</div>
-          <h1 data-i18n="accountSideTitle">Доступ к BreakOut — без ручной активации.</h1>
-          <p data-i18n="accountSideIntro">После покупки срок доступа привязывается к аккаунту. Приложение проверяет его при входе и сохраняет разрешение для работы без постоянного подключения к интернету.</p>
-          <div class="account-preview">
-            <div><span data-i18n="accountPreviewAccess">Доступ</span><strong data-account-preview-state data-i18n="accountPreviewInactive">Не активирован</strong></div>
-            <div><span data-i18n="accountPreviewPlan">Тариф</span><strong data-account-preview-plan>—</strong></div>
-            <div><span data-i18n="accountPreviewDevices">Устройства</span><strong data-account-preview-devices>0 Mac</strong></div>
+          <h1 data-i18n="accountSideTitle">Один аккаунт для сайта и BreakOut на Mac.</h1>
+          <p data-i18n="accountSideIntro">После входа здесь отображаются срок доступа и активированные устройства. Тот же аккаунт используется в приложении.</p>
+          <div class="account-sync-visual" aria-hidden="true">
+            <div class="account-sync-node"><span>WEB</span><b>BreakOut</b></div>
+            <div class="account-sync-line"><i></i><em>ACCOUNT</em><i></i></div>
+            <div class="account-sync-node"><span>MAC</span><b>BreakOut.app</b></div>
           </div>
-          <div class="account-side-note"><span></span><p data-i18n="accountSideNote">При коммерческом запуске здесь будут отображаться тариф, дата окончания доступа и активированные Mac.</p></div>
+          <p class="account-side-caption" data-i18n="accountSideNote">Статус доступа появляется только после входа — без лишних пустых показателей до авторизации.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer"><div class="content-shell footer-inner"><div class="footer-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><small>© 2026</small></div><div class="footer-links"><a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a><a href="terms.html" data-i18n="termsShort">Условия</a><a href="support.html" data-i18n="navSupport">Поддержка</a></div></div></footer>
-  <script src="config-v18.js?v=18.0"></script>
-  <script src="supabase-v18.js?v=18.0"></script>
-  <script src="script-v18.js?v=18.0"></script>
+  <script src="config-v19.js?v=19.0"></script>
+  <script src="supabase-v19.js?v=19.0"></script>
+  <script src="script-v19.js?v=19.0"></script>
 </body>
 </html>

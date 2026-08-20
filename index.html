@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v18.css?v=18.0">
+  <link rel="stylesheet" href="styles-v19.css?v=19.0">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -38,10 +38,8 @@
         <a href="support.html" data-i18n="navSupport">Поддержка</a>
       </nav>
       <div class="nav-actions">
-        <div class="lang-switch" aria-label="Language">
-          <button type="button" data-lang="en">EN</button>
-          <button type="button" data-lang="ru">RU</button>
-        </div><div class="theme-switch" aria-label="Тема"><button type="button" data-theme-option="light" aria-label="Светлая тема" title="Светлая тема"><span aria-hidden="true">☀</span></button><button type="button" data-theme-option="dark" aria-label="Тёмная тема" title="Тёмная тема"><span aria-hidden="true">☾</span></button></div>
+        <button class="utility-toggle language-toggle" type="button" data-lang-toggle aria-label="Сменить язык" title="Сменить язык"><span data-lang-current>RU</span></button>
+        <button class="utility-toggle theme-toggle" type="button" data-theme-toggle aria-label="Сменить тему" title="Сменить тему"><span data-theme-icon aria-hidden="true">☾</span></button>
         <button class="menu-btn" type="button" aria-label="Меню" aria-expanded="false">☰</button>
       </div>
     </div>
@@ -180,39 +178,30 @@
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section operator-section" id="features">
       <div class="content-shell">
-        <div class="section-heading">
+        <div class="section-heading operator-heading">
           <div>
-            <div class="kicker" data-i18n="featuresKicker">Возможности</div>
-            <h2 data-i18n="featuresTitle">Нужные инструменты — в одном рабочем пространстве.</h2>
+            <div class="kicker" data-i18n="featuresKicker">Во время матча</div>
+            <h2 data-i18n="featuresTitle">Меньше действий между эпизодом и меткой.</h2>
           </div>
-          <p data-i18n="featuresIntro">BreakOut построен из модулей: можно собрать рабочий экран под матч, разбор или подготовку материала и держать рядом только то, что нужно сейчас.</p>
+          <p data-i18n="featuresIntro">BreakOut рассчитан на работу в реальном темпе: основные действия можно выполнять без переходов между отдельными окнами и сервисами.</p>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3 data-i18n="f1t">Захват матча</h3>
-            <p data-i18n="f1d">Подключайте видеосигнал, записывайте матч и работайте с видео прямо внутри проекта.</p>
+        <div class="operator-grid">
+          <article class="operator-card">
+            <div class="operator-visual hotkey-visual" aria-hidden="true"><kbd>1</kbd><span>→</span><b>FO +</b></div>
+            <h3 data-i18n="f1t">Кодирование с клавиатуры</h3>
+            <p data-i18n="f1d">Назначайте горячие клавиши на программируемые кнопки и отмечайте события, не отрываясь от игры.</p>
           </article>
-          <article class="feature-card">
-            <h3 data-i18n="f2t">Таймлайн и события</h3>
-            <p data-i18n="f2d">Отмечайте игровые события на таймлайне и быстро возвращайтесь к нужному моменту.</p>
+          <article class="operator-card">
+            <div class="operator-visual replay-link-visual" aria-hidden="true"><i></i><b>EVENT</b><span>▶</span></div>
+            <h3 data-i18n="f2t">Метка сразу ведёт к эпизоду</h3>
+            <p data-i18n="f2d">Событие остаётся на таймлайне и становится точкой входа в повтор и дальнейший разбор.</p>
           </article>
-          <article class="feature-card">
-            <h3 data-i18n="f3t">Программируемые кнопки</h3>
-            <p data-i18n="f3d">Создавайте собственные кнопки и горячие клавиши под свою систему кодирования игры.</p>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="f4t">Повтор и просмотр</h3>
-            <p data-i18n="f4d">Открывайте нужный эпизод, пересматривайте его и продолжайте работу, не теряя контекст матча.</p>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="f5t">Статистика</h3>
-            <p data-i18n="f5d">Сводите отмеченные события в наглядную статистику для разбора после игры.</p>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="f6t">Экспорт</h3>
-            <p data-i18n="f6d">Экспортируйте выбранные эпизоды и подготовленные подборки для дальнейшей работы.</p>
+          <article class="operator-card">
+            <div class="operator-visual export-visual" aria-hidden="true"><span>1</span><span>LINE</span><span>ALL</span></div>
+            <h3 data-i18n="f3t">Экспорт под конкретную задачу</h3>
+            <p data-i18n="f3d">Сохраняйте один эпизод, материал выбранных дорожек или полный проект — без пересборки анализа вручную.</p>
           </article>
         </div>
       </div>
@@ -221,10 +210,10 @@
     <section class="showcase-section" id="showcase">
       <div class="content-shell showcase-heading">
         <div>
-          <div class="kicker" data-i18n="showcaseKicker">Интерфейс</div>
-          <h2 data-i18n="showcaseTitle">От начала матча до финального разбора.</h2>
+          <div class="kicker" data-i18n="showcaseKicker">Реальный интерфейс</div>
+          <h2 data-i18n="showcaseTitle">Вот как BreakOut выглядит в работе.</h2>
         </div>
-        <p data-i18n="showcaseIntro">Реальные экраны BreakOut. Листайте влево и вправо, чтобы посмотреть разные этапы работы.</p>
+        <p data-i18n="showcaseIntro">Шесть реальных экранов приложения — без маркетинговых макетов и выдуманного интерфейса.</p>
       </div>
 
       <div class="carousel-wrap" aria-roledescription="carousel">
@@ -261,35 +250,32 @@
       </div>
     </section>
 
-    <section class="section workflow-section">
+    <section class="section depth-section" id="beyond-coding">
       <div class="content-shell">
-        <div class="section-heading compact-heading">
-          <div><div class="kicker" data-i18n="workflowKicker">Рабочий процесс</div><h2 data-i18n="workflowTitle">От события в матче — до готового материала.</h2></div>
+        <div class="section-heading depth-heading">
+          <div><div class="kicker" data-i18n="depthKicker">Не только кодирование</div><h2 data-i18n="depthTitle">Инструменты, которые продолжают работу после метки.</h2></div>
+          <p data-i18n="depthIntro">BreakOut не заканчивается на кнопках и таймлайне. В проекте есть инструменты для разбора, подготовки материала и работы прямо поверх видео.</p>
         </div>
-        <div class="workflow-line">
-          <article><h3 data-i18n="w1t">Соберите рабочее пространство</h3><p data-i18n="w1d">Выберите компоновку и нужные модули под конкретную задачу.</p></article>
-          <article><h3 data-i18n="w2t">Настройте события</h3><p data-i18n="w2d">Подготовьте кнопки и горячие клавиши до начала работы.</p></article>
-          <article><h3 data-i18n="w3t">Работайте в моменте</h3><p data-i18n="w3d">Отмечайте события и возвращайтесь к нужным эпизодам сразу по ходу матча.</p></article>
-          <article><h3 data-i18n="w4t">Разберите и экспортируйте</h3><p data-i18n="w4d">Используйте статистику и сохраните материал в нужном объёме.</p></article>
+        <div class="depth-grid">
+          <article class="depth-card depth-card-wide">
+            <div class="depth-visual multi-angle-visual" aria-hidden="true"><span></span><span></span><i>01</i><i>02</i></div>
+            <div><small data-i18n="depth1Eyebrow">Видео</small><h3 data-i18n="depth1Title">Несколько ракурсов</h3><p data-i18n="depth1Text">Сопоставляйте эпизод с разных камер, когда одного угла недостаточно для разбора.</p></div>
+          </article>
+          <article class="depth-card">
+            <div class="depth-visual drawing-visual" aria-hidden="true"><span></span><i></i><b>↗</b></div>
+            <div><small data-i18n="depth2Eyebrow">Разбор</small><h3 data-i18n="depth2Title">Рисование поверх видео</h3><p data-i18n="depth2Text">Подчёркивайте позиции, направления и детали эпизода прямо на кадре.</p></div>
+          </article>
+          <article class="depth-card">
+            <div class="depth-visual composer-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div><small data-i18n="depth3Eyebrow">Подборки</small><h3 data-i18n="depth3Title">Компоузер и плейлисты</h3><p data-i18n="depth3Text">Собирайте отмеченные эпизоды в отдельные подборки для показа и дальнейшей работы.</p></div>
+          </article>
+          <article class="depth-card depth-card-wide scoreboard-depth-card">
+            <div class="depth-visual scoreboard-visual" aria-hidden="true"><div><span>HOME</span><b>2</b></div><div><span>AWAY</span><b>1</b></div><em>08:42 · P2</em></div>
+            <div><small data-i18n="depth4Eyebrow">Матч</small><h3 data-i18n="depth4Title">Табло поверх видео</h3><p data-i18n="depth4Text">Ведите счёт, период и игровое время и при необходимости показывайте компактное табло прямо на видео.</p></div>
+          </article>
         </div>
       </div>
     </section>
-
-    <section class="mac-section benefits-product-section">
-      <div class="content-shell mac-card product-advantages">
-        <div class="mac-app advantages-heading">
-          <img src="assets/breakout-icon.png" alt="BreakOut">
-          <div><div class="kicker" data-i18n="macKicker">Почему BreakOut</div><h2 data-i18n="macTitle">Рабочий процесс собран в одном приложении.</h2><p class="advantages-lead" data-i18n="macLead">От подготовки проекта до экспорта — без разрыва между инструментами.</p></div>
-        </div>
-        <div class="mac-facts advantage-grid">
-          <div><strong data-i18n="macFact1Title">Рабочее пространство под задачу</strong><small data-i18n="macFact1Text">Выбирайте компоновку и набор модулей под конкретный матч или разбор.</small></div>
-          <div><strong data-i18n="macFact2Title">События сразу на таймлайне</strong><small data-i18n="macFact2Text">Программируемые кнопки и горячие клавиши помогают отмечать игру без лишних переходов.</small></div>
-          <div><strong data-i18n="macFact3Title">Разбор и экспорт в том же проекте</strong><small data-i18n="macFact3Text">Повтор, статистика и гибкий экспорт остаются частью одного рабочего процесса.</small></div>
-        </div>
-        <div class="system-note"><span data-i18n="forMac">Для Mac</span><span>macOS 12.5+</span></div>
-      </div>
-    </section>
-
 
     <section class="section account-link-section" id="account">
       <div class="content-shell account-link-card">
@@ -386,7 +372,7 @@
     </div>
   </div>
 
-  <script src="config-v18.js?v=18.0"></script>
-  <script src="script-v18.js?v=18.0"></script>
+  <script src="config-v19.js?v=19.0"></script>
+  <script src="script-v19.js?v=19.0"></script>
 </body>
 </html>

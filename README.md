@@ -1,19 +1,13 @@
-# BreakOut Website v18 — Supabase account integration
+# BreakOut Website v19
 
-This version keeps the v13 visual design and connects `account.html` to the same BreakOut Dev Supabase project used by the macOS app.
+Premium product refresh built on the working v18 Supabase account integration.
 
-Main files:
-- `config.js` — public website/Supabase configuration.
-- `supabase-v14.js` — Auth/session/Data API client.
-- `account.html` — sign-up, sign-in, password recovery and account dashboard.
-- `supabase/01_breakout_dev_schema.sql` — database/RLS/RPC setup.
-- `SUPABASE_SETUP.md` — exact next steps.
-
-Supabase Project URL and Publishable key are already configured in `config.js`.
-Never publish a Supabase secret/service-role key.
-
-
-## v18 auth-page fix
-- Fixes registration-only fields appearing in Sign In mode (`[hidden]` now always wins).
-- Uses unique v18 CSS/JS/config filenames and build query parameters to bypass stale Safari/GitHub Pages caches.
-- Supabase Project URL and Publishable key remain configured; no secret/service-role key is included.
+Key changes:
+- removed repetitive workflow sections and replaced them with concrete operator benefits and additional real BreakOut capabilities;
+- single-tap 44px language and theme controls;
+- account page hides plan/device status until authentication;
+- demo keeps the real 2x2 layout, 18 hockey coding tags and all 18 timeline tracks;
+- demo button labels adapt to pane width and remain clipped inside their buttons;
+- capture/replay frames preserve the full video image;
+- correct `FORECHECK` spelling and additional spacing between demo coding buttons;
+- Supabase Project URL and publishable key remain configured for BreakOut Dev.
