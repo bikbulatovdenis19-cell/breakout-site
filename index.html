@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v20.css?v=20.0">
+  <link rel="stylesheet" href="styles-v21.css?v=21.0">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -80,7 +80,7 @@
         </div>
 
         <div class="demo-shell-wrap">
-          <div class="demo-app" id="breakout-demo" style="--split-x:72%;--split-y:58%">
+          <div class="demo-app" id="breakout-demo" style="--split-x:66%;--split-y:58%">
             <div class="demo-titlebar">
               <div class="demo-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><em>25 Feb 2018 — Russia vs Germany</em></div>
               <div class="demo-status"><span class="record-dot"></span><span data-i18n="captureActive">Захват активен</span><b id="demo-clock">23:54</b></div>
@@ -108,12 +108,12 @@
                   <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="FO -" data-track="fo_loss" data-color="#df4d45" data-count="11"><em class="coding-count">11</em><span>FO -</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="OZ ENTRY" data-track="oz_entry" data-color="#43c83f" data-count="12"><em class="coding-count">12</em><span>OZ ENTRY</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="DZ EXIT" data-track="dz_exit" data-color="#43c83f" data-count="10"><em class="coding-count">10</em><span>DZ EXIT</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="BREAKOUT" data-track="breakout" data-color="#67736b" data-count="8"><em class="coding-count">8</em><span>BREAKOUT</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="FORCHECK" data-track="forcheck" data-color="#67736b" data-count="9"><em class="coding-count">9</em><span>FORCHECK</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="NZ REGROUP" data-track="nz_regroup" data-color="#67736b" data-count="6"><em class="coding-count">6</em><span>NZ REGROUP</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="BREAKOUT" data-track="breakout" data-color="#3f78a7" data-count="8"><em class="coding-count">8</em><span>BREAKOUT</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="FORCHECK" data-track="forcheck" data-color="#3f78a7" data-count="9"><em class="coding-count">9</em><span>FORCHECK</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="NZ REGROUP" data-track="nz_regroup" data-color="#3f78a7" data-count="6"><em class="coding-count">6</em><span>NZ REGROUP</span><small data-i18n="startStopShort">старт / стоп</small></button>
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="TK" data-track="takeaway" data-color="#43c83f" data-count="7"><em class="coding-count">7</em><span>TK</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="GV" data-track="giveaway" data-color="#df4d45" data-count="5"><em class="coding-count">5</em><span>GV</span><small data-i18n="beforeAfterShort">до / после</small></button>
-                  <button class="coding-btn tactical" type="button" data-mode="beforeAfter" data-name="HIT" data-track="hit" data-color="#67736b" data-count="13"><em class="coding-count">13</em><span>HIT</span><small data-i18n="beforeAfterShort">до / после</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="beforeAfter" data-name="HIT" data-track="hit" data-color="#3f78a7" data-count="13"><em class="coding-count">13</em><span>HIT</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="BLK" data-track="block" data-color="#43c83f" data-count="6"><em class="coding-count">6</em><span>BLK</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="PEN" data-track="penalty" data-color="#df4d45" data-count="3"><em class="coding-count">3</em><span>PEN</span><small data-i18n="beforeAfterShort">до / после</small></button>
                 </div>
@@ -183,17 +183,17 @@
         <div class="section-heading capabilities-heading">
           <div>
             <div class="kicker" data-i18n="featuresKicker">Возможности</div>
-            <h2 data-i18n="featuresTitle">Инструменты для работы во время матча и после него.</h2>
+            <h2 data-i18n="featuresTitle">Инструменты для матча и последующего разбора.</h2>
           </div>
           <p data-i18n="featuresIntro">Отмечайте события, возвращайтесь к эпизодам и готовьте материал в том же рабочем пространстве.</p>
         </div>
         <div class="capabilities-grid">
           <article class="capability-card">
-            <div class="capability-visual hotkey-ui" aria-hidden="true"><kbd>1</kbd><div><b>FO +</b><small>HOTKEY</small></div></div>
+            <div class="capability-visual hotkey-ui" aria-hidden="true"><div class="hotkey-chip positive"><span>1</span><b>FO +</b></div><div class="hotkey-chip negative"><span>W</span><b>PK</b></div><div class="hotkey-chip tactical"><span>E</span><b>NZ</b></div></div>
             <h3 data-i18n="f1t">Горячие клавиши</h3><p data-i18n="f1d">Назначайте события на клавиатуру и кодируйте игру без лишних движений мышью.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual interval-ui" aria-hidden="true"><span>PP</span><div class="mini-track"><i></i></div><em>START · STOP</em></div>
+            <div class="capability-visual interval-ui" aria-hidden="true"><div class="interval-track"><span>PP</span><i class="pp"></i></div><div class="interval-track"><span>PK</span><i class="pk"></i></div><div class="interval-track"><span>GOAL</span><i class="goal"></i></div></div>
             <h3 data-i18n="f4t">Интервальные события</h3><p data-i18n="f4d">Первое нажатие открывает событие, второе фиксирует его окончание на таймлайне.</p>
           </article>
           <article class="capability-card">
@@ -201,11 +201,11 @@
             <h3 data-i18n="f2t">Повтор из метки</h3><p data-i18n="f2d">Выберите событие на таймлайне и сразу откройте связанный с ним эпизод.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual cameras-ui" aria-hidden="true"><div><span>CAM 1</span><i></i></div><div><span>CAM 2</span><i></i></div></div>
+            <div class="capability-visual cameras-ui" aria-hidden="true"><div><span>CAMERA 1</span></div><div><span>CAMERA 2</span></div><div><span>CAMERA 3</span></div><div><span>CAMERA 4</span></div></div>
             <h3 data-i18n="depth1Title">Несколько ракурсов</h3><p data-i18n="depth1Text">Сопоставляйте один эпизод с разных камер, когда одного угла недостаточно.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual drawing-ui" aria-hidden="true"><div class="rink-mini"><i class="rink-line"></i><i class="draw-circle"></i><i class="draw-arrow"></i></div></div>
+            <div class="capability-visual drawing-ui" aria-hidden="true"><div class="rink-mini"><i class="rink-border"></i><i class="rink-center"></i><i class="rink-blue rink-blue-left"></i><i class="rink-blue rink-blue-right"></i><i class="rink-circle rink-circle-center"></i><i class="rink-circle rink-circle-lt"></i><i class="rink-circle rink-circle-lb"></i><i class="rink-circle rink-circle-rt"></i><i class="rink-circle rink-circle-rb"></i><i class="rink-goal rink-goal-left"></i><i class="rink-goal rink-goal-right"></i></div></div>
             <h3 data-i18n="depth2Title">Рисование поверх видео</h3><p data-i18n="depth2Text">Отмечайте позиции и направления прямо на кадре для наглядного разбора.</p>
           </article>
           <article class="capability-card">
@@ -213,7 +213,7 @@
             <h3 data-i18n="depth3Title">Компоузер и плейлисты</h3><p data-i18n="depth3Text">Собирайте отмеченные эпизоды в последовательности для показа и дальнейшей работы.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual export-ui" aria-hidden="true"><div><span>✓</span><b>1 эпизод</b></div><div><span>✓</span><b>Дорожка</b></div><div><span>✓</span><b>Весь проект</b></div></div>
+            <div class="capability-visual export-ui" aria-hidden="true"><div><span>✓</span><b>Одна метка</b></div><div><span>✓</span><b>Одна линия</b></div><div><span>✓</span><b>Весь проект</b></div></div>
             <h3 data-i18n="f3t">Гибкий экспорт</h3><p data-i18n="f3d">Сохраняйте один эпизод, выбранные дорожки или материал проекта в нужном объёме.</p>
           </article>
           <article class="capability-card">
@@ -289,20 +289,20 @@
     <section class="section pricing-section" id="pricing">
       <div class="content-shell">
         <div class="section-heading">
-          <div><div class="kicker" data-i18n="pricingKicker">Тарифы</div><h2 data-i18n="pricingTitle">Полный доступ к BreakOut.</h2></div>
-          <p data-i18n="pricingIntro">Выберите срок доступа. После оплаты он будет привязан к аккаунту BreakOut и станет доступен в приложении на Mac.</p>
+          <div><div class="kicker" data-i18n="pricingKicker">Доступ</div><h2 data-i18n="pricingTitle">Выберите срок доступа.</h2></div>
+          <p data-i18n="pricingIntro">Срок доступа привязывается к аккаунту после оплаты.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
             <div class="price-head"><span data-i18n="sixMonths">6 месяцев</span><em data-i18n="comingSoon">Скоро</em></div>
             <strong>25 000 ₽</strong>
-            <p data-i18n="priceSixCopy">Для сезона, проекта или первого внедрения в рабочий процесс.</p>
+            <p data-i18n="priceSixCopy">Для начала работы.</p>
             <button class="button secondary full" data-action="buy-six" data-i18n="chooseSix">Выбрать 6 месяцев</button>
           </article>
           <article class="price-card accent-card">
             <div class="price-head"><span data-i18n="oneYear">1 год</span><em data-i18n="comingSoon">Скоро</em></div>
             <strong>50 000 ₽</strong>
-            <p data-i18n="priceYearCopy">Для постоянной работы команды в течение года.</p>
+            <p data-i18n="priceYearCopy">Для непрерывной работы в течение года.</p>
             <button class="button primary full" data-action="buy-year" data-i18n="chooseYear">Выбрать 1 год</button>
           </article>
         </div>
@@ -362,7 +362,7 @@
     </div>
   </div>
 
-  <script src="config-v20.js?v=20.0"></script>
-  <script src="script-v20.js?v=20.0"></script>
+  <script src="config-v21.js?v=21.0"></script>
+  <script src="script-v21.js?v=21.0"></script>
 </body>
 </html>
