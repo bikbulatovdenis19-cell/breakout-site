@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v19.css?v=19.0">
+  <link rel="stylesheet" href="styles-v20.css?v=20.0">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -109,7 +109,7 @@
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="OZ ENTRY" data-track="oz_entry" data-color="#43c83f" data-count="12"><em class="coding-count">12</em><span>OZ ENTRY</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="DZ EXIT" data-track="dz_exit" data-color="#43c83f" data-count="10"><em class="coding-count">10</em><span>DZ EXIT</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="BREAKOUT" data-track="breakout" data-color="#67736b" data-count="8"><em class="coding-count">8</em><span>BREAKOUT</span><small data-i18n="startStopShort">старт / стоп</small></button>
-                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="FORECHECK" data-track="forecheck" data-color="#67736b" data-count="9"><em class="coding-count">9</em><span>FORECHECK</span><small data-i18n="startStopShort">старт / стоп</small></button>
+                  <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="FORCHECK" data-track="forcheck" data-color="#67736b" data-count="9"><em class="coding-count">9</em><span>FORCHECK</span><small data-i18n="startStopShort">старт / стоп</small></button>
                   <button class="coding-btn tactical" type="button" data-mode="pressAndRelease" data-name="NZ REGROUP" data-track="nz_regroup" data-color="#67736b" data-count="6"><em class="coding-count">6</em><span>NZ REGROUP</span><small data-i18n="startStopShort">старт / стоп</small></button>
                   <button class="coding-btn positive" type="button" data-mode="beforeAfter" data-name="TK" data-track="takeaway" data-color="#43c83f" data-count="7"><em class="coding-count">7</em><span>TK</span><small data-i18n="beforeAfterShort">до / после</small></button>
                   <button class="coding-btn negative" type="button" data-mode="beforeAfter" data-name="GV" data-track="giveaway" data-color="#df4d45" data-count="5"><em class="coding-count">5</em><span>GV</span><small data-i18n="beforeAfterShort">до / после</small></button>
@@ -140,7 +140,7 @@
                     <div class="demo-track" data-track="oz_entry"><label>OZ ENTRY</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="dz_exit"><label>DZ EXIT</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="breakout"><label>BREAKOUT</label><div class="track-surface"></div></div>
-                    <div class="demo-track" data-track="forecheck"><label>FORECHECK</label><div class="track-surface"></div></div>
+                    <div class="demo-track" data-track="forcheck"><label>FORCHECK</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="nz_regroup"><label>NZ REGROUP</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="takeaway"><label>TK</label><div class="track-surface"></div></div>
                     <div class="demo-track" data-track="giveaway"><label>GV</label><div class="track-surface"></div></div>
@@ -178,30 +178,47 @@
       </div>
     </section>
 
-    <section class="section operator-section" id="features">
+    <section class="section capabilities-section" id="features">
       <div class="content-shell">
-        <div class="section-heading operator-heading">
+        <div class="section-heading capabilities-heading">
           <div>
-            <div class="kicker" data-i18n="featuresKicker">Во время матча</div>
-            <h2 data-i18n="featuresTitle">Меньше действий между эпизодом и меткой.</h2>
+            <div class="kicker" data-i18n="featuresKicker">Возможности</div>
+            <h2 data-i18n="featuresTitle">Инструменты для работы во время матча и после него.</h2>
           </div>
-          <p data-i18n="featuresIntro">BreakOut рассчитан на работу в реальном темпе: основные действия можно выполнять без переходов между отдельными окнами и сервисами.</p>
+          <p data-i18n="featuresIntro">Отмечайте события, возвращайтесь к эпизодам и готовьте материал в том же рабочем пространстве.</p>
         </div>
-        <div class="operator-grid">
-          <article class="operator-card">
-            <div class="operator-visual hotkey-visual" aria-hidden="true"><kbd>1</kbd><span>→</span><b>FO +</b></div>
-            <h3 data-i18n="f1t">Кодирование с клавиатуры</h3>
-            <p data-i18n="f1d">Назначайте горячие клавиши на программируемые кнопки и отмечайте события, не отрываясь от игры.</p>
+        <div class="capabilities-grid">
+          <article class="capability-card">
+            <div class="capability-visual hotkey-ui" aria-hidden="true"><kbd>1</kbd><div><b>FO +</b><small>HOTKEY</small></div></div>
+            <h3 data-i18n="f1t">Горячие клавиши</h3><p data-i18n="f1d">Назначайте события на клавиатуру и кодируйте игру без лишних движений мышью.</p>
           </article>
-          <article class="operator-card">
-            <div class="operator-visual replay-link-visual" aria-hidden="true"><i></i><b>EVENT</b><span>▶</span></div>
-            <h3 data-i18n="f2t">Метка сразу ведёт к эпизоду</h3>
-            <p data-i18n="f2d">Событие остаётся на таймлайне и становится точкой входа в повтор и дальнейший разбор.</p>
+          <article class="capability-card">
+            <div class="capability-visual interval-ui" aria-hidden="true"><span>PP</span><div class="mini-track"><i></i></div><em>START · STOP</em></div>
+            <h3 data-i18n="f4t">Интервальные события</h3><p data-i18n="f4d">Первое нажатие открывает событие, второе фиксирует его окончание на таймлайне.</p>
           </article>
-          <article class="operator-card">
-            <div class="operator-visual export-visual" aria-hidden="true"><span>1</span><span>LINE</span><span>ALL</span></div>
-            <h3 data-i18n="f3t">Экспорт под конкретную задачу</h3>
-            <p data-i18n="f3d">Сохраняйте один эпизод, материал выбранных дорожек или полный проект — без пересборки анализа вручную.</p>
+          <article class="capability-card">
+            <div class="capability-visual replay-ui" aria-hidden="true"><div class="mini-frame"><span>▶</span></div><div class="mini-event"><b>HIT</b><small>12:03</small></div></div>
+            <h3 data-i18n="f2t">Повтор из метки</h3><p data-i18n="f2d">Выберите событие на таймлайне и сразу откройте связанный с ним эпизод.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-visual cameras-ui" aria-hidden="true"><div><span>CAM 1</span><i></i></div><div><span>CAM 2</span><i></i></div></div>
+            <h3 data-i18n="depth1Title">Несколько ракурсов</h3><p data-i18n="depth1Text">Сопоставляйте один эпизод с разных камер, когда одного угла недостаточно.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-visual drawing-ui" aria-hidden="true"><div class="rink-mini"><i class="rink-line"></i><i class="draw-circle"></i><i class="draw-arrow"></i></div></div>
+            <h3 data-i18n="depth2Title">Рисование поверх видео</h3><p data-i18n="depth2Text">Отмечайте позиции и направления прямо на кадре для наглядного разбора.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-visual composer-ui" aria-hidden="true"><div><span>01</span><b>OZ ENTRY</b><small>00:08</small></div><div><span>02</span><b>HIT</b><small>00:06</small></div><div><span>03</span><b>SOG +</b><small>00:05</small></div></div>
+            <h3 data-i18n="depth3Title">Компоузер и плейлисты</h3><p data-i18n="depth3Text">Собирайте отмеченные эпизоды в последовательности для показа и дальнейшей работы.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-visual export-ui" aria-hidden="true"><div><span>✓</span><b>1 эпизод</b></div><div><span>✓</span><b>Дорожка</b></div><div><span>✓</span><b>Весь проект</b></div></div>
+            <h3 data-i18n="f3t">Гибкий экспорт</h3><p data-i18n="f3d">Сохраняйте один эпизод, выбранные дорожки или материал проекта в нужном объёме.</p>
+          </article>
+          <article class="capability-card">
+            <div class="capability-visual scoreboard-ui" aria-hidden="true"><div class="sb-row"><span>HOME</span><b>2</b></div><div class="sb-row"><span>AWAY</span><b>1</b></div><div class="sb-clock"><strong>08:42</strong><em>P2</em><small>PP 01:18</small></div></div>
+            <h3 data-i18n="depth4Title">Табло поверх видео</h3><p data-i18n="depth4Text">Показывайте счёт, игровое время, период и Power Play прямо поверх видео.</p>
           </article>
         </div>
       </div>
@@ -210,10 +227,9 @@
     <section class="showcase-section" id="showcase">
       <div class="content-shell showcase-heading">
         <div>
-          <div class="kicker" data-i18n="showcaseKicker">Реальный интерфейс</div>
-          <h2 data-i18n="showcaseTitle">Вот как BreakOut выглядит в работе.</h2>
+          <div class="kicker" data-i18n="showcaseKicker">Интерфейс</div>
+          <h2 data-i18n="showcaseTitle">Рабочие экраны BreakOut.</h2>
         </div>
-        <p data-i18n="showcaseIntro">Шесть реальных экранов приложения — без маркетинговых макетов и выдуманного интерфейса.</p>
       </div>
 
       <div class="carousel-wrap" aria-roledescription="carousel">
@@ -250,32 +266,6 @@
       </div>
     </section>
 
-    <section class="section depth-section" id="beyond-coding">
-      <div class="content-shell">
-        <div class="section-heading depth-heading">
-          <div><div class="kicker" data-i18n="depthKicker">Не только кодирование</div><h2 data-i18n="depthTitle">Инструменты, которые продолжают работу после метки.</h2></div>
-          <p data-i18n="depthIntro">BreakOut не заканчивается на кнопках и таймлайне. В проекте есть инструменты для разбора, подготовки материала и работы прямо поверх видео.</p>
-        </div>
-        <div class="depth-grid">
-          <article class="depth-card depth-card-wide">
-            <div class="depth-visual multi-angle-visual" aria-hidden="true"><span></span><span></span><i>01</i><i>02</i></div>
-            <div><small data-i18n="depth1Eyebrow">Видео</small><h3 data-i18n="depth1Title">Несколько ракурсов</h3><p data-i18n="depth1Text">Сопоставляйте эпизод с разных камер, когда одного угла недостаточно для разбора.</p></div>
-          </article>
-          <article class="depth-card">
-            <div class="depth-visual drawing-visual" aria-hidden="true"><span></span><i></i><b>↗</b></div>
-            <div><small data-i18n="depth2Eyebrow">Разбор</small><h3 data-i18n="depth2Title">Рисование поверх видео</h3><p data-i18n="depth2Text">Подчёркивайте позиции, направления и детали эпизода прямо на кадре.</p></div>
-          </article>
-          <article class="depth-card">
-            <div class="depth-visual composer-visual" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div><small data-i18n="depth3Eyebrow">Подборки</small><h3 data-i18n="depth3Title">Компоузер и плейлисты</h3><p data-i18n="depth3Text">Собирайте отмеченные эпизоды в отдельные подборки для показа и дальнейшей работы.</p></div>
-          </article>
-          <article class="depth-card depth-card-wide scoreboard-depth-card">
-            <div class="depth-visual scoreboard-visual" aria-hidden="true"><div><span>HOME</span><b>2</b></div><div><span>AWAY</span><b>1</b></div><em>08:42 · P2</em></div>
-            <div><small data-i18n="depth4Eyebrow">Матч</small><h3 data-i18n="depth4Title">Табло поверх видео</h3><p data-i18n="depth4Text">Ведите счёт, период и игровое время и при необходимости показывайте компактное табло прямо на видео.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section account-link-section" id="account">
       <div class="content-shell account-link-card">
@@ -306,13 +296,13 @@
           <article class="price-card">
             <div class="price-head"><span data-i18n="sixMonths">6 месяцев</span><em data-i18n="comingSoon">Скоро</em></div>
             <strong>25 000 ₽</strong>
-            <p data-i18n="priceIncludes">Полный функционал BreakOut на оплаченный период.</p>
+            <p data-i18n="priceSixCopy">Для сезона, проекта или первого внедрения в рабочий процесс.</p>
             <button class="button secondary full" data-action="buy-six" data-i18n="chooseSix">Выбрать 6 месяцев</button>
           </article>
           <article class="price-card accent-card">
             <div class="price-head"><span data-i18n="oneYear">1 год</span><em data-i18n="comingSoon">Скоро</em></div>
             <strong>50 000 ₽</strong>
-            <p data-i18n="priceIncludes">Полный функционал BreakOut на оплаченный период.</p>
+            <p data-i18n="priceYearCopy">Для постоянной работы команды в течение года.</p>
             <button class="button primary full" data-action="buy-year" data-i18n="chooseYear">Выбрать 1 год</button>
           </article>
         </div>
@@ -321,10 +311,10 @@
 
     <section class="section legal-links-section" id="privacy">
       <div class="content-shell legal-links-card">
-        <div class="legal-links-heading"><div class="kicker" data-i18n="legalKicker">Документы</div><h2 data-i18n="legalTitle">Правила использования BreakOut.</h2></div>
+        <div class="legal-links-heading"><div class="kicker" data-i18n="legalKicker">Документы</div><h2 data-i18n="legalTitle">Условия и конфиденциальность.</h2></div>
         <div class="legal-links-list">
-          <a href="privacy.html"><span data-i18n="privacyLinkShort">Политика конфиденциальности</span><b>↗</b></a>
-          <a href="terms.html"><span data-i18n="termsLinkShort">Условия использования</span><b>↗</b></a>
+          <a href="privacy.html"><span><strong data-i18n="privacyLinkShort">Политика конфиденциальности</strong><small data-i18n="privacyLinkDesc">Как обрабатываются данные аккаунта и доступа.</small></span><b>↗</b></a>
+          <a href="terms.html"><span><strong data-i18n="termsLinkShort">Условия использования</strong><small data-i18n="termsLinkDesc">Правила использования приложения, сайта и аккаунта.</small></span><b>↗</b></a>
         </div>
       </div>
     </section>
@@ -372,7 +362,7 @@
     </div>
   </div>
 
-  <script src="config-v19.js?v=19.0"></script>
-  <script src="script-v19.js?v=19.0"></script>
+  <script src="config-v20.js?v=20.0"></script>
+  <script src="script-v20.js?v=20.0"></script>
 </body>
 </html>

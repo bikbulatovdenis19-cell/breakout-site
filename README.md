@@ -1,13 +1,12 @@
-# BreakOut Website v19
+# BreakOut Website v20
 
-Premium product refresh built on the working v18 Supabase account integration.
+Premium product-page refresh built on the working Supabase-connected v19 site.
 
-Key changes:
-- removed repetitive workflow sections and replaced them with concrete operator benefits and additional real BreakOut capabilities;
-- single-tap 44px language and theme controls;
-- account page hides plan/device status until authentication;
-- demo keeps the real 2x2 layout, 18 hockey coding tags and all 18 timeline tracks;
-- demo button labels adapt to pane width and remain clipped inside their buttons;
-- capture/replay frames preserve the full video image;
-- correct `FORECHECK` spelling and additional spacing between demo coding buttons;
-- Supabase Project URL and publishable key remain configured for BreakOut Dev.
+Highlights:
+- one unified capabilities section between the interactive demo and screenshots;
+- concrete UI miniatures for hotkeys, interval coding, replay, cameras, drawing, Composer, export and scoreboard;
+- concise screenshot heading and calm carousel autoplay that stops after manual interaction;
+- differentiated 6-month / 1-year pricing copy;
+- balanced privacy / terms cards and consistent legal-page controls;
+- requested `FORCHECK` label in the interactive demo;
+- existing Supabase account integration preserved.
