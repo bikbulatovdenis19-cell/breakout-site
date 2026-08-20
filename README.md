@@ -1,3 +1,5 @@
+BreakOut Website v26 — interval events reference + scoreboard label sizing
+
 # BreakOut Website v23
 
 Updated website build based on v21.
