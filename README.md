@@ -41,3 +41,6 @@ Interval events visual now has six fixed visible lanes matching Hotkeys: PK, PP,
 
 
 Version 30: interval-events visual height synchronized with neighboring capability visuals; six lanes scale vertically to fill the available space.
+
+## v32 mobile capabilities
+Capability cards now scale proportionally on phones. The dark visual area uses the full card width without white side bands while preserving a stable aspect ratio; desktop layout is unchanged.
