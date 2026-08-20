@@ -38,3 +38,6 @@ Interval events card now contains six explicit lanes matching Hotkeys: FO+, PK, 
 
 ## v29
 Interval events visual now has six fixed visible lanes matching Hotkeys: PK, PP, SOG +, FO +, NZ, HIT.
+
+
+Version 30: interval-events visual height synchronized with neighboring capability visuals; six lanes scale vertically to fill the available space.
