@@ -1,46 +1,12 @@
-BreakOut Website v26 — interval events reference + scoreboard label sizing
+# BreakOut Website v34
 
-# BreakOut Website v23
+This build refines the mobile capabilities layout, desktop hover depth, showcase carousel looping, and introduces a multisport panorama after the real application screenshots.
 
-Updated website build based on v21.
-
-## v23 changes
-- Interactive demo opens with a more compact left column (video + timeline); the 16:9 frame is never cropped or stretched and uses black letterboxing when needed.
-- The programmable-button panel fills its module instead of leaving a large empty area.
-- Capability cards are larger and visually consistent.
-- Hotkeys now show six clean coding buttons with labels only.
-- Interval-events miniature has six timeline rows with varied event positions.
-- Replay miniature uses one clear central play control.
-- Multi-camera miniature is a 2x2 camera matrix.
-- Drawing miniature uses the supplied hockey-rink PNG.
-- Composer, export and scoreboard miniatures are larger and more legible.
-- Pricing, documents and adjacent sections use a more consistent vertical rhythm.
-- Existing Supabase account integration and 3-second carousel autoplay behavior are retained.
-
-
-## v23 visual polish
-- square centered hotkey tiles with equal spacing
-- six logically staggered interval lanes
-- replay REC/time HUD
-- scoreboard PP aligned to the HOME score row
-- subtle blurred hockey-rink ambience behind site content
-
-v25: verified capabilities fixes — visible rink background, centered square hotkeys, six visible interval lanes, aligned scoreboard PP.
-
-
-## v27
-Interval events card now contains six persistent visible lanes: PK, PP, SOG+, FO+, NZ, HIT.
-
-
-## v28
-Interval events card now contains six explicit lanes matching Hotkeys: FO+, PK, NZ, PP, HIT, SOG+.
-
-
-## v29
-Interval events visual now has six fixed visible lanes matching Hotkeys: PK, PP, SOG +, FO +, NZ, HIT.
-
-
-Version 30: interval-events visual height synchronized with neighboring capability visuals; six lanes scale vertically to fill the available space.
-
-## v33 mobile capabilities
-Capability cards now scale proportionally on phones. The dark visual area uses the full card width without white side bands while preserving a stable aspect ratio; desktop layout is unchanged.
+Key changes:
+- capabilities cards use near-full mobile width with equal visual padding;
+- desktop capability cards use a faster restrained pop-forward hover interaction;
+- capabilities-section hockey-rink background is removed;
+- showcase carousel loops continuously without a visible jump back to the first slide;
+- carousel response/fade timings are faster;
+- multisport section uses one panoramic, diagonally layered field graphic for hockey, football, basketball, and tennis;
+- Supabase/account configuration remains unchanged.
