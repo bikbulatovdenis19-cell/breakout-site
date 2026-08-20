@@ -26,3 +26,15 @@ Updated website build based on v21.
 - subtle blurred hockey-rink ambience behind site content
 
 v25: verified capabilities fixes — visible rink background, centered square hotkeys, six visible interval lanes, aligned scoreboard PP.
+
+
+## v27
+Interval events card now contains six persistent visible lanes: PK, PP, SOG+, FO+, NZ, HIT.
+
+
+## v28
+Interval events card now contains six explicit lanes matching Hotkeys: FO+, PK, NZ, PP, HIT, SOG+.
+
+
+## v29
+Interval events visual now has six fixed visible lanes matching Hotkeys: PK, PP, SOG +, FO +, NZ, HIT.
