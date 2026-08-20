@@ -22,3 +22,5 @@ Updated website build based on v21.
 - replay REC/time HUD
 - scoreboard PP aligned to the HOME score row
 - subtle blurred hockey-rink ambience behind site content
+
+v25: verified capabilities fixes — visible rink background, centered square hotkeys, six visible interval lanes, aligned scoreboard PP.
