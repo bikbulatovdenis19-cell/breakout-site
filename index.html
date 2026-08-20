@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/breakout-icon.png">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v21.css?v=21.0">
+  <link rel="stylesheet" href="styles-v22.css?v=22.0">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -80,7 +80,7 @@
         </div>
 
         <div class="demo-shell-wrap">
-          <div class="demo-app" id="breakout-demo" style="--split-x:66%;--split-y:58%">
+          <div class="demo-app" id="breakout-demo" style="--split-x:58%;--split-y:58%">
             <div class="demo-titlebar">
               <div class="demo-brand"><img src="assets/breakout-icon.png" alt=""><span>BreakOut</span><em>25 Feb 2018 — Russia vs Germany</em></div>
               <div class="demo-status"><span class="record-dot"></span><span data-i18n="captureActive">Захват активен</span><b id="demo-clock">23:54</b></div>
@@ -189,35 +189,66 @@
         </div>
         <div class="capabilities-grid">
           <article class="capability-card">
-            <div class="capability-visual hotkey-ui" aria-hidden="true"><div class="hotkey-chip positive"><span>1</span><b>FO +</b></div><div class="hotkey-chip negative"><span>W</span><b>PK</b></div><div class="hotkey-chip tactical"><span>E</span><b>NZ</b></div></div>
+            <div class="capability-visual hotkey-ui" aria-hidden="true">
+              <div class="hotkey-chip positive"><b>FO +</b></div>
+              <div class="hotkey-chip negative"><b>PK</b></div>
+              <div class="hotkey-chip tactical"><b>NZ</b></div>
+              <div class="hotkey-chip positive"><b>PP</b></div>
+              <div class="hotkey-chip tactical"><b>HIT</b></div>
+              <div class="hotkey-chip positive"><b>SOG +</b></div>
+            </div>
             <h3 data-i18n="f1t">Горячие клавиши</h3><p data-i18n="f1d">Назначайте события на клавиатуру и кодируйте игру без лишних движений мышью.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual interval-ui" aria-hidden="true"><div class="interval-track"><span>PP</span><i class="pp"></i></div><div class="interval-track"><span>PK</span><i class="pk"></i></div><div class="interval-track"><span>GOAL</span><i class="goal"></i></div></div>
+            <div class="capability-visual interval-ui" aria-hidden="true">
+              <div class="interval-track positive"><span>FO +</span><i style="--l:12%;--w:11%"></i></div>
+              <div class="interval-track negative"><span>PK</span><i style="--l:31%;--w:34%"></i></div>
+              <div class="interval-track tactical"><span>NZ</span><i style="--l:61%;--w:22%"></i></div>
+              <div class="interval-track positive"><span>PP</span><i style="--l:18%;--w:42%"></i></div>
+              <div class="interval-track tactical"><span>HIT</span><i style="--l:73%;--w:9%"></i></div>
+              <div class="interval-track positive"><span>SOG +</span><i style="--l:48%;--w:12%"></i></div>
+            </div>
             <h3 data-i18n="f4t">Интервальные события</h3><p data-i18n="f4d">Первое нажатие открывает событие, второе фиксирует его окончание на таймлайне.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual replay-ui" aria-hidden="true"><div class="mini-frame"><span>▶</span></div><div class="mini-event"><b>HIT</b><small>12:03</small></div></div>
+            <div class="capability-visual replay-ui" aria-hidden="true">
+              <div class="replay-preview"><span class="replay-play">▶</span><i></i><small>00:12:03</small></div>
+            </div>
             <h3 data-i18n="f2t">Повтор из метки</h3><p data-i18n="f2d">Выберите событие на таймлайне и сразу откройте связанный с ним эпизод.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual cameras-ui" aria-hidden="true"><div><span>CAMERA 1</span></div><div><span>CAMERA 2</span></div><div><span>CAMERA 3</span></div><div><span>CAMERA 4</span></div></div>
+            <div class="capability-visual cameras-ui" aria-hidden="true">
+              <div><span>CAMERA 1</span></div><div><span>CAMERA 2</span></div><div><span>CAMERA 3</span></div><div><span>CAMERA 4</span></div>
+            </div>
             <h3 data-i18n="depth1Title">Несколько ракурсов</h3><p data-i18n="depth1Text">Сопоставляйте один эпизод с разных камер, когда одного угла недостаточно.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual drawing-ui" aria-hidden="true"><div class="rink-mini"><i class="rink-border"></i><i class="rink-center"></i><i class="rink-blue rink-blue-left"></i><i class="rink-blue rink-blue-right"></i><i class="rink-circle rink-circle-center"></i><i class="rink-circle rink-circle-lt"></i><i class="rink-circle rink-circle-lb"></i><i class="rink-circle rink-circle-rt"></i><i class="rink-circle rink-circle-rb"></i><i class="rink-goal rink-goal-left"></i><i class="rink-goal rink-goal-right"></i></div></div>
+            <div class="capability-visual drawing-ui" aria-hidden="true"><img src="assets/hockey-rink-green.png" alt="" class="rink-reference"></div>
             <h3 data-i18n="depth2Title">Рисование поверх видео</h3><p data-i18n="depth2Text">Отмечайте позиции и направления прямо на кадре для наглядного разбора.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual composer-ui" aria-hidden="true"><div><span>01</span><b>OZ ENTRY</b><small>00:08</small></div><div><span>02</span><b>HIT</b><small>00:06</small></div><div><span>03</span><b>SOG +</b><small>00:05</small></div></div>
+            <div class="capability-visual composer-ui" aria-hidden="true">
+              <div><span>01</span><b>OZ ENTRY</b><small>00:08</small></div>
+              <div><span>02</span><b>HIT</b><small>00:06</small></div>
+              <div><span>03</span><b>SOG +</b><small>00:05</small></div>
+              <div><span>04</span><b>PP</b><small>00:17</small></div>
+              <div><span>05</span><b>FORCHECK</b><small>00:11</small></div>
+            </div>
             <h3 data-i18n="depth3Title">Компоузер и плейлисты</h3><p data-i18n="depth3Text">Собирайте отмеченные эпизоды в последовательности для показа и дальнейшей работы.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual export-ui" aria-hidden="true"><div><span>✓</span><b>Одна метка</b></div><div><span>✓</span><b>Одна линия</b></div><div><span>✓</span><b>Весь проект</b></div></div>
+            <div class="capability-visual export-ui" aria-hidden="true">
+              <div><span>✓</span><b data-i18n="exportOneMarker">Одна метка</b></div>
+              <div><span>✓</span><b data-i18n="exportOneLine">Одна линия</b></div>
+              <div><span>✓</span><b data-i18n="exportWholeProject">Весь проект</b></div>
+            </div>
             <h3 data-i18n="f3t">Гибкий экспорт</h3><p data-i18n="f3d">Сохраняйте один эпизод, выбранные дорожки или материал проекта в нужном объёме.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual scoreboard-ui" aria-hidden="true"><div class="sb-row"><span>HOME</span><b>2</b></div><div class="sb-row"><span>AWAY</span><b>1</b></div><div class="sb-clock"><strong>08:42</strong><em>P2</em><small>PP 01:18</small></div></div>
+            <div class="capability-visual scoreboard-ui" aria-hidden="true">
+              <div class="sb-main"><div class="sb-row"><span>HOME</span><b>2</b></div><div class="sb-row"><span>AWAY</span><b>1</b></div><div class="sb-clock"><strong>08:42</strong><em>P2</em></div></div>
+              <div class="sb-pp"><strong>PP</strong><span>01:18</span></div>
+            </div>
             <h3 data-i18n="depth4Title">Табло поверх видео</h3><p data-i18n="depth4Text">Показывайте счёт, игровое время, период и Power Play прямо поверх видео.</p>
           </article>
         </div>
@@ -362,7 +393,7 @@
     </div>
   </div>
 
-  <script src="config-v21.js?v=21.0"></script>
-  <script src="script-v21.js?v=21.0"></script>
+  <script src="config-v22.js?v=22.0"></script>
+  <script src="script-v22.js?v=22.0"></script>
 </body>
 </html>
