@@ -2145,3 +2145,435 @@ body::before{display:none!important}
   .testimonial-copy blockquote{font-size:15px;line-height:1.58}
   .testimonial-person{padding-top:24px}
 }
+
+
+/* v38 — testimonial photo safety + warmer Denis + corrected scoreboard card */
+.testimonial-card{align-items:stretch}
+.testimonial-photo{display:flex;align-items:center;justify-content:center;padding:18px 18px 18px 8px;background:radial-gradient(110% 90% at 14% 50%,rgba(98,158,42,.06),transparent 48%),linear-gradient(180deg,#101511,#0d120e);}
+.testimonial-photo::after{background:linear-gradient(90deg,rgba(11,16,12,.16),transparent 24%),linear-gradient(180deg,transparent 78%,rgba(7,10,8,.08))}
+.testimonial-photo img{width:100%;height:100%;object-fit:contain;object-position:center center;transform:none!important;filter:saturate(1.01) contrast(1.03) brightness(1.01);}
+.testimonial-photo-vadim img{object-position:50% 50%!important;}
+.testimonial-photo-denis img{object-position:50% 50%!important;filter:saturate(1.08) contrast(1.05) brightness(1.035) sepia(.055) hue-rotate(-8deg)!important;}
+@media(hover:hover){.testimonial-card:hover .testimonial-photo img{transform:none!important;filter:saturate(1.04) contrast(1.035) brightness(1.015)}}
+
+.capability-visual.scoreboard-ui{position:relative!important;display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;padding:18px!important;background:linear-gradient(180deg,rgba(12,18,13,.98),rgba(8,13,10,.96))!important;overflow:hidden!important}
+.capability-visual.scoreboard-ui::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.08);border-radius:18px;pointer-events:none}
+.scoreboard-ui .scoreboard-stage{position:relative;display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;width:min(100%,360px)!important;height:auto!important;margin:24px 0 0 14px!important}
+.scoreboard-ui .sb-main{flex:1 1 auto!important;width:auto!important;max-width:none!important;min-width:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) 62px!important;grid-template-rows:54px 54px 46px!important;border-radius:11px 0 0 11px!important;overflow:hidden!important;border:1px solid #414942!important;border-right:0!important;background:#030403!important;box-shadow:0 10px 28px rgba(0,0,0,.18)!important}
+.scoreboard-ui .sb-row{display:contents!important}
+.scoreboard-ui .sb-row span{background:#eff1ef!important;color:#111311!important;display:flex!important;align-items:center!important;padding-left:18px!important;font-size:14px!important;font-weight:820!important;letter-spacing:.02em!important;border-bottom:1px solid #d4d6d3!important}
+.scoreboard-ui .sb-row b{background:#020302!important;color:#fff!important;display:grid!important;place-items:center!important;font-size:29px!important;font-weight:820!important;border-bottom:1px solid #242824!important}
+.scoreboard-ui .sb-clock{grid-column:1/3!important;display:grid!important;grid-template-columns:minmax(0,1fr) 62px!important;align-items:stretch!important;background:#020302!important}
+.scoreboard-ui .sb-clock strong{display:grid!important;place-items:center!important;font-size:24px!important;font-weight:820!important;letter-spacing:.02em!important;color:#fff!important}
+.scoreboard-ui .sb-clock em{display:grid!important;place-items:center!important;background:#b7bbb7!important;color:#fff!important;font-style:normal!important;font-size:13px!important;font-weight:820!important;letter-spacing:.02em!important}
+.scoreboard-ui .sb-pp{flex:0 0 82px!important;width:82px!important;height:54px!important;margin:0!important;align-self:flex-start!important;display:grid!important;place-items:center!important;grid-template-columns:1fr!important;padding:8px 10px!important;border-radius:0 12px 12px 0!important;background:linear-gradient(180deg,#39af47,#2c9839)!important;box-shadow:0 10px 24px rgba(20,60,23,.22),inset 0 1px rgba(255,255,255,.14)!important}
+.scoreboard-ui .sb-pp strong{font-size:12px!important;line-height:1!important;letter-spacing:.04em!important;color:#fff!important}.scoreboard-ui .sb-pp span{font-size:11px!important;line-height:1.1!important;font-weight:790!important;font-variant-numeric:tabular-nums!important;color:#fff!important}
+
+@media(max-width:900px){
+  .testimonial-card{grid-template-columns:minmax(0,1.18fr) minmax(230px,.82fr)!important}
+  .testimonial-photo{padding:16px 16px 16px 6px!important}
+}
+@media(max-width:680px){
+  .testimonial-card{display:flex!important;flex-direction:column!important}
+  .testimonial-photo{order:-1!important;height:min(84vw,360px)!important;padding:14px 14px 10px!important;align-items:flex-end!important}
+  .testimonial-photo::after{background:linear-gradient(180deg,transparent 76%,rgba(8,12,9,.12))}
+  .testimonial-copy{padding:24px 22px 24px!important;min-height:0!important}
+  .capability-visual.scoreboard-ui{padding:14px!important}
+  .capability-visual.scoreboard-ui::before{inset:10px;border-radius:16px}
+  .scoreboard-ui .scoreboard-stage{width:min(100%,310px)!important;margin:18px 0 0 8px!important}
+  .scoreboard-ui .sb-main{grid-template-columns:minmax(0,1fr) 48px!important;grid-template-rows:42px 42px 38px!important}
+  .scoreboard-ui .sb-row span{padding-left:12px!important;font-size:11px!important}
+  .scoreboard-ui .sb-row b{font-size:21px!important}
+  .scoreboard-ui .sb-clock{grid-template-columns:minmax(0,1fr) 48px!important}
+  .scoreboard-ui .sb-clock strong{font-size:18px!important}
+  .scoreboard-ui .sb-clock em{font-size:11px!important}
+  .scoreboard-ui .sb-pp{width:66px!important;flex-basis:66px!important;height:42px!important;padding:6px 7px!important}
+  .scoreboard-ui .sb-pp strong{font-size:10px!important}
+  .scoreboard-ui .sb-pp span{font-size:9px!important}
+}
+
+
+/* v39 — verified testimonial uniformity + bigger hotkeys + corrected scoreboard */
+.testimonials-grid{align-items:stretch}
+.testimonial-card{grid-template-columns:minmax(0,1fr) 320px!important;align-items:stretch!important;overflow:hidden!important}
+.testimonial-copy{padding:30px 28px 28px!important}
+.testimonial-copy blockquote{font-size:16px!important;line-height:1.64!important}
+.testimonial-person strong{font-size:18px!important}
+.testimonial-person span{font-size:13px!important;max-width:none!important}
+.testimonial-photo{align-self:center!important;justify-self:end!important;width:calc(100% - 26px)!important;max-width:286px!important;aspect-ratio:1/1!important;height:auto!important;margin:13px!important;padding:0!important;border-radius:24px!important;border:1px solid rgba(255,255,255,.08)!important;box-shadow:0 16px 36px rgba(0,0,0,.24)!important;background:#151b16!important;overflow:hidden!important}
+.testimonial-photo::after{background:linear-gradient(180deg,transparent 76%,rgba(7,10,8,.10))!important;border-radius:24px!important}
+.testimonial-photo img{width:100%!important;height:100%!important;object-fit:cover!important;transform:none!important;filter:saturate(1.02) contrast(1.03) brightness(1.01)!important}
+.testimonial-photo-vadim img{object-position:50% 22%!important}
+.testimonial-photo-denis img{object-position:50% 18%!important;filter:saturate(1.06) contrast(1.04) brightness(1.04)!important}
+@media(hover:hover){.testimonial-card:hover .testimonial-photo img{transform:none!important;filter:saturate(1.05) contrast(1.035) brightness(1.02)!important}}
+
+.hotkey-ui{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:18px!important;padding:20px 22px!important;place-items:center!important}
+.hotkey-ui .hotkey-chip{width:min(100%,104px)!important;aspect-ratio:1/1!important;border-radius:18px!important;box-shadow:inset 0 1px rgba(255,255,255,.12),0 10px 24px rgba(0,0,0,.16)!important}
+.hotkey-ui .hotkey-chip b{font-size:24px!important;line-height:1!important;font-weight:820!important;letter-spacing:.01em!important}
+
+.capability-visual.scoreboard-ui{display:flex!important;align-items:center!important;justify-content:center!important;padding:18px!important;min-height:242px!important;height:242px!important;background:linear-gradient(180deg,#111813,#0d130f)!important;overflow:hidden!important}
+.capability-visual.scoreboard-ui::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.08);border-radius:18px;pointer-events:none}
+.scoreboard-ui .scoreboard-stage{display:grid!important;grid-template-columns:minmax(0,1fr) 86px!important;align-items:start!important;justify-content:center!important;gap:0!important;width:min(100%,392px)!important;max-width:392px!important;height:auto!important;margin:0!important}
+.scoreboard-ui .sb-main{width:100%!important;max-width:none!important;min-width:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) 64px!important;grid-template-rows:60px 60px 52px!important;border-radius:12px 0 0 12px!important;border:1px solid #3e463f!important;border-right:0!important;overflow:hidden!important;background:#030403!important;box-shadow:0 12px 28px rgba(0,0,0,.18)!important}
+.scoreboard-ui .sb-row{display:contents!important}
+.scoreboard-ui .sb-row span{background:#eff1ef!important;color:#121412!important;display:flex!important;align-items:center!important;padding-left:18px!important;font-size:18px!important;font-weight:820!important;letter-spacing:.02em!important;border-bottom:1px solid #d0d3cf!important}
+.scoreboard-ui .sb-row b{background:#030403!important;color:#fff!important;display:grid!important;place-items:center!important;font-size:31px!important;font-weight:840!important;border-bottom:1px solid #242924!important}
+.scoreboard-ui .sb-clock{grid-column:1/3!important;display:grid!important;grid-template-columns:minmax(0,1fr) 64px!important;align-items:stretch!important;background:#030403!important}
+.scoreboard-ui .sb-clock strong{display:grid!important;place-items:center!important;font-size:31px!important;font-weight:840!important;letter-spacing:.02em!important;color:#fff!important}
+.scoreboard-ui .sb-clock em{display:grid!important;place-items:center!important;background:#b5b9b5!important;color:#fff!important;font-style:normal!important;font-size:18px!important;font-weight:840!important;letter-spacing:.02em!important}
+.scoreboard-ui .sb-pp{width:86px!important;height:60px!important;align-self:start!important;justify-self:start!important;margin:0!important;border-radius:0 12px 12px 0!important;background:linear-gradient(180deg,#39af47,#2c9839)!important;display:grid!important;grid-template-columns:1fr!important;place-items:center!important;padding:8px 8px!important;box-shadow:0 10px 24px rgba(20,60,23,.22),inset 0 1px rgba(255,255,255,.14)!important}
+.scoreboard-ui .sb-pp strong{font-size:12px!important;line-height:1!important;letter-spacing:.04em!important;color:#fff!important}.scoreboard-ui .sb-pp span{font-size:12px!important;line-height:1.1!important;font-weight:790!important;font-variant-numeric:tabular-nums!important;color:#fff!important}
+
+@media(max-width:900px){
+  .testimonial-card{grid-template-columns:minmax(0,1fr) 290px!important}
+  .hotkey-ui{gap:14px!important;padding:18px!important}
+  .hotkey-ui .hotkey-chip{width:min(100%,92px)!important}
+  .hotkey-ui .hotkey-chip b{font-size:21px!important}
+}
+@media(max-width:680px){
+  .testimonial-card{display:flex!important;flex-direction:column!important}
+  .testimonial-photo{order:-1!important;align-self:center!important;justify-self:center!important;width:min(100%,320px)!important;max-width:none!important;aspect-ratio:1/1!important;height:auto!important;margin:16px 16px 6px!important;border-radius:22px!important}
+  .testimonial-copy{padding:24px 22px 26px!important}
+  .testimonial-copy blockquote{font-size:16px!important;line-height:1.6!important}
+  .testimonial-person strong{font-size:17px!important}
+  .testimonial-person span{font-size:12.5px!important}
+  .hotkey-ui{gap:12px!important;padding:16px!important}
+  .hotkey-ui .hotkey-chip{width:min(100%,84px)!important;border-radius:16px!important}
+  .hotkey-ui .hotkey-chip b{font-size:18px!important}
+  .capability-visual.scoreboard-ui{height:210px!important;min-height:210px!important;padding:12px!important}
+  .scoreboard-ui .scoreboard-stage{grid-template-columns:minmax(0,1fr) 68px!important;width:min(100%,300px)!important;max-width:300px!important}
+  .scoreboard-ui .sb-main{grid-template-columns:minmax(0,1fr) 50px!important;grid-template-rows:44px 44px 38px!important}
+  .scoreboard-ui .sb-row span{padding-left:12px!important;font-size:13px!important}
+  .scoreboard-ui .sb-row b{font-size:23px!important}
+  .scoreboard-ui .sb-clock{grid-template-columns:minmax(0,1fr) 50px!important}
+  .scoreboard-ui .sb-clock strong{font-size:21px!important}
+  .scoreboard-ui .sb-clock em{font-size:13px!important}
+  .scoreboard-ui .sb-pp{width:68px!important;height:44px!important;padding:6px 7px!important}
+  .scoreboard-ui .sb-pp strong{font-size:10px!important}
+  .scoreboard-ui .sb-pp span{font-size:9px!important}
+}
+
+/* v40 — hard final overrides for scoreboard, hotkeys and testimonial framing */
+#capabilities .capability-visual.scoreboard-ui{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:242px!important;
+  min-height:242px!important;
+  padding:18px!important;
+  overflow:hidden!important;
+  background:linear-gradient(180deg,#101712,#0c120e)!important;
+}
+#capabilities .capability-visual.scoreboard-ui::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:12px!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  border-radius:18px!important;
+  pointer-events:none!important;
+}
+#capabilities .scoreboard-stage-v40{
+  position:relative!important;
+  z-index:1!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 62px 82px!important;
+  grid-template-rows:56px 56px 48px!important;
+  width:min(100%,360px)!important;
+  height:160px!important;
+  margin:0!important;
+  padding:0!important;
+  gap:0!important;
+  align-items:stretch!important;
+  justify-items:stretch!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-team{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  padding:0 0 0 18px!important;
+  margin:0!important;
+  background:#f0f1ef!important;
+  color:#111311!important;
+  font-size:18px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  letter-spacing:.015em!important;
+  border-bottom:1px solid #cfd2cf!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-home{
+  border-radius:12px 0 0 0!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-away{
+  grid-column:1!important;
+  grid-row:2!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-score{
+  display:grid!important;
+  place-items:center!important;
+  margin:0!important;
+  padding:0!important;
+  background:#020302!important;
+  color:#fff!important;
+  font-size:30px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  border-bottom:1px solid #242824!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-home-score{grid-column:2!important;grid-row:1!important}
+#capabilities .scoreboard-stage-v40 .sb-away-score{grid-column:2!important;grid-row:2!important}
+#capabilities .scoreboard-stage-v40 .sb-pp{
+  grid-column:3!important;
+  grid-row:1!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:6px 8px!important;
+  align-self:stretch!important;
+  justify-self:stretch!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  border-radius:0 12px 12px 0!important;
+  background:linear-gradient(180deg,#39ad47,#2b9638)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-pp strong,
+#capabilities .scoreboard-stage-v40 .sb-pp span{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#fff!important;
+  line-height:1!important;
+  font-weight:850!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-pp strong{font-size:13px!important;letter-spacing:.045em!important}
+#capabilities .scoreboard-stage-v40 .sb-pp span{font-size:12px!important;font-variant-numeric:tabular-nums!important}
+#capabilities .scoreboard-stage-v40 .sb-time{
+  grid-column:1!important;
+  grid-row:3!important;
+  display:grid!important;
+  place-items:center!important;
+  margin:0!important;
+  padding:0!important;
+  background:#020302!important;
+  color:#fff!important;
+  font-size:29px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  letter-spacing:.02em!important;
+  border-radius:0 0 0 12px!important;
+}
+#capabilities .scoreboard-stage-v40 .sb-period{
+  grid-column:2!important;
+  grid-row:3!important;
+  display:grid!important;
+  place-items:center!important;
+  margin:0!important;
+  padding:0!important;
+  background:#b6bab6!important;
+  color:#fff!important;
+  font-size:19px!important;
+  line-height:1!important;
+  font-weight:850!important;
+}
+
+#capabilities .hotkey-ui{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,minmax(0,1fr))!important;
+  gap:16px!important;
+  padding:18px 20px!important;
+  place-items:center!important;
+}
+#capabilities .hotkey-ui .hotkey-chip{
+  width:min(100%,104px)!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  padding:0!important;
+  border-radius:18px!important;
+}
+#capabilities .hotkey-ui .hotkey-chip b{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  font-size:23px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  letter-spacing:.005em!important;
+  text-align:center!important;
+}
+
+#reviews .testimonial-card{
+  box-sizing:border-box!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 286px!important;
+  gap:18px!important;
+  min-height:322px!important;
+  padding:18px!important;
+  align-items:center!important;
+}
+#reviews .testimonial-copy{
+  box-sizing:border-box!important;
+  min-height:286px!important;
+  padding:10px 10px 8px 10px!important;
+}
+#reviews .testimonial-photo{
+  box-sizing:border-box!important;
+  position:relative!important;
+  width:286px!important;
+  height:286px!important;
+  max-width:286px!important;
+  aspect-ratio:1/1!important;
+  margin:0!important;
+  padding:0!important;
+  align-self:center!important;
+  justify-self:end!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  background:#111713!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.22)!important;
+}
+#reviews .testimonial-photo::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  border-radius:inherit!important;
+  background:linear-gradient(180deg,transparent 78%,rgba(6,9,7,.08))!important;
+}
+#reviews .testimonial-photo img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  transform:none!important;
+  border-radius:inherit!important;
+  filter:none!important;
+}
+#reviews .testimonial-photo-vadim img{object-position:50% 22%!important}
+#reviews .testimonial-photo-denis img{object-position:50% 18%!important}
+#reviews .testimonial-card:hover .testimonial-photo img{transform:none!important;filter:none!important}
+
+@media(max-width:1100px){
+  #reviews .testimonial-card{grid-template-columns:minmax(0,1fr) 260px!important;min-height:296px!important;padding:18px!important}
+  #reviews .testimonial-photo{width:260px!important;height:260px!important;max-width:260px!important;order:initial!important}
+  #reviews .testimonial-copy{min-height:260px!important}
+}
+
+@media(max-width:680px){
+  #capabilities .capability-visual.scoreboard-ui{height:210px!important;min-height:210px!important;padding:12px!important}
+  #capabilities .scoreboard-stage-v40{
+    grid-template-columns:minmax(0,1fr) 48px 66px!important;
+    grid-template-rows:44px 44px 38px!important;
+    width:min(100%,280px)!important;
+    height:126px!important;
+  }
+  #capabilities .scoreboard-stage-v40 .sb-team{padding-left:12px!important;font-size:14px!important}
+  #capabilities .scoreboard-stage-v40 .sb-score{font-size:23px!important}
+  #capabilities .scoreboard-stage-v40 .sb-time{font-size:21px!important}
+  #capabilities .scoreboard-stage-v40 .sb-period{font-size:15px!important}
+  #capabilities .scoreboard-stage-v40 .sb-pp{padding:5px!important}
+  #capabilities .scoreboard-stage-v40 .sb-pp strong{font-size:10px!important}
+  #capabilities .scoreboard-stage-v40 .sb-pp span{font-size:9px!important}
+  #capabilities .hotkey-ui{gap:11px!important;padding:14px!important}
+  #capabilities .hotkey-ui .hotkey-chip{width:min(100%,86px)!important;border-radius:16px!important}
+  #capabilities .hotkey-ui .hotkey-chip b{font-size:18px!important}
+
+  #reviews .testimonial-card{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    min-height:0!important;
+    padding:18px!important;
+  }
+  #reviews .testimonial-photo{
+    order:-1!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:none!important;
+    aspect-ratio:1/1!important;
+    margin:0!important;
+    align-self:stretch!important;
+    justify-self:stretch!important;
+    border-radius:22px!important;
+  }
+  #reviews .testimonial-copy{
+    min-height:0!important;
+    width:100%!important;
+    padding:6px 4px 4px!important;
+  }
+  #reviews .testimonial-photo-vadim img{object-position:50% 20%!important}
+  #reviews .testimonial-photo-denis img{object-position:50% 16%!important}
+}
+
+
+/* v41 — actual applied scoreboard overrides under #features */
+#features .capability-visual.scoreboard-ui{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;height:242px!important;min-height:242px!important;padding:18px!important;overflow:hidden!important;background:linear-gradient(180deg,#101712,#0c120e)!important}
+#features .capability-visual.scoreboard-ui::before{content:""!important;display:block!important;position:absolute!important;inset:12px!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:18px!important;pointer-events:none!important}
+#features .scoreboard-stage-v40{position:relative!important;z-index:1!important;display:grid!important;grid-template-columns:minmax(0,1fr) 62px 82px!important;grid-template-rows:56px 56px 48px!important;width:min(100%,360px)!important;height:160px!important;margin:0!important;padding:0!important;gap:0!important;align-items:stretch!important;justify-items:stretch!important}
+#features .scoreboard-stage-v40 .sb-team{display:flex!important;align-items:center!important;justify-content:flex-start!important;padding:0 0 0 18px!important;margin:0!important;background:#f0f1ef!important;color:#111311!important;font-size:18px!important;line-height:1!important;font-weight:850!important;letter-spacing:.015em!important;border-bottom:1px solid #cfd2cf!important}
+#features .scoreboard-stage-v40 .sb-home{grid-column:1!important;grid-row:1!important;border-radius:12px 0 0 0!important}
+#features .scoreboard-stage-v40 .sb-away{grid-column:1!important;grid-row:2!important}
+#features .scoreboard-stage-v40 .sb-score{display:grid!important;place-items:center!important;margin:0!important;padding:0!important;background:#020302!important;color:#fff!important;font-size:30px!important;line-height:1!important;font-weight:850!important;border-bottom:1px solid #242824!important}
+#features .scoreboard-stage-v40 .sb-home-score{grid-column:2!important;grid-row:1!important}
+#features .scoreboard-stage-v40 .sb-away-score{grid-column:2!important;grid-row:2!important}
+#features .scoreboard-stage-v40 .sb-pp{grid-column:3!important;grid-row:1!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;margin:0!important;padding:6px 8px!important;align-self:stretch!important;justify-self:stretch!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;border-radius:0 12px 12px 0!important;background:linear-gradient(180deg,#39ad47,#2b9638)!important;color:#fff!important;box-shadow:none!important}
+#features .scoreboard-stage-v40 .sb-pp strong,#features .scoreboard-stage-v40 .sb-pp span{display:block!important;margin:0!important;padding:0!important;color:#fff!important;line-height:1!important;font-weight:850!important}
+#features .scoreboard-stage-v40 .sb-pp strong{font-size:13px!important;letter-spacing:.045em!important}
+#features .scoreboard-stage-v40 .sb-pp span{font-size:12px!important;font-variant-numeric:tabular-nums!important}
+#features .scoreboard-stage-v40 .sb-time{grid-column:1!important;grid-row:3!important;display:grid!important;place-items:center!important;margin:0!important;padding:0!important;background:#020302!important;color:#fff!important;font-size:29px!important;line-height:1!important;font-weight:850!important;letter-spacing:.02em!important;border-radius:0 0 0 12px!important}
+#features .scoreboard-stage-v40 .sb-period{grid-column:2!important;grid-row:3!important;display:grid!important;place-items:center!important;margin:0!important;padding:0!important;background:#b6bab6!important;color:#fff!important;font-size:19px!important;line-height:1!important;font-weight:850!important}
+@media(max-width:680px){#features .capability-visual.scoreboard-ui{height:210px!important;min-height:210px!important;padding:12px!important}#features .scoreboard-stage-v40{grid-template-columns:minmax(0,1fr) 48px 66px!important;grid-template-rows:44px 44px 38px!important;width:min(100%,280px)!important;height:126px!important}#features .scoreboard-stage-v40 .sb-team{padding-left:12px!important;font-size:14px!important}#features .scoreboard-stage-v40 .sb-score{font-size:23px!important}#features .scoreboard-stage-v40 .sb-time{font-size:21px!important}#features .scoreboard-stage-v40 .sb-period{font-size:15px!important}#features .scoreboard-stage-v40 .sb-pp{padding:5px!important}#features .scoreboard-stage-v40 .sb-pp strong{font-size:10px!important}#features .scoreboard-stage-v40 .sb-pp span{font-size:9px!important}}
+
+
+/* v43 — exact scoreboard reference image. Do not reconstruct the scoreboard with CSS. */
+#features .capability-visual.scoreboard-ui.scoreboard-reference-ui{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:242px!important;
+  min-height:242px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#0c120e!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+}
+#features .capability-visual.scoreboard-ui.scoreboard-reference-ui::before,
+#features .capability-visual.scoreboard-ui.scoreboard-reference-ui::after{
+  content:none!important;
+  display:none!important;
+}
+#features .scoreboard-reference-image{
+  display:block!important;
+  width:min(calc(100% - 20px),284px)!important;
+  height:auto!important;
+  max-height:calc(100% - 18px)!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important;
+  filter:none!important;
+}
+@media(max-width:680px){
+  #features .capability-visual.scoreboard-ui.scoreboard-reference-ui{
+    height:210px!important;
+    min-height:210px!important;
+    padding:0!important;
+  }
+  #features .scoreboard-reference-image{
+    width:min(calc(100% - 12px),284px)!important;
+    max-height:calc(100% - 10px)!important;
+  }
+}
