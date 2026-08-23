@@ -2577,3 +2577,85 @@ body::before{display:none!important}
     max-height:calc(100% - 10px)!important;
   }
 }
+
+
+/* v44 — mobile testimonials stay side-by-side and scale as one balanced row. */
+@media(max-width:680px){
+  #reviews .testimonials-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    align-items:stretch!important;
+  }
+  #reviews .testimonial-card{
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+    min-width:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    gap:10px!important;
+    padding:10px!important;
+    border-radius:18px!important;
+  }
+  #reviews .testimonial-photo{
+    box-sizing:border-box!important;
+    order:-1!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    aspect-ratio:1/1!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:stretch!important;
+    border-radius:15px!important;
+  }
+  #reviews .testimonial-copy{
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    min-width:0!important;
+    min-height:0!important;
+    width:100%!important;
+    padding:4px 3px 5px!important;
+  }
+  #reviews .testimonial-rating{
+    margin:0 0 10px!important;
+    font-size:clamp(11px,2.8vw,14px)!important;
+    letter-spacing:.1em!important;
+  }
+  #reviews .testimonial-copy blockquote{
+    overflow-wrap:anywhere!important;
+    font-size:clamp(11.5px,3vw,14px)!important;
+    line-height:1.48!important;
+    letter-spacing:-.01em!important;
+  }
+  #reviews .testimonial-person{
+    margin-top:auto!important;
+    padding-top:16px!important;
+    gap:4px!important;
+  }
+  #reviews .testimonial-person strong{
+    overflow-wrap:anywhere!important;
+    font-size:clamp(11.5px,3vw,14px)!important;
+    line-height:1.25!important;
+  }
+  #reviews .testimonial-person span{
+    max-width:none!important;
+    overflow-wrap:anywhere!important;
+    font-size:clamp(9.5px,2.45vw,11.5px)!important;
+    line-height:1.38!important;
+  }
+}
+@media(max-width:420px){
+  #reviews .testimonials-grid{gap:8px!important}
+  #reviews .testimonial-card{padding:8px!important;gap:8px!important;border-radius:16px!important}
+  #reviews .testimonial-photo{border-radius:13px!important}
+  #reviews .testimonial-rating{margin-bottom:8px!important;font-size:11px!important}
+  #reviews .testimonial-copy blockquote{font-size:11px!important;line-height:1.44!important}
+  #reviews .testimonial-person{padding-top:13px!important}
+  #reviews .testimonial-person strong{font-size:11.5px!important}
+  #reviews .testimonial-person span{font-size:9.5px!important;line-height:1.34!important}
+}

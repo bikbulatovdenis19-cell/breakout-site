@@ -1,5 +1,5 @@
 window.BREAKOUT_CONFIG = {
-  downloadURL: "",
+  downloadURL: "https://ujbirjsfaimsdtqczfiq.supabase.co/storage/v1/object/public/breakout-updates/macos/stable/BreakOut-72.5.85-649.zip",
   accountURL: "account.html?build=19",
   signInURL: "account.html?build=19&mode=signin",
   registerURL: "account.html?build=19&mode=register",
@@ -13,4 +13,4 @@ window.BREAKOUT_CONFIG = {
   supabasePublishableKey: "sb_publishable_FvYjy4TBGqTP5NaLKw-0uA_oM2ehoEK"
 };
 
-window.BREAKOUT_BUILD = "19.0";
+window.BREAKOUT_BUILD = "20.0";
