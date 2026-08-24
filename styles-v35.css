@@ -2860,3 +2860,68 @@ section[id],#breakout-demo{scroll-margin-top:92px}
   #features .capability-card h3{font-size:13.5px!important}
   #features .capability-card p{font-size:9px!important;line-height:1.34!important}
 }
+
+
+/* v43 — mobile capability cards: preserve visual proportions and remove dead space */
+@media(max-width:760px){
+  #features .capability-card{
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+  }
+  #features .capability-visual,
+  #features .capability-visual.interval-ui.interval-ui-v29,
+  #features .capability-visual.scoreboard-ui,
+  #features .capability-visual.scoreboard-ui.scoreboard-reference-ui{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:4 / 3!important;
+    margin:0 0 8px!important;
+    flex:0 0 auto!important;
+  }
+  #features .capability-card h3{
+    margin:0 0 5px!important;
+  }
+  #features .capability-card p{
+    margin:0!important;
+  }
+  #features .drawing-ui{
+    padding:3px!important;
+  }
+  #features .rink-reference{
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:contain!important;
+  }
+  #features .scoreboard-reference-image{
+    width:94%!important;
+    height:92%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    margin:auto!important;
+  }
+}
+@media(max-width:390px){
+  #features .capability-card{
+    min-height:0!important;
+  }
+  #features .capability-visual,
+  #features .capability-visual.interval-ui.interval-ui-v29,
+  #features .capability-visual.scoreboard-ui,
+  #features .capability-visual.scoreboard-ui.scoreboard-reference-ui{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:4 / 3!important;
+    margin-bottom:7px!important;
+  }
+  #features .capability-card h3{
+    margin:0 0 4px!important;
+  }
+}
