@@ -11,7 +11,7 @@
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
-  <link rel="stylesheet" href="styles-v35.css?v=50">
+  <link rel="stylesheet" href="styles-v36.css?v=1">
   <title>Аккаунт — BreakOut</title>
 </head>
 <body class="account-page" data-page="account" data-build="20.0">
@@ -28,9 +28,15 @@
 
   <main class="account-main">
     <section class="account-hero">
-      <div class="content-shell account-layout">
+      <div class="content-shell account-page-shell">
+        <div class="account-page-intro">
+          <div class="kicker" data-i18n="accountSideKicker">Личный кабинет</div>
+          <h1 data-i18n="accountSideTitle">Управляйте доступом к BreakOut.</h1>
+          <p data-i18n="accountSideIntro">Вход, срок доступа и подключённый Mac — в одном аккуратном кабинете.</p>
+        </div>
+
         <div class="account-auth-card">
-          <div class="account-brand-line"><img src="assets/breakout-icon.png?v=38" alt=""><div><span data-i18n="accountPageKicker">Аккаунт BreakOut</span><small data-i18n="accountPageSub">Один аккаунт для сайта и приложения на Mac.</small></div></div>
+          <div class="account-brand-line"><img src="assets/breakout-icon.png?v=38" alt=""><div><span data-i18n="accountPageKicker">Аккаунт BreakOut</span></div></div>
           <div class="account-tabs" role="tablist" data-auth-tabs>
             <button type="button" data-account-mode="signin" class="active" data-i18n="signIn">Войти</button>
             <button type="button" data-account-mode="register" data-i18n="createAccount">Создать аккаунт</button>
@@ -61,14 +67,15 @@
 
           <div class="account-dashboard is-hidden" data-account-dashboard>
             <div class="account-dashboard-head">
-              <div><span data-i18n="accountSignedInAs">Вы вошли как</span><strong data-account-email>—</strong></div>
+              <div><span data-i18n="accountSignedInAs">Аккаунт</span><strong data-account-email>—</strong></div>
               <span class="account-live-badge" data-account-state>—</span>
             </div>
-            <div class="account-dashboard-grid">
+            <div class="account-dashboard-grid account-dashboard-grid-rich">
               <div><span data-i18n="accountPreviewPlan">Тариф</span><strong data-account-access-plan>—</strong></div>
               <div><span data-i18n="accountValidUntil">Действует до</span><strong data-account-access-until>—</strong></div>
-              <div><span data-i18n="accountPreviewDevices">Устройства</span><strong data-account-device-count>—</strong></div>
+              <div><span data-i18n="accountLastSync">Обновлено</span><strong data-account-last-sync>—</strong></div>
             </div>
+            <div class="account-section-title" data-i18n="accountConnectedMac">Подключённый Mac</div>
             <div class="account-device-list" data-account-devices></div>
             <div class="account-dashboard-actions">
               <button class="button secondary" type="button" data-account-refresh data-i18n="accountRefresh">Обновить статус</button>
@@ -85,20 +92,6 @@
             <button class="button primary full" type="button" data-recovery-submit data-i18n="accountSavePassword">Сохранить пароль</button>
             <div class="account-status" data-recovery-status aria-live="polite"></div>
           </div>
-
-          <p class="account-same-login" data-i18n="sameLogin">Этот же аккаунт используется для входа в BreakOut на Mac.</p>
-        </div>
-
-        <div class="account-side">
-          <div class="kicker" data-i18n="accountSideKicker">Личный кабинет</div>
-          <h1 data-i18n="accountSideTitle">Один аккаунт для сайта и BreakOut на Mac.</h1>
-          <p data-i18n="accountSideIntro">После входа здесь отображаются срок доступа и активированные устройства. Тот же аккаунт используется в приложении.</p>
-          <div class="account-sync-visual" aria-hidden="true">
-            <div class="account-sync-node"><span>WEB</span><b>BreakOut</b></div>
-            <div class="account-sync-line"><i></i><em>ACCOUNT</em><i></i></div>
-            <div class="account-sync-node"><span>MAC</span><b>BreakOut.app</b></div>
-          </div>
-          <p class="account-side-caption" data-i18n="accountSideNote">Статус доступа появляется только после входа — без лишних пустых показателей до авторизации.</p>
         </div>
       </div>
     </section>
@@ -107,6 +100,6 @@
   <footer class="footer"><div class="content-shell footer-inner"><div class="footer-brand"><img src="assets/breakout-icon.png?v=38" alt=""><span>BreakOut</span><small>© 2026</small></div><div class="footer-links"><a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a><a href="terms.html" data-i18n="termsShort">Условия</a><a href="support.html" data-i18n="navSupport">Поддержка</a></div></div></footer>
   <script src="config-v26.js?v=27"></script>
   <script src="supabase-v25.js?v=25"></script>
-  <script src="script-v35.js?v=43"></script>
+  <script src="script-v36.js?v=1"></script>
 </body>
 </html>
