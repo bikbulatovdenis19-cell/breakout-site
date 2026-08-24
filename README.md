@@ -10,3 +10,8 @@ Key changes:
 - carousel response/fade timings are faster;
 - multisport section uses one panoramic, diagonally layered field graphic for hockey, football, basketball, and tennis;
 - Supabase/account configuration remains unchanged.
+
+
+## Download button
+
+The website no longer hard-codes a release build in its primary download flow. `script-v35.js` reads the current enclosure URL from the stable Sparkle feed configured in `config-v26.js` (`updateFeedURL`). Publish the new versioned ZIP first, then replace `macos/stable/appcast.xml`; all website download buttons will resolve the new ZIP automatically. The `downloadURL` value is only a fallback if the feed cannot be read.
