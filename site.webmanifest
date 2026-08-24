@@ -1,1 +1,1 @@
-{"name":"BreakOut","short_name":"BreakOut","start_url":"./","display":"standalone","background_color":"#070907","theme_color":"#070907","icons":[{"src":"assets/breakout-icon.png","sizes":"1024x1024","type":"image/png"}]}
+{"name":"BreakOut","short_name":"BreakOut","start_url":"./","display":"standalone","background_color":"#070907","theme_color":"#070907","icons":[{"src":"assets/breakout-icon.png","sizes":"512x512","type":"image/png"}]}
