@@ -4208,3 +4208,141 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
     justify-content:center!important;
   }
 }
+
+/* === v59: mobile hero/pricing/demo cleanup === */
+/* The demo caption is intentionally removed entirely. */
+.hero-demo-label-below{display:none!important}
+
+@media(max-width:760px){
+  /* Mobile hero: remove the secondary desktop+notebook product render and give copy full width. */
+  .hero-demo .hero-intro-grid{
+    display:block!important;
+    grid-template-columns:none!important;
+  }
+  .hero-demo .hero-intro-copy{
+    width:100%!important;
+    max-width:none!important;
+  }
+  .hero-demo .hero-product-visual{display:none!important}
+  .hero-demo .hero-copy-main h1{max-width:100%!important}
+  .hero-demo .hero-lead{max-width:100%!important}
+
+  /* Keep download CTA and platform badge centered in the free mobile width. */
+  .hero-demo .hero-actions-single{width:min(88%,520px)!important;margin-inline:auto!important}
+  .hero-demo .platform-pill{width:max-content!important;max-width:92%!important;margin:14px auto 0!important}
+
+  /* MacBook demo: scale one complete 1180x760 workspace into the physical screen. */
+  .hero-demo .demo-laptop-stage{
+    width:calc(100% - 10px)!important;
+    max-width:760px!important;
+    margin:28px auto 10px!important;
+  }
+  .hero-demo .demo-laptop-stage .demo-shell-wrap{
+    left:10.45%!important;
+    top:2.55%!important;
+    width:79.10%!important;
+    height:85.35%!important;
+    overflow:hidden!important;
+    background:#070907!important;
+  }
+  .hero-demo .demo-laptop-stage .demo-app{
+    width:1180px!important;
+    height:760px!important;
+    max-width:none!important;
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    transform-origin:center center!important;
+    border-radius:0!important;
+  }
+  /* Let the original desktop demo geometry be scaled as a whole; do not reflow its panes on phones. */
+  .hero-demo .demo-laptop-stage .demo-grid{
+    display:grid!important;
+    grid-template-columns:var(--split-x) 1fr!important;
+    grid-template-rows:var(--split-y) 1fr!important;
+    width:100%!important;
+    height:700px!important;
+    min-height:0!important;
+  }
+  .hero-demo .demo-laptop-stage .demo-pane{height:auto!important;min-height:0!important}
+  .hero-demo .demo-laptop-stage .demo-titlebar{height:42px!important;min-height:42px!important;font-size:11px!important;padding-inline:12px!important}
+  .hero-demo .demo-laptop-stage .demo-brand img{width:22px!important;height:22px!important}
+  .hero-demo .demo-laptop-stage .demo-brand em{font-size:9px!important}
+  .hero-demo .demo-laptop-stage .demo-status{font-size:9px!important}
+  .hero-demo .demo-laptop-stage .pane-bar{height:28px!important;min-height:28px!important;font-size:10px!important;padding:0 9px!important}
+  .hero-demo .demo-laptop-stage .capture-stage,
+  .hero-demo .demo-laptop-stage .replay-stage{height:calc(100% - 28px)!important}
+  .hero-demo .demo-laptop-stage .timeline-demo{height:calc(100% - 28px)!important}
+  .hero-demo .demo-laptop-stage .coding-buttons{grid-template-columns:repeat(3,1fr)!important;gap:6px!important;padding:9px!important;max-height:none!important}
+  .hero-demo .demo-laptop-stage .coding-btn{min-height:54px!important;height:auto!important;font-size:10px!important;padding:5px!important;border-radius:7px!important}
+  .hero-demo .demo-laptop-stage .coding-btn small{font-size:7px!important}
+  .hero-demo .demo-laptop-stage .coding-count{font-size:7px!important}
+  .hero-demo .demo-laptop-stage .demo-help{height:18px!important;min-height:18px!important;font-size:7px!important;padding:2px 8px!important}
+  .hero-demo .demo-laptop-stage .splitter,.hero-demo .demo-laptop-stage .splitter-knob{display:block!important}
+
+  /* Pricing: three compact near-square cards with aligned plan names and prices. */
+  #pricing .pricing-grid-three{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:8px!important;
+    align-items:stretch!important;
+  }
+  #pricing .price-card{
+    min-height:218px!important;
+    height:218px!important;
+    padding:14px 11px 12px!important;
+    border-radius:18px!important;
+  }
+  #pricing .price-head{
+    min-height:20px!important;
+    align-items:center!important;
+  }
+  #pricing .price-head span{
+    display:block!important;
+    width:100%!important;
+    white-space:nowrap!important;
+    font-size:10px!important;
+    line-height:1!important;
+    letter-spacing:-.01em!important;
+  }
+  #pricing .price-card>strong{
+    display:block!important;
+    white-space:nowrap!important;
+    font-size:clamp(18px,4.7vw,23px)!important;
+    line-height:1!important;
+    margin:14px 0 9px!important;
+    letter-spacing:-.045em!important;
+    min-height:24px!important;
+  }
+  #pricing .price-card>p{
+    font-size:9px!important;
+    line-height:1.28!important;
+    margin:0 0 8px!important;
+    min-height:34px!important;
+  }
+  #pricing .price-card .button{
+    min-height:42px!important;
+    padding:5px 6px!important;
+    font-size:10.5px!important;
+    line-height:1.03!important;
+    border-radius:12px!important;
+  }
+
+  /* Final CTA: center the pair as a group beneath the centered heading. */
+  .cta-card{padding-inline:22px!important;text-align:center!important}
+  .cta-card>div:first-child{width:100%!important;text-align:center!important}
+  .cta-card h2{max-width:14ch!important;margin-inline:auto!important;text-align:center!important}
+  .cta-actions{
+    width:min(78%,360px)!important;
+    margin:28px auto 0!important;
+    justify-items:stretch!important;
+  }
+  .cta-actions .button{width:100%!important;margin:0!important}
+}
+
+@media(max-width:430px){
+  #pricing .price-card{height:205px!important;min-height:205px!important;padding:12px 9px 10px!important}
+  #pricing .price-head span{font-size:9px!important}
+  #pricing .price-card>strong{font-size:17px!important}
+  #pricing .price-card>p{font-size:8.3px!important;min-height:31px!important}
+  #pricing .price-card .button{font-size:9.5px!important;min-height:40px!important}
+}

@@ -447,15 +447,15 @@
 
   function fitLaptopDemo(){
     const baseW=1180,baseH=760;
-    app.style.width=baseW+'px';
-    app.style.height=baseH+'px';
-    app.style.maxWidth='none';
-    app.style.position='absolute';
-    app.style.left='50%';
-    app.style.top='50%';
-    app.style.transformOrigin='center center';
+    app.style.setProperty('width',baseW+'px','important');
+    app.style.setProperty('height',baseH+'px','important');
+    app.style.setProperty('max-width','none','important');
+    app.style.setProperty('position','absolute','important');
+    app.style.setProperty('left','50%','important');
+    app.style.setProperty('top','50%','important');
+    app.style.setProperty('transform-origin','center center','important');
     const scale=Math.min(wrap.clientWidth/baseW,wrap.clientHeight/baseH);
-    app.style.transform=`translate(-50%,-50%) scale(${scale})`;
+    app.style.setProperty('transform',`translate(-50%,-50%) scale(${scale})`,'important');
   }
   let fitRAF=0;
   const scheduleFit=()=>{cancelAnimationFrame(fitRAF);fitRAF=requestAnimationFrame(fitLaptopDemo)};
