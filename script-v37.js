@@ -352,3 +352,66 @@
   applyLanguage();
   fitMobileDemo();
 })();
+
+/* v53 — viewport-aware capabilities micro-animations */
+(()=>{
+  const section=document.querySelector('#features');
+  if(!section)return;
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cards=[...section.querySelectorAll('.capability-card')];
+  if(reduce){cards.forEach(c=>c.classList.add('is-visible'));return;}
+
+  if('IntersectionObserver' in window){
+    const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');reveal.unobserve(entry.target)}
+    }),{threshold:.16,rootMargin:'0px 0px -4% 0px'});
+    cards.forEach(card=>reveal.observe(card));
+  }else cards.forEach(c=>c.classList.add('is-visible'));
+
+  // Replay time follows the six-second visual playhead.
+  const replayCard=section.querySelector('.replay-ui')?.closest('.capability-card');
+  const replayTime=section.querySelector('.replay-preview small');
+  let replayTimer=null,replaySecond=0;
+  const startReplay=()=>{if(replayTimer||!replayTime)return; replaySecond=0; replayTime.textContent='00:12:03'; replayTimer=setInterval(()=>{replaySecond=(replaySecond+1)%6;replayTime.textContent=`00:12:${String(3+replaySecond).padStart(2,'0')}`},1000)};
+  const stopReplay=()=>{if(replayTimer){clearInterval(replayTimer);replayTimer=null}};
+
+  // Scoreboard counts down and loops to stay demonstrative.
+  const scoreboardCard=section.querySelector('.scoreboard-reference-ui')?.closest('.capability-card');
+  const scoreboardTime=section.querySelector('.scoreboard-live-time');
+  let scoreboardTimer=null,scoreLeft=12*60+34;
+  const renderScore=()=>{if(!scoreboardTime)return;const m=Math.floor(scoreLeft/60),s=scoreLeft%60;scoreboardTime.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`};
+  const startScore=()=>{if(scoreboardTimer||!scoreboardTime)return;renderScore();scoreboardTimer=setInterval(()=>{scoreLeft--;if(scoreLeft<12*60+24)scoreLeft=12*60+34;renderScore()},1000)};
+  const stopScore=()=>{if(scoreboardTimer){clearInterval(scoreboardTimer);scoreboardTimer=null}};
+
+  // Composer: swap neighbouring rows with FLIP so the list genuinely rearranges.
+  const composer=section.querySelector('.composer-ui');
+  const composerCard=composer?.closest('.capability-card');
+  let composerTimer=null,composerStep=0;
+  function flipSwap(a,b){
+    if(!a||!b||!composer)return;
+    const first=new Map([...composer.children].map(el=>[el,el.getBoundingClientRect()]));
+    const marker=document.createComment('swap');a.before(marker);b.before(a);marker.replaceWith(b);
+    [...composer.children].forEach(el=>{const old=first.get(el),now=el.getBoundingClientRect();if(!old)return;const dy=old.top-now.top;el.style.transition='none';el.style.transform=`translateY(${dy}px)`;el.classList.add('is-moving');requestAnimationFrame(()=>requestAnimationFrame(()=>{el.style.transition='';el.style.transform='';setTimeout(()=>el.classList.remove('is-moving'),620)}))});
+  }
+  const startComposer=()=>{if(composerTimer||!composer)return;composerTimer=setInterval(()=>{const rows=[...composer.children];if(rows.length<4)return;const pair=(composerStep++%2===0)?[rows[0],rows[1]]:[rows[2],rows[3]];flipSwap(...pair)},1800)};
+  const stopComposer=()=>{if(composerTimer){clearInterval(composerTimer);composerTimer=null}};
+
+  if('IntersectionObserver' in window){
+    const activeObs=new IntersectionObserver(entries=>entries.forEach(e=>{
+      const on=e.isIntersecting&&e.intersectionRatio>.18;
+      if(e.target===replayCard)(on?startReplay:stopReplay)();
+      if(e.target===scoreboardCard)(on?startScore:stopScore)();
+      if(e.target===composerCard)(on?startComposer:stopComposer)();
+    }),{threshold:[0,.2,.6]});
+    [replayCard,scoreboardCard,composerCard].filter(Boolean).forEach(el=>activeObs.observe(el));
+  }else{startReplay();startScore();startComposer()}
+
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){stopReplay();stopScore();stopComposer()}
+    else{
+      if(replayCard?.getBoundingClientRect().top<innerHeight&&replayCard.getBoundingClientRect().bottom>0)startReplay();
+      if(scoreboardCard?.getBoundingClientRect().top<innerHeight&&scoreboardCard.getBoundingClientRect().bottom>0)startScore();
+      if(composerCard?.getBoundingClientRect().top<innerHeight&&composerCard.getBoundingClientRect().bottom>0)startComposer();
+    }
+  });
+})();
