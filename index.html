@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v38.css?v=55">
+  <link rel="stylesheet" href="styles-v39.css?v=56">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -88,14 +88,8 @@
           </div>
         </div>
 
-        <div class="hero-demo-label">
-          <span class="live-dot"></span>
-          <strong data-i18n="demoKicker">Интерактивное демо</strong>
-          <span data-i18n="demoIntro">Пример кодирования: 18 хоккейных тегов, таймлайн и повтор.</span>
-        </div>
-
         <div class="demo-laptop-stage">
-          <img class="demo-laptop-frame" src="assets/macbook-demo-frame.png" alt="" aria-hidden="true">
+          <img class="demo-laptop-frame" src="assets/macbook-demo-frame-v56.png" alt="" aria-hidden="true">
           <div class="demo-shell-wrap">
           <div class="demo-app" id="breakout-demo" style="--split-x:58%;--split-y:58%">
             <div class="demo-titlebar">
@@ -192,6 +186,11 @@
             </div>
           </div>
         </div>
+        <div class="hero-demo-label hero-demo-label-below">
+          <span class="live-dot"></span>
+          <strong data-i18n="demoKicker">Интерактивное демо</strong>
+          <span data-i18n="demoIntro">Пример кодирования: 18 хоккейных тегов, таймлайн и повтор.</span>
+        </div>
         </div>
       </div>
     </section>
@@ -230,7 +229,7 @@
           </article>
           <article class="capability-card">
             <div class="capability-visual replay-ui" aria-hidden="true">
-              <div class="replay-preview"><span class="replay-rec"><i></i>REC</span><small>00:12:03</small><span class="replay-play"><i class="replay-play-icon">▶</i><i class="replay-pause-icon">Ⅱ</i></span><i class="replay-progress"></i></div>
+              <div class="replay-preview"><span class="replay-rec"><i></i>REC</span><small>00:12:03</small><span class="replay-play" aria-hidden="true"><span class="replay-glyph replay-glyph-play"></span><span class="replay-glyph replay-glyph-pause"><i></i><i></i></span></span><i class="replay-progress"></i></div>
             </div>
             <h3 data-i18n="f2t">Повтор из метки</h3><p data-i18n="f2d">Выберите событие на таймлайне и сразу откройте связанный с ним эпизод.</p>
           </article>
@@ -241,7 +240,7 @@
             <h3 data-i18n="depth1Title">Несколько ракурсов</h3><p data-i18n="depth1Text">Сопоставляйте один эпизод с разных камер, когда одного угла недостаточно.</p>
           </article>
           <article class="capability-card">
-            <div class="capability-visual drawing-ui" aria-hidden="true"><img src="assets/hockey-rink-green.png" alt="" class="rink-reference"><svg class="tactic-overlay" viewBox="0 0 400 220" preserveAspectRatio="none"><defs><marker id="tacticArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="currentColor"/></marker></defs><path class="tactic-route tactic-route-top" d="M344 48 C282 47, 226 48, 164 50 C126 51, 96 52, 62 54"/><path class="tactic-route tactic-route-bottom" d="M58 168 C118 170, 182 170, 244 168 C284 167, 316 165, 344 163"/><circle class="tactic-magnet magnet-1" cx="150" cy="83" r="7"/><circle class="tactic-magnet magnet-2" cx="200" cy="82" r="7"/><circle class="tactic-magnet magnet-3" cx="250" cy="84" r="7"/><circle class="tactic-magnet magnet-4" cx="175" cy="132" r="7"/><circle class="tactic-magnet magnet-5" cx="225" cy="132" r="7"/></svg></div>
+            <div class="capability-visual drawing-ui" aria-hidden="true"><img src="assets/hockey-rink-green.png" alt="" class="rink-reference"><svg class="tactic-overlay" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet"><circle class="tactic-magnet magnet-1" cx="90" cy="110" r="10"/><circle class="tactic-magnet magnet-2" cx="160" cy="75" r="10"/><circle class="tactic-magnet magnet-3" cx="250" cy="75" r="10"/><circle class="tactic-magnet magnet-4" cx="160" cy="145" r="10"/><circle class="tactic-magnet magnet-5" cx="250" cy="145" r="10"/></svg></div>
             <h3 data-i18n="depth2Title">Рисование поверх видео</h3><p data-i18n="depth2Text">Отмечайте позиции и направления прямо на кадре для наглядного разбора.</p>
           </article>
           <article class="capability-card">
@@ -471,6 +470,6 @@
   </div>
 
   <script src="config-v26.js?v=27"></script>
-  <script src="script-v38.js?v=55"></script>
+  <script src="script-v39.js?v=56"></script>
 </body>
 </html>
