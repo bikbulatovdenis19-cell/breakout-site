@@ -4496,3 +4496,205 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
   .hero-desktop-cta [data-action="download"],
   .cta-card [data-action="download"]{animation:none!important;transform:none!important}
 }
+
+/* v64 — mobile final CTA buttons: wider, centered, with safe inner card margins. */
+@media (max-width:760px){
+  .cta-card .cta-actions{
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    width:calc(100% + 32px)!important;
+    max-width:none!important;
+    margin:28px 0 0!important;
+  }
+  .cta-card .cta-actions .button{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+}
+
+/* === v65 desktop-only visual harmonization ===
+   Mobile layout intentionally untouched. */
+@media (min-width:981px){
+  /* Hero: bring the Mac CTA closer to the copy, slightly lower and larger. */
+  .hero-demo .hero-intro-grid{
+    grid-template-columns:minmax(0,1.03fr) minmax(470px,.82fr)!important;
+    gap:44px!important;
+    align-items:center!important;
+  }
+  .hero-demo .hero-desktop-cta{
+    justify-self:start!important;
+    align-self:center!important;
+    width:min(100%,680px)!important;
+    max-width:680px!important;
+    margin:0!important;
+    transform:translate(-34px,42px)!important;
+    gap:26px!important;
+    min-height:104px!important;
+  }
+  .hero-demo .hero-desktop-cta .hero-desktop-platform{
+    min-width:180px!important;
+    gap:12px!important;
+  }
+  .hero-demo .hero-desktop-cta .platform-icon{
+    width:46px!important;
+    height:46px!important;
+    border-radius:13px!important;
+  }
+  .hero-demo .hero-desktop-cta .hero-desktop-platform strong{
+    font-size:15px!important;
+    line-height:1.12!important;
+  }
+  .hero-demo .hero-desktop-cta .hero-desktop-platform small{
+    font-size:11px!important;
+    margin-top:4px!important;
+  }
+  .hero-demo .hero-desktop-download{
+    width:350px!important;
+    min-height:60px!important;
+    flex:0 0 350px!important;
+    padding-inline:30px!important;
+    font-size:14px!important;
+    border-radius:16px!important;
+  }
+
+  /* Shared typography for the four lower desktop blocks. */
+  .account-link-section .kicker,
+  .pricing-section .kicker,
+  .legal-links-section .kicker,
+  .cta-section .cta-card>div:first-child>span{
+    font-size:11px!important;
+    font-weight:800!important;
+    letter-spacing:.095em!important;
+    line-height:1.1!important;
+    text-transform:uppercase!important;
+  }
+  .account-link-section h2,
+  .pricing-section h2,
+  .legal-links-section h2,
+  .cta-section h2{
+    font-family:inherit!important;
+    font-weight:680!important;
+    letter-spacing:-.048em!important;
+    line-height:1.02!important;
+  }
+  .account-link-section h2{font-size:clamp(36px,3vw,48px)!important}
+  .pricing-section h2{font-size:clamp(40px,3.25vw,52px)!important}
+  .legal-links-section h2{font-size:clamp(38px,3vw,50px)!important}
+  .cta-section h2{font-size:clamp(38px,3.1vw,50px)!important}
+  .account-link-section p,
+  .pricing-section .section-heading>p,
+  .legal-links-section small{
+    font-family:inherit!important;
+    letter-spacing:0!important;
+  }
+
+  /* Account card: match the final CTA composition — copy on the left, controls low on the right. */
+  .account-link-section{padding-top:44px!important;padding-bottom:44px!important}
+  .account-link-card-refined{padding:32px 38px!important}
+  .account-link-card-refined .account-link-copy{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    grid-template-rows:auto auto auto!important;
+    column-gap:48px!important;
+    align-items:end!important;
+  }
+  .account-link-card-refined .account-link-copy>h2{
+    max-width:15ch!important;
+    margin:8px 0 10px!important;
+  }
+  .account-link-card-refined .account-link-copy>p{
+    max-width:62ch!important;
+    font-size:14px!important;
+    line-height:1.55!important;
+  }
+  .account-link-card-refined .account-link-actions{
+    grid-column:2!important;
+    grid-row:3!important;
+    align-self:end!important;
+    justify-self:end!important;
+    margin:0 0 2px!important;
+    transform:translateY(2px)!important;
+    gap:10px!important;
+  }
+  .account-link-card-refined .account-link-actions .button,
+  .cta-card .cta-actions .button{
+    min-height:52px!important;
+    padding-inline:24px!important;
+    font-size:13px!important;
+    border-radius:14px!important;
+    white-space:nowrap!important;
+  }
+
+  /* HTML section order is already 1 → 3 → 4 → 2; no DOM reordering needed. */
+}
+
+/* === v66 mobile: lower-section order + typography/button system harmonization === */
+@media (max-width:760px){
+  /* DOM order is intentionally 1 → 3 → 4 → 2: account, pricing, legal, final CTA. */
+  .account-link-section,
+  .pricing-section,
+  .legal-links-section,
+  .cta-section{
+    font-family:inherit!important;
+  }
+
+  .account-link-section .kicker,
+  .pricing-section .kicker,
+  .legal-links-section .kicker,
+  .cta-section .cta-card>div:first-child>span{
+    font-size:12px!important;
+    font-weight:800!important;
+    letter-spacing:.105em!important;
+    line-height:1.15!important;
+    text-transform:uppercase!important;
+  }
+
+  .account-link-section h2,
+  .pricing-section h2,
+  .legal-links-section h2,
+  .cta-section h2{
+    font-family:inherit!important;
+    font-size:clamp(34px,9.2vw,46px)!important;
+    font-weight:700!important;
+    letter-spacing:-.045em!important;
+    line-height:1.04!important;
+  }
+
+  .account-link-section p,
+  .pricing-section .section-heading>p,
+  .legal-links-section small{
+    font-family:inherit!important;
+    font-size:15px!important;
+    line-height:1.55!important;
+    letter-spacing:0!important;
+  }
+
+  .account-link-actions .button,
+  .pricing-grid .button,
+  .cta-card .cta-actions .button{
+    min-height:54px!important;
+    border-radius:15px!important;
+    font-family:inherit!important;
+    font-size:14px!important;
+    font-weight:750!important;
+    letter-spacing:-.01em!important;
+    line-height:1.1!important;
+    text-align:center!important;
+    justify-content:center!important;
+  }
+
+  /* Keep the four blocks visually related through matching edge rhythm. */
+  .account-link-card-refined,
+  .legal-links-card,
+  .cta-card{
+    border-radius:24px!important;
+  }
+
+  .account-link-section{padding:54px 0 58px!important;}
+  .pricing-section{padding:58px 0 64px!important;}
+  .legal-links-section{padding:54px 0 62px!important;}
+  .cta-section{padding:44px 0 74px!important;}
+}
