@@ -4346,3 +4346,22 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
   #pricing .price-card>p{font-size:8.3px!important;min-height:31px!important}
   #pricing .price-card .button{font-size:9.5px!important;min-height:40px!important}
 }
+
+/* v60 — mobile final CTA: hard-center action stack inside the card. */
+@media(max-width:760px){
+  .cta-card{position:relative!important}
+  .cta-card .cta-actions{
+    position:relative!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    width:min(78%,360px)!important;
+    margin:28px 0 0!important;
+    display:grid!important;
+    gap:12px!important;
+  }
+  .cta-card .cta-actions .button{
+    width:100%!important;
+    margin:0!important;
+    justify-content:center!important;
+  }
+}
