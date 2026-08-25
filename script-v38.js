@@ -418,3 +418,18 @@
     }
   });
 })();
+
+/* v55 — page progress, whole-page reveal, localized prices */
+(()=>{
+  const progress=document.querySelector('.page-scroll-progress i');
+  const updateProgress=()=>{if(!progress)return;const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);progress.style.transform=`scaleX(${Math.max(0,Math.min(1,scrollY/max))})`};
+  addEventListener('scroll',updateProgress,{passive:true});addEventListener('resize',updateProgress,{passive:true});updateProgress();
+
+  const sections=[...document.querySelectorAll('main>section:not(.hero-demo)')];
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)sections.forEach(s=>s.classList.add('bo-revealed'));
+  else if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('bo-revealed');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -6% 0px'});sections.forEach(s=>io.observe(s))}else sections.forEach(s=>s.classList.add('bo-revealed'));
+
+  const syncPrices=()=>document.querySelectorAll('[data-price-ru]').forEach(el=>{el.textContent=(document.documentElement.lang||'ru').toLowerCase().startsWith('en')?el.dataset.priceEn:el.dataset.priceRu});
+  syncPrices();
+  const langObs=new MutationObserver(syncPrices);langObs.observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+})();

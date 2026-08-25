@@ -22,10 +22,11 @@
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v38.css?v=1">
+  <link rel="stylesheet" href="styles-v38.css?v=55">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
+  <div class="page-scroll-progress" aria-hidden="true"><i></i></div>
   <header class="topbar">
     <div class="nav-shell">
       <div class="brand-cluster">
@@ -93,7 +94,9 @@
           <span data-i18n="demoIntro">Пример кодирования: 18 хоккейных тегов, таймлайн и повтор.</span>
         </div>
 
-        <div class="demo-shell-wrap">
+        <div class="demo-laptop-stage">
+          <img class="demo-laptop-frame" src="assets/macbook-demo-frame.png" alt="" aria-hidden="true">
+          <div class="demo-shell-wrap">
           <div class="demo-app" id="breakout-demo" style="--split-x:58%;--split-y:58%">
             <div class="demo-titlebar">
               <div class="demo-brand"><img src="assets/breakout-icon.png?v=38" alt=""><span>BreakOut</span><em>25 Feb 2018 — Russia vs Germany</em></div>
@@ -188,6 +191,7 @@
               <span><kbd>Right click</kbd><b data-i18n="helpContext">контекстное меню</b></span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -399,13 +403,13 @@
           </article>
           <article class="price-card six-month-card">
             <div class="price-head"><span data-i18n="sixMonths">6 месяцев</span></div>
-            <strong>45 000 ₽</strong>
+            <strong data-price-ru="45 000 ₽" data-price-en="$590">45 000 ₽</strong>
             <p data-i18n="priceSixCopy">Для регулярной работы в течение сезона.</p>
             <button class="button primary full" data-action="download" data-i18n="buyPlan">Купить</button>
           </article>
           <article class="price-card annual-card">
             <div class="price-head"><span data-i18n="oneYear">1 год</span></div>
-            <strong>80 000 ₽</strong>
+            <strong data-price-ru="80 000 ₽" data-price-en="$1,050">80 000 ₽</strong>
             <p data-i18n="priceYearCopy">Для непрерывной работы в течение года.</p>
             <button class="button primary full" data-action="download" data-i18n="buyPlan">Купить</button>
           </article>
@@ -467,6 +471,6 @@
   </div>
 
   <script src="config-v26.js?v=27"></script>
-  <script src="script-v38.js?v=1"></script>
+  <script src="script-v38.js?v=55"></script>
 </body>
 </html>
