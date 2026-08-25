@@ -160,7 +160,7 @@
       if(mode==='signin'){show(signInForm);hide(registerForm)}else{hide(signInForm);show(registerForm)}
       tabs.forEach(b=>b.classList.toggle('active',b.dataset.accountMode===mode));
       clearStatus(signInStatus);clearStatus(registerStatus);clearStatus(dashboardStatus);
-      if(planBox){if(mode==='register'&&plan){show(planBox);if(plan==='6m'){planName.textContent=t('planSixName')||'6 месяцев';planPrice.textContent='45 000 ₽'}else if(plan==='1y'){planName.textContent=t('planYearName')||'1 год';planPrice.textContent='80 000 ₽'}else hide(planBox)}else hide(planBox)}
+      if(planBox){if(mode==='register'&&plan){show(planBox);if(plan==='6m'){planName.textContent=t('planSixName')||'6 месяцев';planPrice.textContent=(lang==='en'?'$525':'40 000 ₽')}else if(plan==='1y'){planName.textContent=t('planYearName')||'1 год';planPrice.textContent=(lang==='en'?'$1,050':'80 000 ₽')}else hide(planBox)}else hide(planBox)}
       const url=new URL(location.href);url.searchParams.set('mode',mode);history.replaceState({},'',url);
       resetPreview();
     }
@@ -464,28 +464,40 @@
   scheduleFit();
 
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  // Animate the shared split variables directly. The panes, splitters and center knob
+  // therefore travel together instead of showing a dark separator racing ahead.
   const grid=app.querySelector('.demo-grid');
-  if(grid)grid.style.transition='grid-template-columns 1.25s cubic-bezier(.22,.7,.2,1),grid-template-rows 1.25s cubic-bezier(.22,.7,.2,1)';
-  const steps=[
-    ['58%','58%'],['55.5%','58%'],['60.5%','58%'],['58%','58%'],
-    ['58%','55.5%'],['58%','60.5%'],['58%','58%']
-  ];
-  let active=true,step=0,timer=0;
+  if(grid)grid.style.transition='none';
+  const steps=[[58,58],[55.5,58],[60.5,58],[58,58],[58,55.5],[58,60.5],[58,58]];
+  let active=true,step=0,timer=0,driftRAF=0,currentX=58,currentY=58;
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  const animateSplit=(tx,ty,duration=720)=>{
+    cancelAnimationFrame(driftRAF);
+    const sx=currentX,sy=currentY,start=performance.now();
+    const frame=now=>{
+      if(!active)return;
+      const p=Math.min(1,(now-start)/duration),e=ease(p);
+      currentX=sx+(tx-sx)*e; currentY=sy+(ty-sy)*e;
+      app.style.setProperty('--split-x',currentX.toFixed(3)+'%');
+      app.style.setProperty('--split-y',currentY.toFixed(3)+'%');
+      if(p<1)driftRAF=requestAnimationFrame(frame);
+    };
+    driftRAF=requestAnimationFrame(frame);
+  };
   stage.classList.add('demo-auto-drift');
   const tick=()=>{
     if(!active)return;
     const [x,y]=steps[step++%steps.length];
-    app.style.setProperty('--split-x',x);
-    app.style.setProperty('--split-y',y);
-    timer=setTimeout(tick,1650);
+    animateSplit(x,y);
+    timer=setTimeout(tick,1750);
   };
   timer=setTimeout(tick,900);
   const stopAuto=()=>{
     if(!active)return;
     active=false;
     clearTimeout(timer);
+    cancelAnimationFrame(driftRAF);
     stage.classList.remove('demo-auto-drift');
-    if(grid)grid.style.transition='';
   };
   ['pointerdown','touchstart','keydown','wheel'].forEach(type=>stage.addEventListener(type,stopAuto,{passive:true,once:true}));
 })();
