@@ -325,6 +325,7 @@
 
   // Mobile: preserve the real 2×2 BreakOut layout and scale the whole demo as one object.
   function fitMobileDemo(){
+    if(document.querySelector('.hero-demo .demo-laptop-stage')) return;
     const wrap=document.querySelector('.hero-demo .demo-shell-wrap');
     const app=document.querySelector('.hero-demo .demo-app');
     if(!wrap||!app)return;
@@ -437,7 +438,7 @@
 })();
 
 
-/* v56 — fit the full live demo into the MacBook and gently demonstrate pane resizing until first interaction. */
+/* v57 — stable laptop fitting + low-overhead automatic pane demonstration. */
 (()=>{
   const stage=document.querySelector('.demo-laptop-stage');
   const wrap=stage?.querySelector('.demo-shell-wrap');
@@ -445,40 +446,46 @@
   if(!stage||!wrap||!app)return;
 
   function fitLaptopDemo(){
-    if(innerWidth<=760){
-      const baseW=1180,baseH=760;
-      app.style.width=baseW+'px';app.style.height=baseH+'px';app.style.maxWidth='none';
-      app.style.position='absolute';app.style.left='50%';app.style.top='50%';app.style.transformOrigin='center center';
-      const scale=Math.max(wrap.clientWidth/baseW,wrap.clientHeight/baseH);
-      app.style.transform=`translate(-50%,-50%) scale(${scale})`;
-    }else{
-      app.style.position='';app.style.left='';app.style.top='';app.style.width='';app.style.height='';app.style.maxWidth='';app.style.transform='';app.style.transformOrigin='';
-    }
+    const baseW=1180,baseH=760;
+    app.style.width=baseW+'px';
+    app.style.height=baseH+'px';
+    app.style.maxWidth='none';
+    app.style.position='absolute';
+    app.style.left='50%';
+    app.style.top='50%';
+    app.style.transformOrigin='center center';
+    const scale=Math.min(wrap.clientWidth/baseW,wrap.clientHeight/baseH);
+    app.style.transform=`translate(-50%,-50%) scale(${scale})`;
   }
-  addEventListener('resize',()=>requestAnimationFrame(fitLaptopDemo),{passive:true});
-  addEventListener('orientationchange',()=>setTimeout(fitLaptopDemo,120),{passive:true});
-  requestAnimationFrame(fitLaptopDemo);
+  let fitRAF=0;
+  const scheduleFit=()=>{cancelAnimationFrame(fitRAF);fitRAF=requestAnimationFrame(fitLaptopDemo)};
+  addEventListener('resize',scheduleFit,{passive:true});
+  addEventListener('orientationchange',()=>setTimeout(scheduleFit,100),{passive:true});
+  scheduleFit();
 
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  let auto=true,start=performance.now(),raf=0;
+  const grid=app.querySelector('.demo-grid');
+  if(grid)grid.style.transition='grid-template-columns 1.25s cubic-bezier(.22,.7,.2,1),grid-template-rows 1.25s cubic-bezier(.22,.7,.2,1)';
+  const steps=[
+    ['58%','58%'],['55.5%','58%'],['60.5%','58%'],['58%','58%'],
+    ['58%','55.5%'],['58%','60.5%'],['58%','58%']
+  ];
+  let active=true,step=0,timer=0;
   stage.classList.add('demo-auto-drift');
-  const ease=t=>.5-.5*Math.cos(Math.PI*Math.max(0,Math.min(1,t)));
-  const lerp=(a,b,t)=>a+(b-a)*ease(t);
-  function motion(now){
-    if(!auto)return;
-    const sec=((now-start)/1000)%12;
-    let x=58,y=58;
-    if(sec<2)x=lerp(58,55.5,sec/2);
-    else if(sec<4)x=lerp(55.5,60.5,(sec-2)/2);
-    else if(sec<6)x=lerp(60.5,58,(sec-4)/2);
-    else if(sec<8)y=lerp(58,55.5,(sec-6)/2);
-    else if(sec<10)y=lerp(55.5,60.5,(sec-8)/2);
-    else y=lerp(60.5,58,(sec-10)/2);
-    app.style.setProperty('--split-x',x.toFixed(2)+'%');
-    app.style.setProperty('--split-y',y.toFixed(2)+'%');
-    raf=requestAnimationFrame(motion);
-  }
-  raf=requestAnimationFrame(motion);
-  const stopAuto=()=>{if(!auto)return;auto=false;stage.classList.remove('demo-auto-drift');if(raf)cancelAnimationFrame(raf)};
+  const tick=()=>{
+    if(!active)return;
+    const [x,y]=steps[step++%steps.length];
+    app.style.setProperty('--split-x',x);
+    app.style.setProperty('--split-y',y);
+    timer=setTimeout(tick,1650);
+  };
+  timer=setTimeout(tick,900);
+  const stopAuto=()=>{
+    if(!active)return;
+    active=false;
+    clearTimeout(timer);
+    stage.classList.remove('demo-auto-drift');
+    if(grid)grid.style.transition='';
+  };
   ['pointerdown','touchstart','keydown','wheel'].forEach(type=>stage.addEventListener(type,stopAuto,{passive:true,once:true}));
 })();

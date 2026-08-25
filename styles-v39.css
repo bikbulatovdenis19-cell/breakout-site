@@ -3913,3 +3913,140 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
   #features .replay-glyph-pause{opacity:0!important;animation:none!important}
   #features .tactic-magnet{animation:none!important}
 }
+
+/* v57 — final alignment, demo fit, replay glyph, pricing scale and theme-aware device floor */
+
+/* Desktop hero: Mac compatibility badge on the left, download button on the right,
+   centered together beneath the supporting copy. */
+@media(min-width:761px){
+  .hero-intro-copy{
+    display:grid;
+    grid-template-columns:max-content minmax(260px,290px);
+    column-gap:22px;
+    justify-content:center;
+    align-items:center;
+  }
+  .hero-intro-copy .eyebrow,
+  .hero-intro-copy h1,
+  .hero-intro-copy .hero-lead{grid-column:1 / -1;width:100%}
+  .hero-intro-copy .platform-pill{
+    grid-column:1;
+    grid-row:4;
+    margin:26px 0 0!important;
+    justify-self:end;
+  }
+  .hero-intro-copy .hero-actions.hero-actions-single{
+    grid-column:2;
+    grid-row:4;
+    width:290px;
+    max-width:290px;
+    margin:26px 0 0!important;
+    justify-self:start;
+  }
+  .hero-intro-copy .hero-actions.hero-actions-single .button{width:100%}
+}
+
+/* Mobile eyebrow is visually centered across the phone, not tied to the left edge. */
+@media(max-width:760px){
+  .hero-intro-copy .eyebrow{justify-content:center;text-align:center;padding-inline:2px}
+}
+
+/* Replace the rear-looking glow with a narrow natural floor shadow directly under devices. */
+.hero-intro-grid .hero-product-glow{
+  left:10%!important;
+  right:7%!important;
+  bottom:-1.1%!important;
+  height:4.2%!important;
+  border-radius:50%!important;
+  background:radial-gradient(ellipse at center,
+    rgba(255,255,255,.34) 0%,
+    rgba(255,255,255,.17) 42%,
+    rgba(255,255,255,.045) 66%,
+    transparent 82%)!important;
+  filter:blur(10px)!important;
+  opacity:.9!important;
+}
+:root[data-theme="light"] .hero-intro-grid .hero-product-glow{
+  background:radial-gradient(ellipse at center,
+    rgba(23,28,23,.25) 0%,
+    rgba(23,28,23,.13) 42%,
+    rgba(23,28,23,.035) 66%,
+    transparent 82%)!important;
+  opacity:.82!important;
+}
+
+/* MacBook demo: cover the complete transparent screen cleanly and keep the caption below it. */
+.hero-demo .demo-laptop-stage{margin-bottom:0!important}
+.hero-demo .demo-laptop-stage .demo-shell-wrap{
+  left:10.63%!important;
+  top:2.82%!important;
+  width:78.96%!important;
+  height:85.02%!important;
+  border-radius:.35%!important;
+  background:#070907!important;
+}
+.hero-demo-label-below{
+  position:relative!important;
+  z-index:12!important;
+  clear:both!important;
+  width:min(1500px,96%)!important;
+  margin:18px auto 24px!important;
+  padding-top:4px!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+
+/* Exact pause symbol: one pseudo-element paints two equal bars, so it cannot collapse to one. */
+#features .replay-glyph-pause{display:grid!important;place-items:center!important;grid-template-columns:none!important;gap:0!important}
+#features .replay-glyph-pause i{display:none!important}
+#features .replay-glyph-pause::before{
+  content:"";
+  display:block;
+  width:14px;
+  height:16px;
+  background:linear-gradient(90deg,var(--accent) 0 4px,transparent 4px 10px,var(--accent) 10px 14px);
+  border-radius:1px;
+}
+
+/* Desktop pricing should occupy the full heading width instead of floating as a small island. */
+@media(min-width:1081px){
+  #pricing .pricing-grid-three{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    gap:20px!important;
+  }
+  #pricing .price-card{
+    min-height:360px!important;
+    padding:32px 30px!important;
+    border-radius:25px!important;
+  }
+  #pricing .price-card>strong{font-size:clamp(38px,3.15vw,54px)!important}
+  #pricing .price-card p{font-size:14px!important;line-height:1.5!important}
+  #pricing .price-card .button{min-height:52px!important;font-size:16px!important}
+}
+
+/* Mobile final CTA: both buttons form one centered symmetric column. */
+@media(max-width:760px){
+  .cta-card{display:block!important;text-align:center!important}
+  .cta-card>div:first-child{max-width:100%!important;margin-inline:auto!important}
+  .cta-card h2{margin-inline:auto!important;text-align:center!important}
+  .cta-actions{
+    display:grid!important;
+    justify-items:center!important;
+    width:100%!important;
+    max-width:360px!important;
+    margin:28px auto 0!important;
+    gap:12px!important;
+  }
+  .cta-actions .button{width:min(100%,330px)!important;justify-content:center!important;margin-inline:auto!important}
+
+  /* Keep the demo itself fully inside the laptop on phones. */
+  .hero-demo .demo-laptop-stage .demo-shell-wrap{
+    left:10.63%!important;
+    top:2.82%!important;
+    width:78.96%!important;
+    height:85.02%!important;
+  }
+  .hero-demo-label-below{margin:12px auto 20px!important;padding-inline:12px!important}
+}
