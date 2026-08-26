@@ -4939,3 +4939,19 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
     padding-right:118px!important;
   }
 }
+
+
+/* v73 — working screens: continuous seamless drift on desktop and mobile. */
+.showcase-track{
+  scroll-snap-type:none!important;
+  scroll-behavior:auto!important;
+  overscroll-behavior-x:contain!important;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-x pan-y;
+}
+.showcase-slide{
+  scroll-snap-align:none!important;
+  scroll-snap-stop:normal!important;
+}
+.showcase-slide.carousel-clone{pointer-events:auto!important}
+.carousel-arrow,.carousel-dots{display:none!important}

@@ -217,19 +217,21 @@
     }
   }
 
-  // Carousel — continuous, user-scrollable, seamless right-to-left loop.
-  // Three copies keep manual scrolling seamless in either direction; autoplay resumes after interaction.
+  // Carousel — truly continuous, user-scrollable and seamless.
+  // It starts moving as soon as the page loads, so by the time the section enters view
+  // it already feels like a long-running infinite ribbon. The visual order stays 1 → 6 → 1.
   const track=document.querySelector('.showcase-track');
   const slides=track?[...track.querySelectorAll('.showcase-slide')]:[];
   let carouselRAF=0,carouselPauseUntil=0,lastCarouselFrame=0,carouselCycleWidth=0,carouselCycleStart=0,carouselNormalizing=false;
-  const pauseCarousel=(ms=1400)=>{carouselPauseUntil=Math.max(carouselPauseUntil,performance.now()+ms)};
+  const carouselEpoch=Date.now();
+  const pauseCarousel=(ms=1200)=>{carouselPauseUntil=Math.max(carouselPauseUntil,performance.now()+ms)};
   const markLoopCopies=(nodes)=>nodes.forEach((node,i)=>{node.classList.add('carousel-clone');node.setAttribute('aria-hidden','true');node.dataset.loopIndex=String(i)});
   const updateCarouselActive=()=>{
     if(!track||!slides.length)return;
     const all=[...track.querySelectorAll('.showcase-slide')];
     const center=track.scrollLeft+track.clientWidth/2;
     let nearest=null,best=Infinity;
-    all.forEach((sl,i)=>{const d=Math.abs(sl.offsetLeft+sl.clientWidth/2-center);if(d<best){best=d;nearest=sl}});
+    all.forEach(sl=>{const d=Math.abs(sl.offsetLeft+sl.clientWidth/2-center);if(d<best){best=d;nearest=sl}});
     const idx=nearest?.classList.contains('carousel-clone')?Number(nearest.dataset.loopIndex):slides.indexOf(nearest);
     all.forEach(sl=>sl.classList.remove('active'));
     if(Number.isFinite(idx)&&idx>=0){
@@ -239,9 +241,18 @@
   };
   const normalizeCarousel=()=>{
     if(!track||!carouselCycleWidth||carouselNormalizing)return;
-    const x=track.scrollLeft;
-    if(x<carouselCycleStart){carouselNormalizing=true;track.scrollLeft=x+carouselCycleWidth;carouselNormalizing=false}
-    else if(x>=carouselCycleStart+carouselCycleWidth){carouselNormalizing=true;track.scrollLeft=x-carouselCycleWidth;carouselNormalizing=false}
+    let x=track.scrollLeft;
+    if(x<carouselCycleStart){
+      carouselNormalizing=true;
+      while(x<carouselCycleStart)x+=carouselCycleWidth;
+      track.scrollLeft=x;
+      carouselNormalizing=false;
+    }else if(x>=carouselCycleStart+carouselCycleWidth){
+      carouselNormalizing=true;
+      while(x>=carouselCycleStart+carouselCycleWidth)x-=carouselCycleWidth;
+      track.scrollLeft=x;
+      carouselNormalizing=false;
+    }
   };
   const setupCarouselLoop=()=>{
     if(!track||!slides.length)return;
@@ -250,12 +261,16 @@
     markLoopCopies(before);markLoopCopies(after);
     const beforeFrag=document.createDocumentFragment(),afterFrag=document.createDocumentFragment();
     before.forEach(n=>beforeFrag.appendChild(n));after.forEach(n=>afterFrag.appendChild(n));
-    track.insertBefore(beforeFrag,slides[0]);track.appendChild(afterFrag);
+    track.insertBefore(beforeFrag,slides[0]);
+    track.appendChild(afterFrag);
     requestAnimationFrame(()=>{
       const afterFirst=after[0];
       carouselCycleStart=slides[0].offsetLeft;
       carouselCycleWidth=afterFirst.offsetLeft-carouselCycleStart;
-      track.scrollLeft=carouselCycleStart;
+      // Begin at a real phase inside the loop instead of always looking freshly reset.
+      const nominalSpeed=matchMedia('(max-width:760px)').matches?42:52;
+      const phase=((Date.now()-carouselEpoch)/1000*nominalSpeed)%Math.max(1,carouselCycleWidth);
+      track.scrollLeft=carouselCycleStart+phase;
       updateCarouselActive();
       lastCarouselFrame=performance.now();
     });
@@ -264,20 +279,23 @@
     setupCarouselLoop();
     const glide=now=>{
       if(!lastCarouselFrame)lastCarouselFrame=now;
-      const dt=Math.min(34,now-lastCarouselFrame);lastCarouselFrame=now;
+      const dt=Math.min(40,Math.max(0,now-lastCarouselFrame));
+      lastCarouselFrame=now;
       if(!document.hidden&&now>=carouselPauseUntil&&!carouselNormalizing&&carouselCycleWidth){
-        const speed=matchMedia('(max-width:760px)').matches?22:34; // px per second
+        // Moving toward increasing scrollLeft keeps the visible sequence 1 → 2 → ... → 6.
+        // The higher speed makes the drift clearly visible without looking like slide-by-slide autoplay.
+        const speed=matchMedia('(max-width:760px)').matches?42:52;
         track.scrollLeft+=speed*dt/1000;
         normalizeCarousel();
       }
       updateCarouselActive();
       carouselRAF=requestAnimationFrame(glide);
     };
-    ['pointerdown','touchstart','wheel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(ev==='wheel'?1000:1800),{passive:true}));
-    ['pointerup','touchend','pointercancel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(900),{passive:true}));
+    ['pointerdown','touchstart','wheel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(ev==='wheel'?850:1500),{passive:true}));
+    ['pointerup','touchend','pointercancel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(650),{passive:true}));
     track.addEventListener('scroll',()=>{normalizeCarousel();updateCarouselActive()},{passive:true});
-    track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){pauseCarousel(1200)}});
-    window.addEventListener('resize',()=>{pauseCarousel(500);setupCarouselLoop()});
+    track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight')pauseCarousel(950)});
+    window.addEventListener('resize',()=>{pauseCarousel(350);setupCarouselLoop()});
     carouselRAF=requestAnimationFrame(glide);
   }
   // Screenshot lightbox — lets mobile users inspect the real UI without cropping
