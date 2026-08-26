@@ -37,10 +37,10 @@
   };
 
   Object.assign(tr.ru,{
-    navAccount:'Аккаунт',accountKicker:'Доступ к BreakOut',accountTitle:'Начните бесплатно. Продолжайте, когда будете готовы.',accountIntro:'Создайте аккаунт, активируйте 7-дневный пробный период и управляйте сроком доступа в личном кабинете.',createAccount:'Создать аккаунт',accountFact1Title:'7 дней бесплатно',accountFact1Text:'Полный доступ начинается после первого успешного входа в BreakOut.',accountFact2Title:'Срок всегда под рукой',accountFact2Text:'В кабинете видно тариф, дату окончания и подключённый Mac.',accountFact3Title:'Продление без ключей',accountFact3Text:'После покупки срок доступа обновляется в аккаунте и приложении.',accountPageKicker:'Аккаунт BreakOut',accountPageSub:'',selectedAccess:'Выбранный доступ',password:'Пароль',repeatPassword:'Повторите пароль',forgotPassword:'Забыли пароль?',accountConsent:'Я принимаю условия использования и политику конфиденциальности.',sameLogin:'Этот же аккаунт используется для входа в BreakOut на Mac.',accountSideKicker:'Личный кабинет',accountSideTitle:'Управляйте доступом к BreakOut.',accountSideIntro:'Вход, срок доступа и подключённый Mac — в одном аккуратном кабинете.',accountPreviewAccess:'Доступ',accountPreviewInactive:'Не активирован',accountPreviewPlan:'Тариф',accountPreviewDevices:'Устройства',accountSideNote:'Статус доступа появляется только после входа — без лишних пустых показателей до авторизации.',accountServerPending:'Связь с аккаунтом BreakOut настроена через Supabase.',accountResetPending:'Восстановление пароля выполняется через Supabase Auth.',accountSignedInAs:'Аккаунт',accountValidUntil:'Действует до',accountLastSync:'Обновлено',accountConnectedMac:'Подключённый Mac',accountRefresh:'Обновить статус',accountLogout:'Выйти',accountNewPasswordTitle:'Новый пароль',accountNewPasswordIntro:'Введите новый пароль для аккаунта BreakOut.',accountSavePassword:'Сохранить пароль',planSixName:'6 месяцев',planYearName:'1 год',pricingIntro:'Первый успешный вход активирует 7-дневный пробный период. Дальнейший срок доступа привязывается к аккаунту BreakOut.'
+    navAccount:'Аккаунт',accountKicker:'Доступ к BreakOut',accountTitle:'Начните бесплатно. Продолжайте, когда будете готовы.',accountIntro:'Создайте аккаунт, активируйте 7-дневный пробный период и управляйте сроком доступа в личном кабинете.',createAccount:'Создать аккаунт',accountFact1Title:'7 дней бесплатно',accountFact1Text:'Полный доступ начинается после первого успешного входа в BreakOut.',accountFact2Title:'Срок всегда под рукой',accountFact2Text:'В кабинете видно тариф, дату окончания и подключённый Mac.',accountFact3Title:'Продление без ключей',accountFact3Text:'После покупки срок доступа обновляется в аккаунте и приложении.',accountPageKicker:'Аккаунт BreakOut',accountPageSub:'',selectedAccess:'Выбранный доступ',password:'Пароль',repeatPassword:'Повторите пароль',forgotPassword:'Забыли пароль?',accountConsent:'Я принимаю условия использования и политику конфиденциальности.',sameLogin:'Этот же аккаунт используется для входа в BreakOut на Mac.',accountSideKicker:'Личный кабинет',accountSideTitle:'Управляйте доступом к BreakOut.',accountSideIntro:'Вход, срок доступа и подключённый Mac — в одном аккуратном кабинете.',accountPreviewAccess:'Доступ',accountPreviewInactive:'Не активирован',accountPreviewPlan:'Тариф',accountPreviewDevices:'Устройства',accountSideNote:'Статус доступа появляется только после входа — без лишних пустых показателей до авторизации.',accountServerPending:'Связь с аккаунтом BreakOut настроена через Supabase.',accountResetPending:'Восстановление пароля выполняется через Supabase Auth.',accountSignedInAs:'Аккаунт',accountValidUntil:'Действует до',accountLastSync:'Обновлено',accountConnectedMac:'Подключённый Mac',accountRefresh:'Обновить статус',accountLogout:'Выйти',accountNewPasswordTitle:'Новый пароль',accountNewPasswordIntro:'Введите новый пароль для аккаунта BreakOut.',accountSavePassword:'Сохранить пароль',planSixName:'6 месяцев',planYearName:'1 год',trialShort:'7 дней',popularPlan:'Популярный',pricingIntro:'Первый успешный вход активирует 7-дневный пробный период. Дальнейший срок доступа привязывается к аккаунту BreakOut.'
   });
   Object.assign(tr.en,{
-    navAccount:'Account',accountKicker:'BreakOut access',accountTitle:'Start free. Continue when you are ready.',accountIntro:'Create an account, activate the 7-day trial and manage your access period in the account portal.',createAccount:'Create account',accountFact1Title:'7 days free',accountFact1Text:'Full access starts after your first successful sign-in to BreakOut.',accountFact2Title:'Access at a glance',accountFact2Text:'See your plan, expiration date and connected Mac in one place.',accountFact3Title:'Renew without keys',accountFact3Text:'After purchase, your access period updates in the account and the app.',accountPageKicker:'BreakOut account',accountPageSub:'',selectedAccess:'Selected access',password:'Password',repeatPassword:'Repeat password',forgotPassword:'Forgot password?',accountConsent:'I accept the Terms of Use and Privacy Policy.',sameLogin:'Use the same account to sign in to BreakOut on Mac.',accountSideKicker:'Account portal',accountSideTitle:'Manage your BreakOut access.',accountSideIntro:'Sign-in, access period and your connected Mac in one clean account portal.',accountPreviewAccess:'Access',accountPreviewInactive:'Inactive',accountPreviewPlan:'Plan',accountPreviewDevices:'Devices',accountSideNote:'Access status appears only after sign-in, without empty status fields before authentication.',accountServerPending:'The BreakOut account is connected through Supabase.',accountResetPending:'Password recovery is handled through Supabase Auth.',accountSignedInAs:'Account',accountValidUntil:'Valid until',accountLastSync:'Updated',accountConnectedMac:'Connected Mac',accountRefresh:'Refresh status',accountLogout:'Sign out',accountNewPasswordTitle:'New password',accountNewPasswordIntro:'Enter a new password for your BreakOut account.',accountSavePassword:'Save password',planSixName:'6 months',planYearName:'1 year',pricingIntro:'Your first successful sign-in activates a 7-day trial period. Continued access is linked to your BreakOut account.'
+    navAccount:'Account',accountKicker:'BreakOut access',accountTitle:'Start free. Continue when you are ready.',accountIntro:'Create an account, activate the 7-day trial and manage your access period in the account portal.',createAccount:'Create account',accountFact1Title:'7 days free',accountFact1Text:'Full access starts after your first successful sign-in to BreakOut.',accountFact2Title:'Access at a glance',accountFact2Text:'See your plan, expiration date and connected Mac in one place.',accountFact3Title:'Renew without keys',accountFact3Text:'After purchase, your access period updates in the account and the app.',accountPageKicker:'BreakOut account',accountPageSub:'',selectedAccess:'Selected access',password:'Password',repeatPassword:'Repeat password',forgotPassword:'Forgot password?',accountConsent:'I accept the Terms of Use and Privacy Policy.',sameLogin:'Use the same account to sign in to BreakOut on Mac.',accountSideKicker:'Account portal',accountSideTitle:'Manage your BreakOut access.',accountSideIntro:'Sign-in, access period and your connected Mac in one clean account portal.',accountPreviewAccess:'Access',accountPreviewInactive:'Inactive',accountPreviewPlan:'Plan',accountPreviewDevices:'Devices',accountSideNote:'Access status appears only after sign-in, without empty status fields before authentication.',accountServerPending:'The BreakOut account is connected through Supabase.',accountResetPending:'Password recovery is handled through Supabase Auth.',accountSignedInAs:'Account',accountValidUntil:'Valid until',accountLastSync:'Updated',accountConnectedMac:'Connected Mac',accountRefresh:'Refresh status',accountLogout:'Sign out',accountNewPasswordTitle:'New password',accountNewPasswordIntro:'Enter a new password for your BreakOut account.',accountSavePassword:'Save password',planSixName:'6 months',planYearName:'1 year',trialShort:'7 days',popularPlan:'Popular',pricingIntro:'Your first successful sign-in activates a 7-day trial period. Continued access is linked to your BreakOut account.'
   });
 
   let lang=localStorage.getItem('breakout-lang')||(navigator.language?.toLowerCase().startsWith('ru')?'ru':'en');if(!tr[lang])lang='ru';const t=k=>tr[lang][k]||null;
@@ -217,63 +217,59 @@
     }
   }
 
-  // Carousel — continuous loop with clone slides. Manual interaction disables autoplay.
+  // Carousel — continuously glides through all working screens with a seamless loop.
   const track=document.querySelector('.showcase-track');
   const slides=track?[...track.querySelectorAll('.showcase-slide')]:[];
   const prev=document.querySelector('.carousel-arrow.prev'),next=document.querySelector('.carousel-arrow.next'),dots=document.querySelector('.carousel-dots');
-  let active=0,scrollTimer,carouselAutoTimer=null,carouselManual=false,programmaticScroll=false,loopResetTimer=null;
-  const carouselSpeed=420;
-  function stopCarouselAuto(){carouselManual=true;if(carouselAutoTimer){clearInterval(carouselAutoTimer);carouselAutoTimer=null}}
+  let active=0,carouselRAF=0,carouselPausedUntil=0,carouselProgrammatic=false,lastCarouselFrame=0,activeUpdateFrame=0;
   function slideLeft(el){return el.offsetLeft-(track.clientWidth-el.clientWidth)/2}
-  function updateCarousel(){slides.forEach((sl,i)=>sl.classList.toggle('active',i===active));track?.querySelector('.carousel-clone:first-child')?.classList.toggle('active',active===slides.length-1);track?.querySelector('.carousel-clone:last-child')?.classList.toggle('active',active===0);dots?.querySelectorAll('button').forEach((d,i)=>d.classList.toggle('active',i===active))}
+  function updateCarousel(){
+    slides.forEach((sl,i)=>sl.classList.toggle('active',i===active));
+    track?.querySelector('.carousel-clone:first-child')?.classList.toggle('active',active===slides.length-1);
+    track?.querySelector('.carousel-clone:last-child')?.classList.toggle('active',active===0);
+    dots?.querySelectorAll('button').forEach((d,i)=>d.classList.toggle('active',i===active));
+  }
   if(track&&slides.length&&dots){
     const firstClone=slides[0].cloneNode(true),lastClone=slides[slides.length-1].cloneNode(true);
-    firstClone.classList.add('carousel-clone');lastClone.classList.add('carousel-clone');firstClone.setAttribute('aria-hidden','true');lastClone.setAttribute('aria-hidden','true');
+    firstClone.classList.add('carousel-clone');lastClone.classList.add('carousel-clone');
+    firstClone.setAttribute('aria-hidden','true');lastClone.setAttribute('aria-hidden','true');
     track.appendChild(firstClone);track.insertBefore(lastClone,slides[0]);
     const rendered=[...track.querySelectorAll('.showcase-slide')];
-    function jumpToRendered(idx){programmaticScroll=true;const previousBehavior=track.style.scrollBehavior;track.style.scrollBehavior='auto';track.scrollLeft=slideLeft(rendered[idx]);requestAnimationFrame(()=>{track.style.scrollBehavior=previousBehavior;programmaticScroll=false})}
-    function go(delta,manual=false){
-      if(manual)stopCarouselAuto();
-      clearTimeout(loopResetTimer);
-      let target=active+delta;
-      let renderedIndex=target+1;
-      if(target<0){active=slides.length-1;renderedIndex=0}
-      else if(target>=slides.length){active=0;renderedIndex=rendered.length-1}
-      else active=target;
-      programmaticScroll=true;
-      track.scrollTo({left:slideLeft(rendered[renderedIndex]),behavior:'smooth'});
+    const jumpToRendered=idx=>{carouselProgrammatic=true;track.scrollLeft=slideLeft(rendered[idx]);requestAnimationFrame(()=>carouselProgrammatic=false)};
+    const pauseCarousel=(ms=2200)=>{carouselPausedUntil=Math.max(carouselPausedUntil,performance.now()+ms)};
+    const updateActiveFromCenter=()=>{
+      const c=track.scrollLeft+track.clientWidth/2;let best=1,dist=Infinity;
+      rendered.forEach((sl,i)=>{const d=Math.abs(sl.offsetLeft+sl.clientWidth/2-c);if(d<dist){dist=d;best=i}});
+      active=best===0?slides.length-1:best===rendered.length-1?0:best-1;
       updateCarousel();
-      const needsReset=renderedIndex===0||renderedIndex===rendered.length-1;
-      loopResetTimer=setTimeout(()=>{
-        if(needsReset) jumpToRendered(active+1);
-        else programmaticScroll=false;
-      },carouselSpeed+90);
-    }
-    function goTo(i,manual=false){
-      if(manual)stopCarouselAuto();
+    };
+    const loopWidth=()=>slideLeft(rendered[rendered.length-1])-slideLeft(rendered[1]);
+    const glide=now=>{
+      if(!lastCarouselFrame)lastCarouselFrame=now;
+      const dt=Math.min(40,now-lastCarouselFrame);lastCarouselFrame=now;
+      if(!document.hidden&&now>=carouselPausedUntil&&!carouselProgrammatic){
+        const speed=matchMedia('(max-width:760px)').matches?18:28; // px / second
+        track.scrollLeft+=speed*dt/1000;
+        const endAt=slideLeft(rendered[rendered.length-1]);
+        if(track.scrollLeft>=endAt){track.scrollLeft-=loopWidth()}
+      }
+      if(now-activeUpdateFrame>90){updateActiveFromCenter();activeUpdateFrame=now}
+      carouselRAF=requestAnimationFrame(glide);
+    };
+    const goTo=(i,manual=true)=>{
       active=(i+slides.length)%slides.length;
-      programmaticScroll=true;
+      if(manual)pauseCarousel(2600);
+      carouselProgrammatic=true;
       track.scrollTo({left:slideLeft(rendered[active+1]),behavior:'smooth'});
       updateCarousel();
-      setTimeout(()=>{programmaticScroll=false},carouselSpeed+90);
-    }
+      setTimeout(()=>{carouselProgrammatic=false;lastCarouselFrame=performance.now()},650);
+    };
     slides.forEach((_,i)=>{const d=document.createElement('button');d.type='button';d.setAttribute('aria-label',String(i+1));d.addEventListener('click',()=>goTo(i,true));dots.appendChild(d)});
-    prev?.addEventListener('click',()=>go(-1,true));next?.addEventListener('click',()=>go(1,true));
-    ['pointerdown','touchstart','wheel'].forEach(ev=>track.addEventListener(ev,()=>{if(!programmaticScroll)stopCarouselAuto()},{passive:true}));
-    track.addEventListener('scroll',()=>{
-      clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{
-        const c=track.scrollLeft+track.clientWidth/2;let best=0,dist=Infinity;rendered.forEach((sl,i)=>{const d=Math.abs(sl.offsetLeft+sl.clientWidth/2-c);if(d<dist){dist=d;best=i}});
-        if(best===0){active=slides.length-1;if(!programmaticScroll)jumpToRendered(slides.length)}
-        else if(best===rendered.length-1){active=0;if(!programmaticScroll)jumpToRendered(1)}
-        else active=best-1;
-        updateCarousel();
-      },55)
-    },{passive:true});
-    track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();go(-1,true)}if(e.key==='ArrowRight'){e.preventDefault();go(1,true)}});
-    requestAnimationFrame(()=>{jumpToRendered(1);updateCarousel()});
-    carouselAutoTimer=setInterval(()=>{if(!carouselManual&&!document.hidden)go(1,false)},3000);
-    window.addEventListener('resize',()=>jumpToRendered(active+1));
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!carouselManual)jumpToRendered(active+1)});
+    prev?.addEventListener('click',()=>goTo(active-1,true));next?.addEventListener('click',()=>goTo(active+1,true));
+    ['pointerdown','touchstart','wheel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(3200),{passive:true}));
+    track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();goTo(active-1,true)}if(e.key==='ArrowRight'){e.preventDefault();goTo(active+1,true)}});
+    window.addEventListener('resize',()=>{pauseCarousel(700);jumpToRendered(active+1)});
+    requestAnimationFrame(()=>{jumpToRendered(1);updateCarousel();carouselRAF=requestAnimationFrame(glide)});
   }
   // Screenshot lightbox — lets mobile users inspect the real UI without cropping
   const lightbox=document.querySelector('#image-lightbox'),lightboxImg=document.querySelector('#image-lightbox-img'),lightboxCaption=document.querySelector('#image-lightbox-caption');
@@ -437,6 +433,16 @@
   const langObs=new MutationObserver(syncPrices);langObs.observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 
+
+
+  // Mobile pricing period tabs: visual navigation to the three plan cards.
+  const priceTabs=[...document.querySelectorAll('[data-price-tab]')];
+  const priceCards=[...document.querySelectorAll('#pricing .price-card')];
+  priceTabs.forEach(tab=>tab.addEventListener('click',()=>{
+    const i=Number(tab.dataset.priceTab)||0;
+    priceTabs.forEach((b,n)=>b.classList.toggle('active',n===i));
+    priceCards[i]?.scrollIntoView({behavior:'smooth',block:'center'});
+  }));
 
 /* v57 — stable laptop fitting + low-overhead automatic pane demonstration. */
 (()=>{

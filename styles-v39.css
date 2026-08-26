@@ -4729,3 +4729,180 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
   }
 }
 \n\n/* v68 — unified hotkey press + synchronized demo drift */\n/* Hotkeys use the exact same press language as the pricing Buy buttons. */\n#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(1){animation:boPricingPress 6s ease-in-out infinite 0s!important}\n#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(2){animation:boPricingPress 6s ease-in-out infinite 1s!important}\n#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(3){animation:boPricingPress 6s ease-in-out infinite 2s!important}\n#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(4){animation:boPricingPress 6s ease-in-out infinite 3s!important}\n#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(5){animation:boPricingPress 6s ease-in-out infinite 4s!important}\n#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(6){animation:boPricingPress 6s ease-in-out infinite 5s!important}\n/* JS now interpolates --split-x/--split-y, so no independent grid transition can expose black seams. */\n.hero-demo .demo-laptop-stage .demo-grid{transition:none!important}\n
+/* === v69 — continuous showcase, unified account actions, stronger hotkeys, mobile plan cards === */
+
+/* Working screens glide continuously instead of pausing on a 3-second autoplay cadence. */
+.showcase-track{
+  scroll-snap-type:none!important;
+  scroll-behavior:auto!important;
+  overscroll-behavior-x:contain;
+}
+.showcase-slide{scroll-snap-align:none!important}
+
+/* Account: add Support after Sign in and give it a restrained colour pulse. */
+.account-link-actions .support-pulse{
+  border-color:rgba(176,235,51,.26)!important;
+  animation:boSupportPulse 4.6s ease-in-out infinite!important;
+}
+@keyframes boSupportPulse{
+  0%,68%,100%{background:rgba(255,255,255,.025);border-color:rgba(176,235,51,.22);box-shadow:none;color:var(--text)}
+  78%{background:rgba(176,235,51,.12);border-color:rgba(176,235,51,.52);box-shadow:0 0 0 1px rgba(176,235,51,.08),0 8px 26px rgba(176,235,51,.10);color:#eaffc7}
+  88%{background:rgba(255,255,255,.025);border-color:rgba(176,235,51,.28);box-shadow:none;color:var(--text)}
+}
+:root[data-theme="light"] .account-link-actions .support-pulse{color:#253021}
+:root[data-theme="light"] .account-link-actions .support-pulse{animation-name:boSupportPulseLight!important}
+@keyframes boSupportPulseLight{
+  0%,68%,100%{background:rgba(255,255,255,.68);border-color:rgba(91,130,28,.18);box-shadow:none;color:#253021}
+  78%{background:rgba(158,216,45,.17);border-color:rgba(91,130,28,.38);box-shadow:0 8px 26px rgba(91,130,28,.10);color:#294305}
+  88%{background:rgba(255,255,255,.68);border-color:rgba(91,130,28,.20);box-shadow:none;color:#253021}
+}
+@media(min-width:981px){
+  .account-link-card-refined .account-link-actions{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;gap:8px!important}
+  .account-link-card-refined .account-link-actions .button{padding-inline:18px!important;font-size:12px!important}
+}
+@media(max-width:760px){
+  .account-link-actions{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+  .account-link-actions .button{width:100%!important;max-width:none!important}
+}
+
+/* Hotkeys: an actual deep button press, one-by-one left-to-right, then the lower row. */
+#features .hotkey-ui .hotkey-chip{transform-origin:center;will-change:transform,filter,box-shadow}
+#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(1){animation:boHotkeyDeepPress 5.4s cubic-bezier(.2,.8,.2,1) infinite 0s!important}
+#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(2){animation:boHotkeyDeepPress 5.4s cubic-bezier(.2,.8,.2,1) infinite .9s!important}
+#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(3){animation:boHotkeyDeepPress 5.4s cubic-bezier(.2,.8,.2,1) infinite 1.8s!important}
+#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(4){animation:boHotkeyDeepPress 5.4s cubic-bezier(.2,.8,.2,1) infinite 2.7s!important}
+#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(5){animation:boHotkeyDeepPress 5.4s cubic-bezier(.2,.8,.2,1) infinite 3.6s!important}
+#features .capability-card.is-visible .hotkey-ui .hotkey-chip:nth-child(6){animation:boHotkeyDeepPress 5.4s cubic-bezier(.2,.8,.2,1) infinite 4.5s!important}
+@keyframes boHotkeyDeepPress{
+  0%,15%,100%{transform:translateY(0) scale(1);filter:brightness(1);box-shadow:inset 0 1px rgba(255,255,255,.10),0 3px 8px rgba(0,0,0,.22)}
+  5%{transform:translateY(5px) scale(.88);filter:brightness(.88);box-shadow:inset 0 7px 14px rgba(0,0,0,.34),0 1px 2px rgba(0,0,0,.16)}
+  10%{transform:translateY(-1px) scale(1.02);filter:brightness(1.05);box-shadow:inset 0 1px rgba(255,255,255,.13),0 5px 12px rgba(0,0,0,.24)}
+}
+
+/* Pricing period selector is a phone-only visual navigator, inspired by the supplied reference. */
+.pricing-period-tabs{display:none}
+#pricing .popular-plan{border-color:rgba(176,235,51,.44)!important;box-shadow:0 0 0 1px rgba(176,235,51,.06),0 18px 46px rgba(0,0,0,.16)}
+#pricing .popular-plan .price-head em{
+  color:#152007!important;
+  background:var(--accent)!important;
+  border-color:transparent!important;
+  font-weight:800!important;
+  letter-spacing:.02em!important;
+}
+:root[data-theme="light"] #pricing .popular-plan{border-color:rgba(112,169,20,.48)!important;box-shadow:0 18px 44px rgba(64,92,28,.10)}
+
+@media(max-width:760px){
+  #pricing .content-shell{width:calc(100% - 32px)!important}
+  #pricing .section-heading{margin-bottom:24px!important}
+  .pricing-period-tabs{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:4px;
+    width:100%;
+    padding:6px;
+    margin:0 auto 20px;
+    border-radius:22px;
+    background:#090b09;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 14px 34px rgba(0,0,0,.22);
+  }
+  .pricing-period-tabs button{
+    min-width:0;
+    min-height:44px;
+    border:0;
+    border-radius:17px;
+    background:transparent;
+    color:#e8ece8;
+    font:inherit;
+    font-size:13px;
+    font-weight:680;
+    cursor:pointer;
+    transition:background .22s ease,color .22s ease,transform .16s ease;
+  }
+  .pricing-period-tabs button.active{background:var(--accent);color:#111;transform:scale(1.01)}
+  :root[data-theme="light"] .pricing-period-tabs{background:#111411;border-color:rgba(0,0,0,.12)}
+
+  #pricing .pricing-grid-three{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    align-items:stretch!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+  #pricing .price-card{
+    min-height:310px!important;
+    width:100%!important;
+    padding:28px 26px 24px!important;
+    border-radius:30px!important;
+    background:linear-gradient(145deg,#0a0d0a 0%,#050705 76%)!important;
+    border:1px solid rgba(255,255,255,.12)!important;
+    box-shadow:0 18px 46px rgba(0,0,0,.22)!important;
+    overflow:hidden!important;
+  }
+  #pricing .price-card.popular-plan{
+    background:linear-gradient(145deg,rgba(176,235,51,.10),#080b08 32%,#050705 80%)!important;
+    border-color:rgba(176,235,51,.62)!important;
+  }
+  #pricing .price-head{min-height:30px!important;gap:10px!important}
+  #pricing .price-head span{font-size:18px!important;line-height:1.15!important;font-weight:650!important;white-space:nowrap!important}
+  #pricing .price-head em{font-size:11px!important;padding:6px 11px!important;border-radius:999px!important;white-space:nowrap!important}
+  #pricing .price-card>strong{
+    display:block!important;
+    margin:22px 0 12px!important;
+    font-size:clamp(38px,11vw,52px)!important;
+    line-height:.98!important;
+    letter-spacing:-.045em!important;
+    white-space:nowrap!important;
+  }
+  #pricing .price-card>p{
+    max-width:30ch!important;
+    min-height:0!important;
+    margin:0 0 28px!important;
+    font-size:15px!important;
+    line-height:1.5!important;
+    color:#aeb6af!important;
+  }
+  #pricing .price-card .button{
+    width:100%!important;
+    min-height:58px!important;
+    height:auto!important;
+    margin-top:auto!important;
+    padding:12px 18px!important;
+    border-radius:16px!important;
+    font-size:17px!important;
+    line-height:1.08!important;
+    font-weight:760!important;
+  }
+  :root[data-theme="light"] #pricing .price-card{
+    background:linear-gradient(145deg,#101310,#070907)!important;
+    color:#f7f9f6!important;
+    border-color:rgba(255,255,255,.12)!important;
+  }
+  :root[data-theme="light"] #pricing .price-card>p{color:#b1b8b2!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #features .hotkey-ui .hotkey-chip,.account-link-actions .support-pulse{animation:none!important;transform:none!important}
+}
+
+/* v70 — desktop persistent navigation */
+@media (min-width:1081px){
+  html{scroll-padding-top:92px}
+  .topbar{
+    position:sticky!important;
+    top:0!important;
+    z-index:5000!important;
+    background:rgba(8,10,8,.84)!important;
+    border-bottom:1px solid rgba(255,255,255,.07)!important;
+    backdrop-filter:blur(22px) saturate(145%)!important;
+    -webkit-backdrop-filter:blur(22px) saturate(145%)!important;
+    box-shadow:0 8px 28px rgba(0,0,0,.12);
+  }
+  :root[data-theme="light"] .topbar{
+    background:rgba(249,251,247,.88)!important;
+    border-bottom-color:rgba(28,47,29,.09)!important;
+    box-shadow:0 8px 28px rgba(28,47,29,.06);
+  }
+  main section[id],main [id]{scroll-margin-top:92px}
+}

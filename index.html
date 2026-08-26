@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v39.css?v=68">
+  <link rel="stylesheet" href="styles-v39.css?v=70">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -380,22 +380,22 @@
           <div class="account-link-actions">
             <a class="button primary" href="account.html?mode=register" data-i18n="createAccount">Создать аккаунт</a>
             <a class="button secondary" href="account.html?mode=signin" data-i18n="signIn">Войти</a>
+            <a class="button secondary support-pulse" href="support.html" data-i18n="contactSupport">Связаться с поддержкой</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <div class="content-shell cta-card">
-        <div><span data-i18n="ctaEyebrow">BreakOut для Mac</span><h2 data-i18n="ctaTitle">Готовьте игру к разбору прямо по ходу матча.</h2></div>
-        <div class="cta-actions"><button class="button primary" data-action="download" data-i18n="download">Скачать для macOS</button><a class="button secondary" href="support.html" data-i18n="contactSupport">Связаться с поддержкой</a></div>
-      </div>
-    </section>
     <section class="section pricing-section" id="pricing">
       <div class="content-shell">
         <div class="section-heading">
           <div><div class="kicker" data-i18n="pricingKicker">Установка и доступ</div><h2 data-i18n="pricingTitle">Скачайте BreakOut и выберите срок доступа.</h2></div>
           <p data-i18n="pricingIntro">После установки первый успешный вход активирует 7-дневный пробный период. Дальнейший доступ оформляется на 6 месяцев или 1 год.</p>
+        </div>
+        <div class="pricing-period-tabs" aria-label="Срок доступа">
+          <button type="button" class="active" data-price-tab="0" data-i18n="trialShort">7 дней</button>
+          <button type="button" data-price-tab="1" data-i18n="sixMonths">6 месяцев</button>
+          <button type="button" data-price-tab="2" data-i18n="oneYear">1 год</button>
         </div>
         <div class="pricing-grid pricing-grid-three">
           <article class="price-card trial-card">
@@ -404,8 +404,8 @@
             <p data-i18n="trialCopy">Полный доступ к BreakOut в течение 7 дней.</p>
             <button class="button primary full" data-action="download" data-i18n="startTrial">Начать пробный период</button>
           </article>
-          <article class="price-card six-month-card">
-            <div class="price-head"><span data-i18n="sixMonths">6 месяцев</span></div>
+          <article class="price-card six-month-card popular-plan">
+            <div class="price-head"><span data-i18n="sixMonths">6 месяцев</span><em data-i18n="popularPlan">Популярный</em></div>
             <strong data-price-ru="40 000 ₽" data-price-en="$525">40 000 ₽</strong>
             <p data-i18n="priceSixCopy">Для регулярной работы в течение сезона.</p>
             <button class="button primary full" data-action="download" data-i18n="buyPlan">Купить</button>
@@ -468,6 +468,6 @@
   </div>
 
   <script src="config-v26.js?v=27"></script>
-  <script src="script-v39.js?v=68"></script>
+  <script src="script-v39.js?v=70"></script>
 </body>
 </html>
