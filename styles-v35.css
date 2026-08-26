@@ -3112,3 +3112,16 @@ section[id],#breakout-demo{scroll-margin-top:92px}
   #features .hotkey-ui .hotkey-chip b{font-size:clamp(12.5px,3.6vw,14.5px)!important}
   #features .cameras-ui span{left:5px!important;top:5px!important;font-size:7px!important}
 }
+
+/* v71 — support top action vertical alignment */
+.legal-back-home{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-sizing:border-box!important;
+  min-height:42px!important;
+  height:42px!important;
+  padding:0 16px!important;
+  line-height:1!important;
+  vertical-align:middle!important;
+}

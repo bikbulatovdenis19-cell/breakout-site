@@ -4906,3 +4906,36 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
   }
   main section[id],main [id]{scroll-margin-top:92px}
 }
+
+/* v71 — seamless working-screen marquee and simplified controls */
+.showcase-track{
+  scroll-snap-type:none!important;
+  scroll-behavior:auto!important;
+  overscroll-behavior-x:contain!important;
+  -webkit-overflow-scrolling:touch;
+  cursor:grab;
+}
+.showcase-track:active{cursor:grabbing}
+.showcase-slide{scroll-snap-align:none!important;scroll-snap-stop:normal!important}
+.carousel-arrow,.carousel-dots{display:none!important}
+.showcase-slide.carousel-clone{pointer-events:auto!important}
+
+/* v72 — keep the Popular badge in the safe top-right corner of the 6-month card on every viewport. */
+#pricing .price-card.popular-plan{position:relative!important}
+#pricing .price-card.popular-plan .price-head{position:static!important}
+#pricing .price-card.popular-plan .price-head em{
+  position:absolute!important;
+  top:20px!important;
+  right:20px!important;
+  z-index:4!important;
+  margin:0!important;
+}
+@media(max-width:760px){
+  #pricing .price-card.popular-plan .price-head em{
+    top:20px!important;
+    right:20px!important;
+  }
+  #pricing .price-card.popular-plan .price-head{
+    padding-right:118px!important;
+  }
+}

@@ -217,59 +217,68 @@
     }
   }
 
-  // Carousel — continuously glides through all working screens with a seamless loop.
+  // Carousel — continuous, user-scrollable, seamless right-to-left loop.
+  // Three copies keep manual scrolling seamless in either direction; autoplay resumes after interaction.
   const track=document.querySelector('.showcase-track');
   const slides=track?[...track.querySelectorAll('.showcase-slide')]:[];
-  const prev=document.querySelector('.carousel-arrow.prev'),next=document.querySelector('.carousel-arrow.next'),dots=document.querySelector('.carousel-dots');
-  let active=0,carouselRAF=0,carouselPausedUntil=0,carouselProgrammatic=false,lastCarouselFrame=0,activeUpdateFrame=0;
-  function slideLeft(el){return el.offsetLeft-(track.clientWidth-el.clientWidth)/2}
-  function updateCarousel(){
-    slides.forEach((sl,i)=>sl.classList.toggle('active',i===active));
-    track?.querySelector('.carousel-clone:first-child')?.classList.toggle('active',active===slides.length-1);
-    track?.querySelector('.carousel-clone:last-child')?.classList.toggle('active',active===0);
-    dots?.querySelectorAll('button').forEach((d,i)=>d.classList.toggle('active',i===active));
-  }
-  if(track&&slides.length&&dots){
-    const firstClone=slides[0].cloneNode(true),lastClone=slides[slides.length-1].cloneNode(true);
-    firstClone.classList.add('carousel-clone');lastClone.classList.add('carousel-clone');
-    firstClone.setAttribute('aria-hidden','true');lastClone.setAttribute('aria-hidden','true');
-    track.appendChild(firstClone);track.insertBefore(lastClone,slides[0]);
-    const rendered=[...track.querySelectorAll('.showcase-slide')];
-    const jumpToRendered=idx=>{carouselProgrammatic=true;track.scrollLeft=slideLeft(rendered[idx]);requestAnimationFrame(()=>carouselProgrammatic=false)};
-    const pauseCarousel=(ms=2200)=>{carouselPausedUntil=Math.max(carouselPausedUntil,performance.now()+ms)};
-    const updateActiveFromCenter=()=>{
-      const c=track.scrollLeft+track.clientWidth/2;let best=1,dist=Infinity;
-      rendered.forEach((sl,i)=>{const d=Math.abs(sl.offsetLeft+sl.clientWidth/2-c);if(d<dist){dist=d;best=i}});
-      active=best===0?slides.length-1:best===rendered.length-1?0:best-1;
-      updateCarousel();
-    };
-    const loopWidth=()=>slideLeft(rendered[rendered.length-1])-slideLeft(rendered[1]);
+  let carouselRAF=0,carouselPauseUntil=0,lastCarouselFrame=0,carouselCycleWidth=0,carouselCycleStart=0,carouselNormalizing=false;
+  const pauseCarousel=(ms=1400)=>{carouselPauseUntil=Math.max(carouselPauseUntil,performance.now()+ms)};
+  const markLoopCopies=(nodes)=>nodes.forEach((node,i)=>{node.classList.add('carousel-clone');node.setAttribute('aria-hidden','true');node.dataset.loopIndex=String(i)});
+  const updateCarouselActive=()=>{
+    if(!track||!slides.length)return;
+    const all=[...track.querySelectorAll('.showcase-slide')];
+    const center=track.scrollLeft+track.clientWidth/2;
+    let nearest=null,best=Infinity;
+    all.forEach((sl,i)=>{const d=Math.abs(sl.offsetLeft+sl.clientWidth/2-center);if(d<best){best=d;nearest=sl}});
+    const idx=nearest?.classList.contains('carousel-clone')?Number(nearest.dataset.loopIndex):slides.indexOf(nearest);
+    all.forEach(sl=>sl.classList.remove('active'));
+    if(Number.isFinite(idx)&&idx>=0){
+      slides[idx]?.classList.add('active');
+      track.querySelectorAll(`.carousel-clone[data-loop-index="${idx}"]`).forEach(sl=>sl.classList.add('active'));
+    }
+  };
+  const normalizeCarousel=()=>{
+    if(!track||!carouselCycleWidth||carouselNormalizing)return;
+    const x=track.scrollLeft;
+    if(x<carouselCycleStart){carouselNormalizing=true;track.scrollLeft=x+carouselCycleWidth;carouselNormalizing=false}
+    else if(x>=carouselCycleStart+carouselCycleWidth){carouselNormalizing=true;track.scrollLeft=x-carouselCycleWidth;carouselNormalizing=false}
+  };
+  const setupCarouselLoop=()=>{
+    if(!track||!slides.length)return;
+    track.querySelectorAll('.carousel-clone').forEach(n=>n.remove());
+    const before=slides.map(sl=>sl.cloneNode(true)),after=slides.map(sl=>sl.cloneNode(true));
+    markLoopCopies(before);markLoopCopies(after);
+    const beforeFrag=document.createDocumentFragment(),afterFrag=document.createDocumentFragment();
+    before.forEach(n=>beforeFrag.appendChild(n));after.forEach(n=>afterFrag.appendChild(n));
+    track.insertBefore(beforeFrag,slides[0]);track.appendChild(afterFrag);
+    requestAnimationFrame(()=>{
+      const afterFirst=after[0];
+      carouselCycleStart=slides[0].offsetLeft;
+      carouselCycleWidth=afterFirst.offsetLeft-carouselCycleStart;
+      track.scrollLeft=carouselCycleStart;
+      updateCarouselActive();
+      lastCarouselFrame=performance.now();
+    });
+  };
+  if(track&&slides.length){
+    setupCarouselLoop();
     const glide=now=>{
       if(!lastCarouselFrame)lastCarouselFrame=now;
-      const dt=Math.min(40,now-lastCarouselFrame);lastCarouselFrame=now;
-      if(!document.hidden&&now>=carouselPausedUntil&&!carouselProgrammatic){
-        const speed=matchMedia('(max-width:760px)').matches?18:28; // px / second
+      const dt=Math.min(34,now-lastCarouselFrame);lastCarouselFrame=now;
+      if(!document.hidden&&now>=carouselPauseUntil&&!carouselNormalizing&&carouselCycleWidth){
+        const speed=matchMedia('(max-width:760px)').matches?22:34; // px per second
         track.scrollLeft+=speed*dt/1000;
-        const endAt=slideLeft(rendered[rendered.length-1]);
-        if(track.scrollLeft>=endAt){track.scrollLeft-=loopWidth()}
+        normalizeCarousel();
       }
-      if(now-activeUpdateFrame>90){updateActiveFromCenter();activeUpdateFrame=now}
+      updateCarouselActive();
       carouselRAF=requestAnimationFrame(glide);
     };
-    const goTo=(i,manual=true)=>{
-      active=(i+slides.length)%slides.length;
-      if(manual)pauseCarousel(2600);
-      carouselProgrammatic=true;
-      track.scrollTo({left:slideLeft(rendered[active+1]),behavior:'smooth'});
-      updateCarousel();
-      setTimeout(()=>{carouselProgrammatic=false;lastCarouselFrame=performance.now()},650);
-    };
-    slides.forEach((_,i)=>{const d=document.createElement('button');d.type='button';d.setAttribute('aria-label',String(i+1));d.addEventListener('click',()=>goTo(i,true));dots.appendChild(d)});
-    prev?.addEventListener('click',()=>goTo(active-1,true));next?.addEventListener('click',()=>goTo(active+1,true));
-    ['pointerdown','touchstart','wheel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(3200),{passive:true}));
-    track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();goTo(active-1,true)}if(e.key==='ArrowRight'){e.preventDefault();goTo(active+1,true)}});
-    window.addEventListener('resize',()=>{pauseCarousel(700);jumpToRendered(active+1)});
-    requestAnimationFrame(()=>{jumpToRendered(1);updateCarousel();carouselRAF=requestAnimationFrame(glide)});
+    ['pointerdown','touchstart','wheel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(ev==='wheel'?1000:1800),{passive:true}));
+    ['pointerup','touchend','pointercancel'].forEach(ev=>track.addEventListener(ev,()=>pauseCarousel(900),{passive:true}));
+    track.addEventListener('scroll',()=>{normalizeCarousel();updateCarouselActive()},{passive:true});
+    track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){pauseCarousel(1200)}});
+    window.addEventListener('resize',()=>{pauseCarousel(500);setupCarouselLoop()});
+    carouselRAF=requestAnimationFrame(glide);
   }
   // Screenshot lightbox — lets mobile users inspect the real UI without cropping
   const lightbox=document.querySelector('#image-lightbox'),lightboxImg=document.querySelector('#image-lightbox-img'),lightboxCaption=document.querySelector('#image-lightbox-caption');

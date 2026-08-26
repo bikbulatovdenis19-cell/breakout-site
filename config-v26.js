@@ -8,7 +8,7 @@ window.BREAKOUT_CONFIG = {
   registerURL: "account.html?build=19&mode=register",
   purchaseSixMonthsURL: "account.html?build=19&mode=register&plan=6m",
   purchaseAnnualURL: "account.html?build=19&mode=register&plan=1y",
-  supportEmail: "",
+  supportEmail: "Denbikbulatov@yandex.com",
 
   // Public client configuration for the BreakOut Dev account service.
   // Only the browser-safe publishable key belongs here; secret/service-role keys never do.
@@ -16,4 +16,4 @@ window.BREAKOUT_CONFIG = {
   supabasePublishableKey: "sb_publishable_FvYjy4TBGqTP5NaLKw-0uA_oM2ehoEK"
 };
 
-window.BREAKOUT_BUILD = "21.0";
+window.BREAKOUT_BUILD = "22.0";
