@@ -268,7 +268,7 @@
       carouselCycleStart=slides[0].offsetLeft;
       carouselCycleWidth=afterFirst.offsetLeft-carouselCycleStart;
       // Begin at a real phase inside the loop instead of always looking freshly reset.
-      const nominalSpeed=matchMedia('(max-width:760px)').matches?42:52;
+      const nominalSpeed=matchMedia('(max-width:760px)').matches?95:120;
       const phase=((Date.now()-carouselEpoch)/1000*nominalSpeed)%Math.max(1,carouselCycleWidth);
       track.scrollLeft=carouselCycleStart+phase;
       updateCarouselActive();
@@ -284,7 +284,7 @@
       if(!document.hidden&&now>=carouselPauseUntil&&!carouselNormalizing&&carouselCycleWidth){
         // Moving toward increasing scrollLeft keeps the visible sequence 1 → 2 → ... → 6.
         // The higher speed makes the drift clearly visible without looking like slide-by-slide autoplay.
-        const speed=matchMedia('(max-width:760px)').matches?42:52;
+        const speed=matchMedia('(max-width:760px)').matches?95:120;
         track.scrollLeft+=speed*dt/1000;
         normalizeCarousel();
       }
