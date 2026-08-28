@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v39.css?v=73">
+  <link rel="stylesheet" href="styles-v39.css?v=75">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -372,12 +372,13 @@
       <div class="content-shell">
         <div class="section-heading">
           <div><div class="kicker" data-i18n="pricingKicker">Установка и доступ</div><h2 data-i18n="pricingTitle">Скачайте BreakOut и выберите срок доступа.</h2></div>
-          <p data-i18n="pricingIntro">После установки первый успешный вход активирует 7-дневный пробный период. Дальнейший доступ оформляется на 6 месяцев или 1 год.</p>
+          <p data-i18n="pricingIntro">После установки первый успешный вход активирует 7-дневный пробный период. Дальнейший доступ можно оформить на 1 месяц, 6 месяцев или 1 год.</p>
         </div>
         <div class="pricing-period-tabs" aria-label="Срок доступа">
           <button type="button" class="active" data-price-tab="0" data-i18n="trialShort">7 дней</button>
-          <button type="button" data-price-tab="1" data-i18n="sixMonths">6 месяцев</button>
-          <button type="button" data-price-tab="2" data-i18n="oneYear">1 год</button>
+          <button type="button" data-price-tab="1" data-i18n="oneMonth">1 месяц</button>
+          <button type="button" data-price-tab="2" data-i18n="sixMonths">6 месяцев</button>
+          <button type="button" data-price-tab="3" data-i18n="oneYear">1 год</button>
         </div>
         <div class="pricing-grid pricing-grid-three">
           <article class="price-card trial-card">
@@ -385,6 +386,12 @@
             <strong data-i18n="trialPrice">7 дней</strong>
             <p data-i18n="trialCopy">Полный доступ к BreakOut в течение 7 дней.</p>
             <button class="button primary full" data-action="download" data-i18n="startTrial">Начать пробный период</button>
+          </article>
+          <article class="price-card monthly-card">
+            <div class="price-head"><span data-i18n="oneMonth">1 месяц</span></div>
+            <strong data-price-ru="7 000 ₽" data-price-en="$92">7 000 ₽</strong>
+            <p data-i18n="priceMonthCopy">Для короткого рабочего цикла или одного этапа сезона.</p>
+            <button class="button primary full" data-action="download" data-i18n="buyPlan">Купить</button>
           </article>
           <article class="price-card six-month-card popular-plan">
             <div class="price-head"><span data-i18n="sixMonths">6 месяцев</span><em data-i18n="popularPlan">Популярный</em></div>
@@ -466,6 +473,7 @@
   </div>
 
   <script src="config-v26.js?v=27"></script>
-  <script src="script-v39.js?v=73"></script>
+  <script src="script-v39.js?v=75"></script>
+  <script src="analytics-track-v1.js?v=1"></script>
 </body>
 </html>

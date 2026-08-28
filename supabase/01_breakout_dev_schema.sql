@@ -17,7 +17,7 @@ create table if not exists public.profiles (
 create table if not exists public.subscriptions (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
-  plan text not null check (plan in ('trial','six_months','annual','complimentary')),
+  plan text not null check (plan in ('trial','monthly','six_months','annual','complimentary')),
   status text not null default 'active' check (status in ('active','payment_issue','revoked','expired')),
   starts_at timestamptz not null default now(),
   expires_at timestamptz not null,
@@ -49,7 +49,7 @@ create table if not exists public.payments (
   user_id uuid not null references auth.users(id) on delete cascade,
   provider text not null default 'yookassa',
   provider_payment_id text,
-  plan text check (plan in ('six_months','annual')),
+  plan text check (plan in ('monthly','six_months','annual')),
   amount_minor bigint,
   currency text not null default 'RUB',
   status text not null default 'pending',

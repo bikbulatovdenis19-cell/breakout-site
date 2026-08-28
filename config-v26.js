@@ -6,6 +6,7 @@ window.BREAKOUT_CONFIG = {
   accountURL: "account.html?build=19",
   signInURL: "account.html?build=19&mode=signin",
   registerURL: "account.html?build=19&mode=register",
+  purchaseMonthlyURL: "account.html?build=19&mode=register&plan=1m",
   purchaseSixMonthsURL: "account.html?build=19&mode=register&plan=6m",
   purchaseAnnualURL: "account.html?build=19&mode=register&plan=1y",
   supportEmail: "Denbikbulatov@yandex.com",
@@ -16,4 +17,4 @@ window.BREAKOUT_CONFIG = {
   supabasePublishableKey: "sb_publishable_FvYjy4TBGqTP5NaLKw-0uA_oM2ehoEK"
 };
 
-window.BREAKOUT_BUILD = "22.0";
+window.BREAKOUT_BUILD = "23.0";

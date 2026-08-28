@@ -4955,3 +4955,19 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
 }
 .showcase-slide.carousel-clone{pointer-events:auto!important}
 .carousel-arrow,.carousel-dots{display:none!important}
+
+
+/* v75 — four access options: 7 days, 1 month, 6 months, 1 year. */
+@media(min-width:761px){
+  #pricing .pricing-grid-three{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}
+}
+@media(max-width:760px){
+  .pricing-period-tabs{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important;padding:5px!important}
+  .pricing-period-tabs button{font-size:11px!important;padding:0 4px!important}
+}
+
+/* v75 — keep the purchase pulse sequence balanced across four access cards. */
+#pricing .price-card:nth-child(1) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 0s!important}
+#pricing .price-card:nth-child(2) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 1.8s!important}
+#pricing .price-card:nth-child(3) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 3.6s!important}
+#pricing .price-card:nth-child(4) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 5.4s!important}
