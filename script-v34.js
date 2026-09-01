@@ -107,7 +107,7 @@
       return raw||message('Не удалось выполнить запрос.','Request failed.');
     }
     function fmtDate(v){if(!v)return'—';const d=new Date(v);if(Number.isNaN(d.getTime()))return'—';return new Intl.DateTimeFormat(ru()?'ru-RU':'en-US',{day:'2-digit',month:'long',year:'numeric'}).format(d)}
-    function planText(v){if(v==='six_months')return t('planSixName')||'6 месяцев';if(v==='annual')return t('planYearName')||'1 год';if(v==='trial')return message('Пробный доступ','Trial');if(v==='complimentary')return message('Тестовый доступ','Test access');return'—'}
+    function planText(v){if(v==='six_months')return t('planSixName')||'6 месяцев';if(v==='annual')return t('planYearName')||'1 год';if(v==='trial')return message('Пробный доступ','Trial');if(v==='complimentary')return message('Премиум','Premium');return'—'}
     function stateText(a){if(!a)return'—';if(a.status==='active'&&new Date(a.expires_at)>new Date())return message('Активен','Active');if(a.status==='payment_issue')return message('Оплата','Payment');if(a.status==='revoked')return message('Отключён','Revoked');return message('Истёк','Expired')}
     function resetPreview(){if(previewState)previewState.textContent=t('accountPreviewInactive')||message('Не активирован','Inactive');if(previewPlan)previewPlan.textContent='—';if(previewDevices)previewDevices.textContent='0 Mac'}
     function showAuth(next='signin'){
