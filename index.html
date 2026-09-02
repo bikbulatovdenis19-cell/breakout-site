@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v41.css?v=80">
+  <link rel="stylesheet" href="styles-v42.css?v=81">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -432,13 +432,17 @@
           <p class="development-platform-lead" data-i18n="developmentPlatforms">И расширяем BreakOut на новые платформы.</p>
         </div>
         <div class="platform-badges">
-          <a class="platform-badge platform-macos" href="#" data-action="download" aria-label="Скачать BreakOut для macOS">
-            <span class="platform-logo apple-logo">●</span>
-            <span class="platform-badge-copy"><small data-i18n="platformDownloadFor">Скачать для</small><strong>macOS</strong></span>
-          </a>
-          <div class="platform-badge platform-windows" aria-label="BreakOut для Windows готовится">
-            <span class="platform-logo windows-logo"><i></i><i></i><i></i><i></i></span>
-            <span class="platform-badge-copy"><small>Windows</small><strong data-i18n="windowsPreparing">ГОТОВИТСЯ</strong></span>
+          <div class="platform-option platform-option-macos">
+            <a class="platform-image-link" href="#" data-action="download" aria-label="Скачать BreakOut для macOS">
+              <img src="platform-macos-badge.png" alt="Download for Mac OS">
+            </a>
+            <div class="platform-status available" data-i18n="macAvailable">ДОСТУПНО</div>
+          </div>
+          <div class="platform-option platform-option-windows">
+            <div class="platform-image-link platform-image-disabled" aria-label="BreakOut для Windows в разработке">
+              <img src="platform-windows-badge.png" alt="Download for Windows">
+            </div>
+            <div class="platform-status development" data-i18n="windowsInDevelopment">В РАЗРАБОТКЕ</div>
           </div>
         </div>
       </div>
@@ -492,7 +496,7 @@
   </div>
 
   <script src="config-v26.js?v=27"></script>
-  <script src="script-v41.js?v=80"></script>
+  <script src="script-v42.js?v=81"></script>
   <script src="analytics-track-v1.js?v=1"></script>
 </body>
 </html>
