@@ -21,3 +21,8 @@ The website no longer hard-codes a release build in its primary download flow. `
 - Larger Composer/Playlist row numbers, event names, and durations.
 - Larger Flexible Export checkmarks and labels.
 - Keeps the v43 two-column mobile capabilities layout and dynamic appcast download flow.
+
+## v77
+- analytics admin UI now translates tracked element/event identifiers into Russian labels;
+- testimonial star ratings removed and text space reflowed;
+- all working-screen carousel images now render at full opacity without edge dimming on desktop and mobile.

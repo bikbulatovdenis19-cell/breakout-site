@@ -4971,3 +4971,22 @@ main>section:not(.hero-demo):not(.bo-revealed) .cta-card{opacity:0;transform:tra
 #pricing .price-card:nth-child(2) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 1.8s!important}
 #pricing .price-card:nth-child(3) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 3.6s!important}
 #pricing .price-card:nth-child(4) .button.primary{animation:boPricingPress 7.2s ease-in-out infinite 5.4s!important}
+
+
+/* v77 — testimonials without synthetic ratings; working-screen carousel at full visual fidelity. */
+#reviews .testimonial-rating{display:none!important}
+#reviews .testimonial-copy{justify-content:flex-start!important}
+#reviews .testimonial-person{margin-top:auto!important}
+
+.showcase-slide,
+.showcase-slide.active,
+.showcase-slide.carousel-clone,
+.showcase-slide.carousel-clone.active{
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
+}
+.carousel-wrap::before,
+.carousel-wrap::after{display:none!important;background:none!important}
+.slide-image,
+.slide-image img{filter:none!important;opacity:1!important}
