@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v42.css?v=81">
+  <link rel="stylesheet" href="styles-v43.css?v=82">
   <title>BreakOut — спортивный видеоанализ для Mac</title>
 </head>
 <body data-page="home">
@@ -69,12 +69,13 @@
       <div class="hero-shell hero-demo-shell">
         <div class="hero-copy hero-copy-grid hero-intro-grid">
           <div class="hero-copy-main hero-intro-copy">
-            <div class="eyebrow"><span></span><b data-i18n="eyebrow">Профессиональный спортивный видеоанализ для Mac</b></div>
+            <div class="eyebrow"><span></span><b data-i18n="eyebrow">Профессиональный спортивный видеоанализ для Mac + iPhone</b></div>
             <h1 data-i18n-lines="heroTitle">Видеть игру.
 Отмечать главное.</h1>
-            <p class="hero-lead" data-i18n="heroLead">BreakOut объединяет работу с видео, событиями, повтором, статистикой и экспортом в одном настраиваемом рабочем пространстве — для тренеров, аналитиков и спортивных команд.</p>
-            <div class="hero-actions hero-actions-single">
+            <p class="hero-lead" data-i18n="heroLead">Анализируйте матч на Mac, сохраняйте готовые ролики и продолжайте работу на iPhone. BreakOut объединяет видео, события, рисунки, подборки и локальную библиотеку в одной экосистеме.</p>
+            <div class="hero-actions hero-actions-ecosystem">
               <button class="button primary" data-action="download"><span data-i18n="download">Скачать для macOS</span><span>↓</span></button>
+              <a class="button secondary" href="#development"><span data-i18n="iosButton">BreakOut для iPhone</span><span>↗</span></a>
             </div>
             <div class="platform-pill">
               <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.8"></rect><path d="M2.5 18.5h19"></path><path d="M9 18.5h6"></path></svg></span>
@@ -82,12 +83,21 @@
             </div>
           </div>
 
-          <div class="hero-product-visual hero-desktop-cta" aria-label="Скачать BreakOut для Mac">
-            <div class="platform-pill hero-desktop-platform">
-              <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.8"></rect><path d="M2.5 18.5h19"></path><path d="M9 18.5h6"></path></svg></span>
-              <span><strong data-i18n="forMac">Для Mac</strong><small data-i18n="macRequirement">macOS 12.5 и новее</small></span>
+          <div class="hero-product-visual hero-desktop-cta" aria-label="Экосистема BreakOut">
+            <div class="hero-device-pills">
+              <div class="platform-pill hero-desktop-platform">
+                <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.8"></rect><path d="M2.5 18.5h19"></path><path d="M9 18.5h6"></path></svg></span>
+                <span><strong data-i18n="forMac">Для Mac</strong><small data-i18n="macRequirement">macOS 12.5 и новее</small></span>
+              </div>
+              <div class="platform-pill hero-desktop-platform">
+                <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"></rect><path d="M10.5 18.5h3"></path></svg></span>
+                <span><strong data-i18n="foriPhone">Для iPhone</strong><small data-i18n="iosCompanion">BreakOut companion</small></span>
+              </div>
             </div>
-            <button class="button primary hero-desktop-download" data-action="download"><span data-i18n="download">Скачать для macOS</span><span>↓</span></button>
+            <div class="hero-desktop-actions">
+              <button class="button primary hero-desktop-download" data-action="download"><span data-i18n="download">Скачать для macOS</span><span>↓</span></button>
+              <a class="button secondary" href="#development"><span data-i18n="iosButton">BreakOut для iPhone</span><span>↗</span></a>
+            </div>
           </div>
         </div>
 
@@ -413,7 +423,7 @@
         <div class="account-link-copy">
           <div class="kicker" data-i18n="accountKicker">Доступ к BreakOut</div>
           <h2 data-i18n="accountTitle">Начните бесплатно. Продолжайте, когда будете готовы.</h2>
-          <p data-i18n="accountIntro">Создайте аккаунт, активируйте 7-дневный пробный период и управляйте сроком доступа в личном кабинете.</p>
+          <p data-i18n="accountIntro">Один BreakOut Account используется на Mac, iPhone и сайте. В нём хранятся доступ и доверенные устройства, а персональный QR-код связывает ваш Mac с мобильным BreakOut.</p>
           <div class="account-link-actions">
             <a class="button primary" href="account.html?mode=register" data-i18n="createAccount">Создать аккаунт</a>
             <a class="button secondary" href="account.html?mode=signin" data-i18n="signIn">Войти</a>
@@ -426,24 +436,30 @@
     <section class="section development-section" id="development">
       <div class="content-shell development-card">
         <div class="development-copy">
-          <div class="kicker" data-i18n="developmentKicker">Развитие BreakOut</div>
-          <h2 data-i18n="developmentTitle">BreakOut продолжает развиваться.</h2>
-          <p data-i18n="developmentIntro">Мы совершенствуем ключевые инструменты BreakOut, уделяя особое внимание рисованию, визуальному анализу, производительности и удобству работы. Новые возможности и улучшения будут появляться в следующих обновлениях.</p>
-          <p class="development-platform-lead" data-i18n="developmentPlatforms">И расширяем BreakOut на новые платформы.</p>
+          <div class="kicker" data-i18n="developmentKicker">Экосистема BreakOut</div>
+          <h2 data-i18n="developmentTitle">Работайте на Mac. Берите результат с собой.</h2>
+          <p data-i18n="developmentIntro">BreakOut macOS остаётся основным рабочим инструментом для анализа. BreakOut iOS получает готовые ролики напрямую по локальной сети, хранит их в собственной библиотеке и позволяет продолжать работу без ноутбука рядом.</p>
+          <div class="ecosystem-flow" aria-label="BreakOut workflow">
+            <span><b>1</b><em data-i18n="ecoStep1">Анализ на Mac</em></span>
+            <i>→</i>
+            <span><b>2</b><em data-i18n="ecoStep2">BreakOut Link</em></span>
+            <i>→</i>
+            <span><b>3</b><em data-i18n="ecoStep3">Локальная библиотека iPhone</em></span>
+          </div>
+          <p class="development-platform-lead" data-i18n="developmentPlatforms">Один аккаунт. Доверенная пара устройств. Видео без облачного хранилища.</p>
         </div>
-        <div class="platform-badges">
-          <div class="platform-option platform-option-macos">
-            <a class="platform-image-link" href="#" data-action="download" aria-label="Скачать BreakOut для macOS">
-              <img src="platform-macos-badge.png" alt="Download for Mac OS">
-            </a>
-            <div class="platform-status available" data-i18n="macAvailable">ДОСТУПНО</div>
+        <div class="platform-badges ecosystem-platforms">
+          <a class="ecosystem-platform-card" href="#" data-action="download" aria-label="Скачать BreakOut для macOS">
+            <span class="ecosystem-device-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="6" width="22" height="15" rx="2.5"></rect><path d="M2.5 25.5h27"></path><path d="M12 25.5h8"></path></svg></span>
+            <span class="ecosystem-platform-copy"><small>BreakOut</small><strong>macOS</strong><em data-i18n="macPlatformRole">Анализ · Timeline · Composer · Drawing</em></span>
+            <span class="platform-status available" data-i18n="macAvailable">ДОСТУПНО</span>
+          </a>
+          <div class="ecosystem-platform-card ecosystem-platform-ios">
+            <span class="ecosystem-device-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="3" width="14" height="26" rx="3.2"></rect><path d="M14 25.5h4"></path></svg></span>
+            <span class="ecosystem-platform-copy"><small>BreakOut</small><strong>iOS</strong><em data-i18n="iosPlatformRole">Library · Drawing · Tactical Board · Offline</em></span>
+            <span class="platform-status available" data-i18n="iosAvailable">ДОСТУПНО</span>
           </div>
-          <div class="platform-option platform-option-windows">
-            <div class="platform-image-link platform-image-disabled" aria-label="BreakOut для Windows в разработке">
-              <img src="platform-windows-badge.png" alt="Download for Windows">
-            </div>
-            <div class="platform-status development" data-i18n="windowsInDevelopment">В РАЗРАБОТКЕ</div>
-          </div>
+          <div class="ecosystem-future-platform"><span>Windows</span><b data-i18n="windowsInDevelopment">В РАЗРАБОТКЕ</b></div>
         </div>
       </div>
     </section>
@@ -496,7 +512,7 @@
   </div>
 
   <script src="config-v26.js?v=27"></script>
-  <script src="script-v42.js?v=81"></script>
+  <script src="script-v43.js?v=82"></script>
   <script src="analytics-track-v1.js?v=1"></script>
 </body>
 </html>
