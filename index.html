@@ -16,13 +16,13 @@
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="BreakOut — платформа видеотренера для macOS и iOS">
-  <meta property="og:description" content="Отмечайте игровые моменты на Mac и передавайте эпизоды, Композер и тактику тренерскому штабу на iPhone или iPad.">
+  <meta property="og:description" content="Отмечайте игровые эпизоды на Mac и передавайте нужный материал тренерскому штабу на iPhone или iPad.">
   <meta property="og:image" content="assets/breakout-og.png?v=38">
   <meta name="twitter:image" content="assets/breakout-og.png?v=38">
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles-v49.css?v=95">
+  <link rel="stylesheet" href="styles-v51.css?v=101">
   <title>BreakOut — платформа видеотренера для macOS и iOS</title>
 </head>
 <body data-page="home">
@@ -74,12 +74,20 @@
             <div class="eyebrow"><span></span><b data-i18n="eyebrow">Профессиональная платформа видеотренера для macOS и iOS</b></div>
             <h1 data-i18n-lines="heroTitle">Видеть игру.
 Отмечать главное.</h1>
-            <p class="hero-lead" data-i18n="heroLead">Отмечайте игровые моменты на Mac, собирайте их в Композере и передавайте тренерскому штабу на iPhone или iPad. Рисунки, комментарии и тактика остаются связаны с исходным проектом.</p>
-            <div class="hero-actions hero-actions-ecosystem">
-              <button class="button primary" data-action="download"><span data-i18n="download">Скачать для macOS</span><span>↓</span></button>
-              <a class="button secondary" href="#ecosystem"><span data-i18n="iosButton">Скачать для iOS</span><span>↘</span></a>
-            </div>
+            <p class="hero-lead" data-i18n="heroLead">Отмечайте игровые эпизоды на Mac, собирайте их в Композере и передавайте нужный материал тренерскому штабу на iPhone или iPad.</p>
           </div>
+          <aside class="hero-platform-panel" aria-label="Доступные версии BreakOut">
+            <article class="hero-platform-card">
+              <div class="hero-platform-icon">macOS</div>
+              <div><b>BreakOut macOS</b><span>macOS 14 и новее</span></div>
+              <button class="button primary hero-platform-download" data-action="download" data-i18n="download">Скачать для macOS</button>
+            </article>
+            <article class="hero-platform-card">
+              <div class="hero-platform-icon">iOS</div>
+              <div><b>BreakOut iOS</b><span>iOS / iPadOS 26 и новее</span></div>
+              <a class="button secondary hero-platform-download" href="#ecosystem" data-i18n="iosButton">Скачать для iOS</a>
+            </article>
+          </aside>
         </div>
 
         <div class="demo-laptop-stage">
@@ -270,42 +278,23 @@
         <div class="section-heading ecosystem-heading-v47">
           <div>
             <div class="kicker" data-i18n="ecosystemKicker">Экосистема</div>
-            <h2 data-i18n="ecosystemTitle">Верх — лавка. Момент — сразу.</h2>
+            <h2 data-i18n="ecosystemTitle">Нужный эпизод — сразу тренерскому штабу.</h2>
           </div>
-          <p data-i18n="ecosystemIntro">Видеотренер отмечает момент на Mac и передаёт его тренерскому штабу. На iPhone или iPad можно открыть эпизод, Композер или тактическую схему, добавить рисунки и комментарии и вернуть изменения в исходный проект.</p>
+          <p data-i18n="ecosystemIntro">Видеотренер отмечает игровые ситуации в BreakOut macOS и отправляет выбранный материал на iPhone или iPad тренерского штаба. Эпизоды открываются внутри BreakOut iOS — без ручной пересылки в Фото.</p>
         </div>
 
-        <div class="ecosystem-feature-v47">
-          <div class="ecosystem-points-v47">
-            <article>
-              <span>01</span>
-              <div><strong data-i18n="ecosystemPoint1Title">Метка на таймлайне</strong><p data-i18n="ecosystemPoint1Text">Видеотренер отмечает игровые ситуации по ходу матча и собирает нужные эпизоды в Композере.</p></div>
-            </article>
-            <article>
-              <span>02</span>
-              <div><strong data-i18n="ecosystemPoint2Title">Верх → лавка</strong><p data-i18n="ecosystemPoint2Text">Один эпизод, выбранные моменты, Композер или тактическую схему можно передать прямо из BreakOut macOS на iPhone или iPad.</p></div>
-            </article>
-            <article>
-              <span>03</span>
-              <div><strong data-i18n="ecosystemPoint3Title">Обратно в проект</strong><p data-i18n="ecosystemPoint3Text">Рисунки, комментарии и изменения тактики возвращаются в связанную метку, Композер или тактическую доску на Mac.</p></div>
-            </article>
+        <div class="ecosystem-feature-v51">
+          <div class="ecosystem-points-v51">
+            <article><span>01</span><div><strong data-i18n="ecosystemPoint1Title">Отметить</strong><p data-i18n="ecosystemPoint1Text">Создайте метку на таймлайне или подготовьте нужные эпизоды в Композере.</p></div></article>
+            <article><span>02</span><div><strong data-i18n="ecosystemPoint2Title">Передать</strong><p data-i18n="ecosystemPoint2Text">Отправьте эпизод, подборку или тактический материал прямо из BreakOut macOS.</p></div></article>
+            <article><span>03</span><div><strong data-i18n="ecosystemPoint3Title">Показать</strong><p data-i18n="ecosystemPoint3Text">Тренер открывает материал в BreakOut iOS на iPhone или iPad — на мостике, скамейке или в раздевалке.</p></div></article>
           </div>
-
-          <div class="ecosystem-product-v47" aria-label="BreakOut на Mac, iPhone и iPad">
-            <div class="ecosystem-mac-v47">
-              <div class="ecosystem-device-top-v47"><b>BreakOut macOS</b><span data-i18n="ecosystemMacLabel">Видеотренер · таймлайн · Композер</span></div>
-              <div class="ecosystem-mac-screen-v47"><img src="assets/workspace-live-new.webp" alt="BreakOut на Mac" loading="lazy"></div>
-            </div>
-            <div class="ecosystem-route-v50" aria-hidden="true"><i></i><b data-i18n="ecosystemRouteLabel">ВЕРХ  →  ЛАВКА</b></div>
-            <div class="ecosystem-mobile-v47">
-              <div class="ecosystem-mobile-bar-v47"><img src="assets/breakout-icon.png?v=38" alt=""><b>BreakOut</b><span>iOS</span></div>
-              <div class="ecosystem-mobile-title-v47" data-i18n="ecosystemMobileLibrary">Моя библиотека</div>
-              <div class="ecosystem-mobile-clips-v47">
-                <div><img src="assets/olympic-frame-2018.webp" alt=""><span><b>PP · 03</b><small data-i18n="ecosystemClipLinked">Связанный эпизод</small></span><em>00:18</em></div>
-                <div><img src="assets/olympic-frame-2018.webp" alt=""><span><b>OZ Entry</b><small data-i18n="ecosystemCollectionLabel">Композер</small></span><em>00:11</em></div>
-                <div><img src="assets/hockey-rink-green.png" alt=""><span><b data-i18n="ecosystemTacticTitle">Большинство 1–3–1</b><small data-i18n="ecosystemTacticLabel">Тактика</small></span><em>↗</em></div>
-              </div>
-              <div class="ecosystem-mobile-footer-v47"><span></span><b data-i18n="ecosystemMobileDevices">iPhone · iPad</b></div>
+          <div class="ecosystem-real-visual-v51">
+            <div class="ecosystem-real-shot-v51"><img src="assets/workspace-live-new.webp" alt="BreakOut macOS" loading="lazy"></div>
+            <div class="ecosystem-ios-note-v51">
+              <img src="assets/breakout-icon.png?v=38" alt="BreakOut">
+              <div><b>BreakOut iOS</b><span>iPhone · iPad</span></div>
+              <p data-i18n="ecosystemIosNote">Мобильная библиотека для материалов, отправленных тренерскому штабу.</p>
             </div>
           </div>
         </div>
@@ -508,7 +497,7 @@
   </div>
 
   <script src="config-v26.js?v=28"></script>
-  <script src="script-v49.js?v=95"></script>
+  <script src="script-v51.js?v=101"></script>
   <script src="analytics-track-v1.js?v=1"></script>
 </body>
 </html>
