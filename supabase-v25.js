@@ -100,5 +100,14 @@
     return request('rest/v1/rpc/revoke_device',{method:'POST',body:{p_device_id:id},token:s.access_token});
   }
 
-  window.BreakOutSupabase={configured,signUp,signIn,signOut,sendPasswordReset,updatePassword,consumeRecoveryHash,currentAccess,devices,revokeDevice,getSession,ensureSession};
+  async function companionDevices(){
+    const s=await ensureSession(); if(!s?.access_token) throw new Error('NO_SESSION');
+    return request('rest/v1/companion_devices?select=id,installation_id,name,platform,app_version,activated_at,last_seen_at,revoked_at&revoked_at=is.null&order=last_seen_at.desc',{token:s.access_token});
+  }
+  async function revokeCompanionDevice(id){
+    const s=await ensureSession(); if(!s?.access_token) throw new Error('NO_SESSION');
+    return request('rest/v1/rpc/revoke_companion_device',{method:'POST',body:{p_device_id:id},token:s.access_token});
+  }
+
+  window.BreakOutSupabase={configured,signUp,signIn,signOut,sendPasswordReset,updatePassword,consumeRecoveryHash,currentAccess,devices,revokeDevice,companionDevices,revokeCompanionDevice,getSession,ensureSession};
 })();

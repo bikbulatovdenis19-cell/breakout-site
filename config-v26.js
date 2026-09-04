@@ -17,4 +17,4 @@ window.BREAKOUT_CONFIG = {
   supabasePublishableKey: "sb_publishable_FvYjy4TBGqTP5NaLKw-0uA_oM2ehoEK"
 };
 
-window.BREAKOUT_BUILD = "23.0";
+window.BREAKOUT_BUILD = "24.0";

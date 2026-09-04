@@ -11,10 +11,10 @@
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="assets/breakout-icon.png?v=38">
   <link rel="apple-touch-icon" href="assets/breakout-icon.png?v=38">
-  <link rel="stylesheet" href="styles-v36.css?v=1">
+  <link rel="stylesheet" href="styles-v36.css?v=2">
   <title>Аккаунт — BreakOut</title>
 </head>
-<body class="account-page" data-page="account" data-build="20.0">
+<body class="account-page" data-page="account" data-build="21.0">
   <header class="topbar">
     <div class="nav-shell">
       <a class="brand" href="index.html" aria-label="BreakOut"><img src="assets/breakout-icon.png?v=38" alt=""><span>BreakOut</span></a>
@@ -32,7 +32,7 @@
         <div class="account-page-intro">
           <div class="kicker" data-i18n="accountSideKicker">Личный кабинет</div>
           <h1 data-i18n="accountSideTitle">Управляйте доступом к BreakOut.</h1>
-          <p data-i18n="accountSideIntro">Вход, срок доступа и подключённый Mac — в одном аккуратном кабинете.</p>
+          <p data-i18n="accountSideIntro">Один аккаунт для BreakOut на Mac, iPhone и сайте — со статусом доступа и связанными устройствами.</p>
         </div>
 
         <div class="account-auth-card">
@@ -75,8 +75,16 @@
               <div><span data-i18n="accountValidUntil">Действует до</span><strong data-account-access-until>—</strong></div>
               <div><span data-i18n="accountLastSync">Обновлено</span><strong data-account-last-sync>—</strong></div>
             </div>
-            <div class="account-section-title" data-i18n="accountConnectedMac">Подключённый Mac</div>
-            <div class="account-device-list" data-account-devices></div>
+            <div class="account-device-groups">
+              <div class="account-device-group">
+                <div class="account-section-title" data-i18n="accountConnectedMac">BreakOut для macOS</div>
+                <div class="account-device-list" data-account-mac-devices></div>
+              </div>
+              <div class="account-device-group">
+                <div class="account-section-title" data-i18n="accountConnectedMobile">BreakOut для iOS</div>
+                <div class="account-device-list" data-account-mobile-devices></div>
+              </div>
+            </div>
             <div class="account-dashboard-actions">
               <button class="button secondary" type="button" data-account-refresh data-i18n="accountRefresh">Обновить статус</button>
               <button class="button ghost" type="button" data-account-logout data-i18n="accountLogout">Выйти</button>
@@ -99,7 +107,7 @@
 
   <footer class="footer"><div class="content-shell footer-inner"><div class="footer-brand"><img src="assets/breakout-icon.png?v=38" alt=""><span>BreakOut</span><small>© 2026</small></div><div class="footer-links"><a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a><a href="terms.html" data-i18n="termsShort">Условия</a><a href="support.html" data-i18n="navSupport">Поддержка</a></div></div></footer>
   <script src="config-v26.js?v=27"></script>
-  <script src="supabase-v25.js?v=25"></script>
-  <script src="script-v36.js?v=76"></script>
+  <script src="supabase-v25.js?v=26"></script>
+  <script src="script-v36.js?v=77"></script>
 </body>
 </html>

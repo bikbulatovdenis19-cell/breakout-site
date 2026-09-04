@@ -3143,3 +3143,12 @@ section[id],#breakout-demo{scroll-margin-top:92px}
   .account-auth-card{padding:20px;border-radius:22px}.account-dashboard-grid-rich{grid-template-columns:1fr}
   .account-page .account-back{display:none!important}
 }
+
+/* BreakOut Account — ecosystem stage 1 */
+.account-device-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.account-device-group{min-width:0;border:1px solid var(--line);border-radius:16px;background:var(--bg2);padding:12px;display:grid;align-content:start;gap:9px}
+.account-device-group .account-section-title{margin:0;font-size:11px;font-weight:760;letter-spacing:.04em;color:var(--muted2)}
+.account-device-empty{min-height:54px;border:1px dashed var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:var(--muted);font-size:11px;line-height:1.35}
+.account-dashboard-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.account-dashboard-actions .button{width:100%;min-width:0;text-align:center}
+@media(max-width:760px){.account-device-groups{grid-template-columns:1fr}.account-dashboard-actions{grid-template-columns:1fr!important}}
